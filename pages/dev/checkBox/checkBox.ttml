@@ -1,15 +1,3 @@
-<tb-navLeft menuList="{{menuList}}" selectedType="checkBox">
-
-    <view class="content">
-        <view>模块展示</view>
-
-        <view class="content-button">
-            <!-- <tb-checkBox/> -->
-        </view>
-
-        <view class="content-md">
-            <towxml nodes="{{article}}" />
-        </view>
-    </view>
-
+<tb-navLeft menuList="{{menuList}}" selectedType="checkBox" article="{{article}}">
+    <tb-checkBox />
 </tb-navLeft>

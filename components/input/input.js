@@ -1,7 +1,7 @@
 // import { isChinaNameValue, isEnglish } from "../../../utils/util.js";
 
 Component({
-  externalClasses: ["box-class", "lable-class", "input-class"],
+  externalClasses: ["box_class", "lable-class", "input-class"],
   /**
    * 组件的属性列表
    */

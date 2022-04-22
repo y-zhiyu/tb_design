@@ -20,3 +20,20 @@
   padding: 25px;
   box-sizing: border-box;
 }
+
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+}
+
+.app-content-components {
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.app-content-md{
+  width:100%;
+}

@@ -1,18 +1,8 @@
-<tb-navLeft menuList="{{menuList}}" selectedType="button">
+<tb-navLeft menuList="{{menuList}}" selectedType="button" article="{{article}}">
 
-    <view class="content">
-        <view>模块展示</view>
-
-        <view class="content-button">
-            <tb-button text="default" btn_class="btn_class" />
-            <tb-button text="primary" type='primary' btn_class="btn_class" />
-            <tb-button text="danger" type='danger' btn_class="btn_class" />
-            <tb-button text="disabled" type='disabled' disabled="{{true}}" btn_class="btn_class" />
-        </view>
-
-        <view class="content-md">
-            <towxml nodes="{{article}}" />
-        </view>
-    </view>
+    <tb-button text="default" btn_class="btn_class" />
+    <tb-button text="primary" type='primary' btn_class="btn_class" />
+    <tb-button text="danger" type='danger' btn_class="btn_class" />
+    <tb-button text="disabled" type='disabled' disabled="{{true}}" btn_class="btn_class" />
 
 </tb-navLeft>

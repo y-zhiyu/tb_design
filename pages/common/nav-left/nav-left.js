@@ -14,10 +14,14 @@ Component({
       type: String,
       value: "",
       observer: function (newVal, oldVal, changedPath) {
-        
+
         this.init(this.data.selectedType);
       },
     },
+    article: {
+      type: Object,
+      value: {},
+    }
   },
 
   /**
@@ -25,7 +29,7 @@ Component({
    */
   data: {},
 
-  ready() {},
+  ready() { },
 
   /**
    * 组件的方法列表

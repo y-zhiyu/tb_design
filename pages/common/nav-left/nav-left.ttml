@@ -3,6 +3,16 @@
         <tb-menu menuList="{{menuList}}" selectedType="{{selectedType}}" binditemChange="getItemChange" />
     </view>
     <view class="app-container-right">
-        <slot />
+
+        <view class="app-content">
+            <view>模块展示</view>
+            <view class="app-content-components">
+                <slot />
+            </view>
+            <view class="app-content-md">
+                <towxml nodes="{{article}}" />
+            </view>
+        </view>
+        
     </view>
 </view>

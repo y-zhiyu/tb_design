@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "tb-menu": "/components/menu/menu"
+    "tb-menu": "/components/menu/menu",
+    "towxml": "/towxml/towxml"
   }
 }

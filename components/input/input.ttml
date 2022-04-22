@@ -1,4 +1,4 @@
-<view class="input-container box-class">
+<view class="input-container box_class">
   <view tt:if="{{lable}}" class="input-title lable-class">
     <view class="input-necessary {{necessary?'input-necessary_active':''}}">*</view>
     <view>{{lable}}</view>

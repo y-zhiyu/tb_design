@@ -1,6 +1,6 @@
-<tb-navLeft menuList="{{menuList}}" selectedType="input">
+<tb-navLeft menuList="{{menuList}}" selectedType="input" article="{{article}}">
     <view class="content-input">
-        <tb-input lable='姓名' necessary='{{true}}' />
-        <tb-input lable='电话' necessary='{{false}}' />
+        <tb-input lable='姓名' necessary='{{true}}' box_class="box_class" />
+        <tb-input lable='电话' necessary='{{false}}' box_class="box_class" />
     </view>
 </tb-navLeft>

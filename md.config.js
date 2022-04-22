@@ -9,14 +9,18 @@ function genDocStr(mdDir) {
 }
 
 function readDir(dir) {
-  // console.log('dir------------', dir);
-
   const dirInfo = fs.readdirSync(dir);
-  
-  console.log('dirInfo----------', dirInfo)
+
+  // console.log('dirInfo----------', dirInfo)
+
   dirInfo.forEach(item => {
     const location = path.join(dir, item);
-    const info = fs.statSync(location)
+    // console.log('location-----------', location);
+
+    const info = fs.statSync(location);
+
+    // console.log('info-----------', info.isDirectory());
+
     if (info.isDirectory()) {
       readDir(location)
     } else if (location.slice(-6) === 'doc.md') {

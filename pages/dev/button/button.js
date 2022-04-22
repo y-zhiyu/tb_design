@@ -16,6 +16,7 @@ Page({
   onLoad: function (options) {
     let source = require('./md/doc.js');
     let article = app.towxml(source, 'markdown');
+    console.log('article------', article)
 
     this.setData({
       article: article
