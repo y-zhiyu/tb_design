@@ -1,0 +1,6 @@
+<view class="popover">
+    <view class="arrow"></view>
+    <view class="popover_c_i" catchtap="getPopover">
+        {{text}}
+    </view>
+</view>

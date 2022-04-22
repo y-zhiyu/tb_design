@@ -1,0 +1,76 @@
+<view class="select-container box-class">
+  <view class="select-title lable-class" tt:if="{{lable}}">
+    <!-- tt:if="{{necessary}}" -->
+    <text class="select-necessary {{necessary?'select-necessary_active':''}}">*</text>
+    <text>{{lable}} </text>
+  </view>
+
+  <view class="select-box {{errorText && 'select-error'}} select-class {{disabled && 'select-disabled'}}">
+    <view tt:if="{{!isSearch}}" class="select-content select-class" data-labeType="{{labeType}}" catchtap="selectTap">
+      <view class="select-text {{!value && placeholder && 'select-normal'}} {{disabled && 'text-disabled'}}">
+        {{value?value:placeholder}}
+      </view>
+      <view tt:if="{{!imgUrl}}" class="select-arrow" animation="{{animationData}}"></view>
+      <image tt:if="{{imgUrl}}" class="select-img" src="{{imgUrl}}" animation="{{animationData}}"></image>
+    </view>
+
+    <view tt:if="{{isSearch}}" class='select-content select-content-input' catchtap="selectInputTap">
+      <input
+        tt:if="{{!disabled}}"
+        type="{{type?type:'text'}}"
+        maxlength="{{maxlength?maxlength:255}}"
+        value="{{value}}"
+        focus="{{inputFocus}}"
+        placeholder="{{placeholder}}"
+        bindinput="onChange"
+        bindfocus='onFocus'
+        bindblur="onBlur"
+        bindconfirm="onConfim"
+        class="select-input">
+      </input>
+
+      <view tt:if="{{disabled}}"
+        class="select-text {{!value && placeholder && 'select-normal'}} {{disabled && 'text-disabled-padding'}}">
+        {{value?value:placeholder}}
+      </view>
+
+      <view class=" select-input-arrow" tt:if="{{!imgUrl}}">
+        <view class="select-arrow" animation="{{animationData}}"></view>
+      </view>
+      <image tt:if="{{imgUrl}}" class="select-input-img" src="{{imgUrl}}" animation="{{animationData}}"></image>
+    </view>
+
+    <view class="select-list-position" tt:if="{{selectShow}}">
+      <view class='select-list'>
+        <view tt:for="{{!isSearch?selectArray:searchSelectArray}}" tt:key='index' data-index="{{index}}"
+          data-item="{{item}}"
+          class='select-item {{item.text && "select-item-flex"}} {{item.selected && "select-text-selected"}} {{item.disabled && "value-disabled"}}'
+          catchtap='{{!item.disabled && "setText"}}'>
+          <view tt:if="{{item.value}}">{{item.value}}</view>
+
+          <!-- <view tt:if="{{item.text}}">{{item.text}}</view> -->
+        </view>
+
+        <view tt:if="{{isOpation}}" catchtap="selectOpation" class="opation  opation_style">
+          <!-- {{opationText}} -->
+          <view class="searchOpation_text">未能找到相关联系人 </view>
+
+          <view class="opation_btn">{{opationText}}</view>
+        </view>
+
+        <view tt:if="{{searchSelectArray.length==0 && value && isSearchOpaction }}" catchtap="selectSearchOpation"
+          class="opation  opation_style">
+
+          <view class="searchOpation_text">未能找到"{{value}}"相关客户 </view>
+
+          <view class="opation_btn">{{isSearchOpactionText}}</view>
+
+
+        </view>
+      </view>
+    </view>
+    <input class="input" type="text" adjust-position="{{false}}" focus="{{focus}}"
+    style="position: absolute;top: 20px;left:-999999px;border:1px red sold" bindblur="getOnBlur" />
+  </view>
+  <view class="select-error-text" tt:if="{{errorText}}">{{errorText}}</view>
+</view>

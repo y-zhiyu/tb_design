@@ -1,0 +1,12 @@
+<template name="nav">
+  <view class="menu-container {{modeType=='inline' && 'menu-inline'}} menu_class">
+    <block tt:for="{{menuList}}" tt:key="index">
+      <view
+        class="menu-item {{modeType=='inline' && selectedType==item.type && 'menu-item-selected'}} {{modeType=='horizontal' && selectedType==item.type && 'menu-item-horizontal-selected'}} menu_item_class"
+        data-type="{{item.type}}" catchtap="getItemChange">
+        <image tt:if="{{item.imgSrc}}" class="menu-item-img menu_img_class" src="{{item.imgSrc}}"></image>
+        {{item.label}}
+      </view>
+    </block>
+  </view>
+</template>

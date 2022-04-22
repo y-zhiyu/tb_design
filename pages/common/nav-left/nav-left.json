@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tb-menu": "/components/menu/menu"
+  }
+}

@@ -1,0 +1,18 @@
+<view class="todoItem {{todoType=='createFinishedPlan' && todoTypeId=='3'&& 'todoItemPadding'}} ">
+    <view class="todoItem_l">
+        <image class="todoItem_l_img"
+            src="{{status==1?publicImgUrl+'/img/pcPAlark/pc_todo_select.png':publicImgUrl+'/img/pcPAlark/pc_todo_default.png'}}">
+        </image>
+        <!-- /img/pcPAlark/pc_todo_select.png -->
+    </view>
+    <view class="todoItem_r">
+        <view class="todoItem_r_title todoItem_r_i">{{title}}</view>
+        <view class="todoItem_r_date todoItem_r_i">{{dateNote}}：{{date}}</view>
+        <view class="todoItem_r_ratio todoItem_r_i" tt:if="{{ratioNote}}">{{ratioNote}}：{{ratio}}%</view>
+        <view class="todoItem_r_tag" tt:if="{{todoType=='createFinishedPlan' && todoTypeId=='3'}}">
+            <view class="todoItem_r_tag_i">结算资料</view>
+            <view class="todoItem_r_tag_i">竣工图纸</view>
+            <view class="todoItem_r_tag_i">结算单签字</view>
+        </view>
+    </view>
+</view>

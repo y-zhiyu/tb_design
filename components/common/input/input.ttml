@@ -1,0 +1,30 @@
+<view class="input-container box-class">
+  <view tt:if="{{lable}}" class="input-title lable-class">
+    <!-- <view class="input-necessary" tt:if="{{necessary}}">*</view> tt:if="{{necessary}}"-->
+    <view class="input-necessary {{necessary?'input-necessary_active':''}}">*</view>
+    <view>{{lable}}</view>
+  </view>
+  <view class='input-box {{errorText && "input-error"}} input-class {{disabled && "input-disabled"}}'>
+    <view class="input-content" tt:if="{{!disabled}}">
+      <input
+        tt:if="{{isSlot}}"
+        type="{{type}}"
+        maxlength="{{maxlength?maxlength:255}}"
+        class="input-text"
+        value="{{value}}"
+        placeholder="{{placeholder}}"
+        bindinput='onChange'
+        bindfocus='onFocus'
+        bindblur="onBlur"
+        bindconfirm="onConfim"
+        placeholder-style="placeholder-style" />
+
+      <block tt:if="{{!isSlot}}">
+        <slot />
+      </block>
+    </view>
+    <block tt:if="{{disabled}}">{{value}}</block>
+
+  </view>
+  <view class="input-error-text" tt:if="{{errorText}}">{{errorText}}</view>
+</view>

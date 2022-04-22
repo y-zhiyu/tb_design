@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-imageGroup":"../imageGroup/imageGroup",
+         "tt-proProgress": "/components/pc/proProgress/proProgress",
+         "tt-logList":"/components/pc/logList/logList",
+         "tt-progress":"/components/common/progress/progress",
+         "tt-button":"/components/common/button/button",
+         "tt-noDate": "/components/pc/noDate/noDate"
+    }
+}

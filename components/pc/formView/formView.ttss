@@ -1,0 +1,66 @@
+.fromView_title{
+    padding: 13px 0 ;
+    background:#5C7184;
+    border-radius: 1px;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 60px;
+}
+.fromViewlist{
+    /* max-height: 800px;
+    overflow: hidden;
+    overflow-y:auto ; */
+}
+.fromView_title_i{
+    color:#E7E7E7 ;
+    font-family: PingFang-SC-Bold, PingFang-SC;
+    font-weight: bold;
+    line-height: 17px;
+    font-size: 12px;
+    width:200px;
+    text-align: center;
+}
+.fromViewlist_i{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #496278;
+    font-size: 12px;
+    color: #8E9BA7 ;
+}
+.fromViewlist_i:last-child{
+    border: none;
+}
+.goodspic_img{
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+}
+.fromViewlist_i_i{
+    width:200px;
+    word-break: break-all;
+    text-align: center;
+}
+/* btn按钮 */
+.action_btn{
+    width:50px;
+    height: 17px;
+    border: 1px solid #E7E7E7;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 17px;
+    color:#E7E7E7;
+    font-size: 9px;
+    display: inline-block;
+    cursor: pointer;
+   
+}  
+ .action_btn{
+    margin-top: 5px;
+    margin-left: 8px;
+} 
+.duration{
+    color: #FBA246;
+}

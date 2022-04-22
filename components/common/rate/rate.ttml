@@ -1,0 +1,7 @@
+<view class="rate-box">
+  <block tt:for="{{countTotal}}" tt:key="index">
+    <image
+      src="{{starCount>index?publicImgUrl+'/img/pcPAlark/pc_selected_stars.png':publicImgUrl+'/img/pcPAlark/pc_default_stars.png'}}"
+      class="rate-box-img rate-img-class" bindtap="bindChange" data-index="{{index}}" />
+  </block>
+</view>

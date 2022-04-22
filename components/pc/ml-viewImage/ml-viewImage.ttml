@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="view-icon" data-type="view" bindtap='getViewPage'>
+    
+    <image
+      src="{{viewType=='view'?publicImgUrl+'/img/pcPAlark/pc_view_active.png':publicImgUrl+'/img/pcPAlark/pc_view_normal.png'}}"
+      class="showlist_img"></image>
+    <tt-popover class="popover" text="视图" />
+  </view>
+  <view class="view-icon" data-type="list" bindtap='getViewPage'>
+    <image
+      src="{{viewType=='list'?publicImgUrl+'/img/pcPAlark/pc_list_active.png':publicImgUrl+'/img/pcPAlark/pc_list_default.png'}}"
+      class="showlist_img"></image>
+    <tt-popover class="popover" text="列表" />
+  </view>
+</view>

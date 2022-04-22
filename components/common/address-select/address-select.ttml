@@ -1,0 +1,42 @@
+<view class="addressBox">
+    <view catchtap="getToggleShow" class="addressBox_showValue {{showValue?'':'noValue'}} ">
+        {{showValue?showValue:'省、市、区/县'}}</view>
+    <block tt:if="{{showAddressPanel}}">
+        <view class="addressBox_con">
+            <view class="addressBox_table">
+                <!-- catchtap="selectTable" -->
+                <block tt:for="{{noteArr}}" tt:key="index">
+                    <view class="addressBox_table_i {{noteIndex==index?'active':''}}" data-index="{{index}}"
+                        catchtap="selectTable">
+                        {{item.title}}
+                    </view>
+                </block>
+            </view>
+            <scroll-view class="addressBox_list" tt:if="{{noteIndex==0}}" style="height:300px;" scroll-y
+                scroll-into-view="province_{{provinceCode}}">
+                <block tt:for="{{provinceList}}" tt:key="index">
+                    <view class="addressBox_list_i {{provinceIndex==index?'addressBox_list_i_active':''}}"
+                        data-index="{{index}}" data-item="{{item}}" id="province_{{item.id}}" catchtap="selectProvince">
+                        {{item.value}}</view>
+                </block>
+            </scroll-view>
+            <scroll-view class="addressBox_list" tt:if="{{noteIndex==1}}" style="height:300px;" scroll-y
+                scroll-into-view="city_{{cityCode}}">
+                <block tt:for="{{cityList}}" tt:key="index">
+                    <view class="addressBox_list_i {{cityIndex==index?'addressBox_list_i_active':''}}"
+                        data-index="{{index}}" data-item="{{item}}" id="city_{{item.id}}" catchtap="selectCity">
+                        {{item.value}}</view>
+                </block>
+            </scroll-view>
+            <scroll-view class="addressBox_list" tt:if="{{noteIndex==2}}" style="height:300px;" scroll-y
+                scroll-into-view="county_{{countyCode}}">
+                <block tt:for="{{countyList}}" tt:key="index">
+                    <view class="addressBox_list_i {{countyIndex==index?'addressBox_list_i_active':''}}"
+                        data-index="{{index}}" data-item="{{item}}" id="county_{{item.id}}" catchtap="selectCounty">
+                        {{item.value}}</view>
+                </block>
+            </scroll-view>
+        </view>
+    </block>
+</view>
+<view class="voer" catchtap="closeShowAddressPanel" tt:if="{{showAddressPanel}}"></view>

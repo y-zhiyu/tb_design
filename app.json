@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/dev/button/button",
+    "pages/dev/input/input",
+    "pages/dev/modal/modal",
+    "pages/dev/icon/icon",
+    "pages/dev/pagination/pagination",
+    "pages/dev/menu/menu"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Gadget",
+    "navigationBarTextStyle": "black"
+  },
+  "ext": {
+    "defaultPages": {
+      "sidebarMode": "pages/dev/button/button",
+      "PCMode": "pages/dev/button/button"
+    }
+  }
+}

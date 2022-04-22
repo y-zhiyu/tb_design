@@ -1,0 +1,27 @@
+.title{
+    position: relative;  
+    height: 30px; 
+}
+.titleText{
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    z-index: 5;
+    /* width: 100px; */
+    width: 50px;
+    font-size: 18px;
+    color: #fff;
+    font-weight:800; 
+    line-height: 15px; 
+}
+.lineDec{
+    position: absolute;
+    /* width: 105px; */
+    width: 55px;
+    height: 18px;
+    top: 10px; 
+    left: 0px;
+    background: linear-gradient(90deg, #3684E2 0%, #163450 100%);
+    border-radius: 11px;
+    z-index: 2;
+}

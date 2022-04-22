@@ -1,0 +1,32 @@
+.sildeBox {
+  width: 100%;
+}
+
+.silde_i {
+  width: 100%;
+  margin-top: 10px;
+  padding: 13px 0 13px 39px;
+  font-size: 13px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  color: rgba(229, 229, 229, 1);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.silde_i:hover{
+  background: #163450;
+}
+
+.sidebarActive {
+  background: rgba(22, 52, 80, 1);
+}
+
+.silde_i_img {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+}

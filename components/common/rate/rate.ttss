@@ -1,0 +1,12 @@
+.rate-box {
+  width: 100%;
+  height: 17px;
+  display: flex;
+}
+
+.rate-box-img {
+  width: 17px;
+  height: 17px;
+  background-size: 100% 100%;
+  margin-right: 10px;
+}

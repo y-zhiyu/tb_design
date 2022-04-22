@@ -1,0 +1,8 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="icon">
+    <view class="content-icon">
+        <view class="icon-item" tt:for="{{iconList}}" tt:key="index">
+            <image class="icon-item-img" src="{{item.iconSrc}}"></image>
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+</tb-navLeft>

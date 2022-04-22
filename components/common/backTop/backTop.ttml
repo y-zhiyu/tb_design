@@ -1,0 +1,4 @@
+<view class="backtopBox" catchtap="backTop">
+    <image class="backtopBoxImg" src="{{publicImgUrl}}/img/pcPAlark/pc_backTop.png"></image>
+</view>
+          

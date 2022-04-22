@@ -1,0 +1,40 @@
+<view class="pagination" style="background:{{themColor.paginationBg}}">
+	<view class="pagination_i total">
+		共 {{allTotal}} 条
+	</view>
+
+	<view class="pagination_i total">
+		每页
+		<picker value="{{paginationArrIndex}}" range="{{paginationArr}}" bindchange="bindPickerChange"
+			bindcancel="bindPickerCancel">
+			<view class="totalPicker">
+				{{paginationArr[paginationArrIndex]}}
+			</view>
+		</picker>
+		条
+	</view>
+
+	<view class="pagination_i paginationNum">
+		<view class="paginationNum_prev" data-node="previousNode" bindtap="{{current!=1 && 'onChangeNode'}}">
+			<image class="paginationNum_prev" src="../images/leftOutlined.png"></image>
+		</view>
+		<view class="paginationNum_center">
+			<view class="paginationNum_center_i" tt:for="{{totalArray}}" tt:key="index" data-current="{{item}}"
+				bindtap="onChange">
+				<view tt:if="{{item!=0}}" class="{{item==current && 'pagination_i_active'}}">{{item}}</view>
+				<view tt:if="{{item==0}}">...</view>
+			</view>
+		</view>
+		<view class="paginationNum_prev" data-node="nextNode" bindtap="{{current!=total && 'onChangeNode'}}">
+			<image class="paginationNum_prev" src="../images/rightOutlined.png"></image>
+		</view>
+	</view>
+
+	<view class="pagination_i gotoPage">
+		前往
+		<view class="pagination_i_inputBox">
+			<input class="pagination_i_input" type="number" value="{{pageNumber}}" bindinput="getoPageNum"  bindconfirm="getconfirm" />
+		</view>
+		页
+	</view>
+</view>

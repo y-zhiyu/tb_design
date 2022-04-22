@@ -1,0 +1,80 @@
+/* 上传播报 */
+
+.upload-container {
+  padding: 28px 26px 40px 44px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* height: 520px; */
+}
+
+.upload-textarea-class {
+  width: 380px !important;
+  height: 100px !important;
+  background: #2B4760 !important;
+  border: none !important;
+  margin-bottom: 20px;
+}
+.upload-textarea-inside-class{
+  padding: 20px 15px !important;
+  height: 100px !important;
+  box-sizing: border-box;
+  color: #83919F !important;
+}
+
+.placeholder-class{
+  color: #83919F !important;
+}
+
+.upload-status {
+  width: 100%;
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  color: #D8DCE6;
+  margin-top: 30px;
+}
+
+.upload-status-pass {
+  margin-top: 20px;
+}
+
+.upload-status-title{
+  width: 112px;
+}
+
+.upload-status-default {
+  font-size: 14px;
+  font-weight: 400;
+  color: #8E9BA7;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.upload-status-img {
+  width: 15px;
+  height: 15px;
+  background-size: 100% 100%;
+  margin-right: 6px;
+}
+
+.upload-status-active {
+  font-size: 14px;
+  color: #fff;
+}
+
+.upload-status-default:last-child {
+  margin-left: 0;
+}
+
+.upload-button-flex {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 78px;
+
+}

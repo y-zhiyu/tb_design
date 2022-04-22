@@ -1,0 +1,31 @@
+/* 主题 */
+
+/* font-family: PingFangSC-Regular, PingFang SC; */
+/* font-weight: 400; */
+
+/* font 
+   color: #424242;
+   hover: #1890FF;
+*/
+
+/* font-size
+   font-size: 14px;
+*/
+
+/* border
+   default: #EEEEEE;
+   hover: #1890FF;
+*/
+
+/* error 
+   default: #ff4d4f;
+   hover: #ff7875;
+ */
+
+
+
+/* 公共 */
+page {
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-size: 14px;
+}

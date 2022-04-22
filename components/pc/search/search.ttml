@@ -1,0 +1,19 @@
+<block tt:if="{{animation}}">
+    <view class="searchBox {{focus || searchWord.length > 0?'searchBox_input_active':''}}">
+        <image class="searchBox_img" src="{{publicImgUrl}}/img/pcPAlark/pc_search.png"></image>
+        <input class="searchBox_input" type="text" placeholder="{{placeholder}}" placeholder-style="placeholder-style" bindinput="getSearchWord"  value="{{searchWord}}" focus="{{focus}}"   bindfocus="getFocus"  bindblur="blur" bindconfirm="confirm"  />
+    </view>
+</block>
+<block tt:else>
+    <view class="searchBox searchBox_width">
+        <view class="search-flex {{searchWord && 'search-flex-start'}}">
+            <image class="searchBox_img" src="{{publicImgUrl}}/img/pcPAlark/pc_search.png"></image>
+            <input class="searchBox_input" type="text" placeholder="{{placeholder}}" placeholder-style="placeholder-style" bindinput="getSearchWord"  value="{{searchWord}}" focus="{{focus}}"   bindfocus="getFocus"  bindblur="blur" bindconfirm="confirm"  />
+        </view>
+        <view class="searchBox_clear">
+            <image catchtap='getClear' tt:if="{{searchWord}}" class="searchBox_img_clear"
+                src="{{publicImgUrl}}/img/pcPAlark/pc_search_close.png">
+            </image>
+        </view>
+    </view>
+</block>

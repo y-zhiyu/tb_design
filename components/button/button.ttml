@@ -1,0 +1,5 @@
+<view
+    class="btn-box {{type=='default' && 'btn-default'}} {{type=='primary' && 'btn-primary'}} {{type=='danger' && 'btn-danger'}} {{disabled && 'btn-disabled'}} btn_class"
+    bindtap="onClick">
+    {{text}}
+</view>

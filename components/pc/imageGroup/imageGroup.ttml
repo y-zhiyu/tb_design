@@ -1,0 +1,7 @@
+<view class="imgBox" style="margin-left:-{{left}}px;">
+    <block tt:for="{{imgList}}" tt:key="index">
+        <view class="imgBox_i {{border?'borderStyle':''}}" style="height:{{height}}px;width:{{width}}px; margin-top:{{top}}px; margin-left:{{left}}px;background:url('{{item}}')" data-current="{{item}}" catchtap = "previewImg">
+    </block>
+    </view>
+</view>
+          

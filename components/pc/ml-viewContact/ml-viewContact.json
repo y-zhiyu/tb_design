@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-rate": "/components/common/rate/rate"
+    }
+}

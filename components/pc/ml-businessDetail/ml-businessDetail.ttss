@@ -1,0 +1,794 @@
+@import '../../../styles/common.ttss';
+@import '../../../styles/process.ttss';
+
+.customerDetail-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* max-height: 100%; */
+}
+
+.customerDetail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(54, 80, 104, 1);
+  margin-bottom: 9px;
+  border-radius: 2px;
+
+}
+.customerDetail-height{
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.customer-nav {
+  width: 100%;
+  height: 66px;
+  min-height:66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 27px;
+  border-bottom: 1px #496278 solid;
+  box-sizing: border-box;
+}
+
+.customer-nav-back {
+  /* width: 60px;
+  height: 60px; */
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #F4F5F8;
+}
+
+
+.customer-nav-back-img {
+  width: 18px;
+  height: 18px;
+  background-size: 100% 100%;
+}
+
+.customer-nav-right {
+  display: flex;
+}
+
+.customer-nav-number {
+  width: 60px;
+  height: 45px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #E7E7E7;
+  cursor: pointer;
+}
+
+.customer-nav-number:hover {
+  background: #2B465F;
+}
+
+.customer-nav-text {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #8E9BA7;
+}
+
+.customer-detail {
+  width: 100%;
+  padding: 37px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-detail-name {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.customer-edit {
+  width: 35px;
+  height: 20px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-edit:hover {
+  background: #2B465F;
+
+}
+
+.customer-content {
+  width: 100%;
+  display: flex;
+  /* padding-bottom: 37px;
+  border-bottom: 1px solid #496278; */
+  box-sizing: border-box;
+  /* margin-bottom: 30px; */
+}
+
+.customer-content:last-child{
+  border-bottom: none;
+
+}
+
+.customer-list-left {
+  width: 50%;
+  padding-right: 37px;
+  margin-right: 79px;
+  border-right: 1px solid #496278;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-list-right {
+  width: 50%;
+  flex: auto;
+  box-sizing: border-box;
+}
+
+.customer-contacts {
+  border-top: 1px solid #496278;
+  margin-top: 35px;
+}
+
+.customer-contacts-title {
+  height: 20px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.customer-contacts-list {
+  display: flex;
+
+}
+
+.customer-contacts-li {
+  min-width: 174px;
+  padding: 0 10px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid #8E9BA7;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin-right: 13px;
+  position: relative;
+}
+
+.customer-contacts-li:hover{
+  background: #2B465F; 
+}
+
+.richText-img {
+  margin-right: 10px !important;
+
+}
+
+.richText-title {
+  font-size: 11px !important;
+  color: #FFFFFF !important;
+}
+
+.customer-invoice {
+  margin-top: 48px;
+}
+
+.table-li-class {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.table-li-class:nth-child(1) {
+  width: 60%;
+}
+
+.customerDetail-tabs {
+  border-radius: 2px;
+  background: rgba(54, 80, 104, 1);
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.customerDetail-record-content {
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.customerDetail-record-add {
+  width: 100%;
+  height: 44px;
+  border-radius: 2px;
+  border: 1px solid #496278;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 400;
+  color: #8E9BA7;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.customerDetail-record-add:hover{
+  background: #2B465F;
+
+}
+
+
+.customerDetail-record-add-img {
+  width: 16px;
+  height: 16px;
+  background-size: 100% 100%;
+}
+
+.customerDetail-record {
+  padding: 10px 15px;
+  background: #415A70;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.input-class{
+  width: 210px !important;
+}
+.textarea-inside-class{
+  height: 50px !important;
+}
+
+.input-box-class {
+  margin-bottom: 24px;
+  /* width: 278px !important; */
+}
+
+.textarea-inside-class{
+  height: 55px !important;
+}
+.input-lable-class {
+  width: 70px !important;
+  font-size: 13px!important;
+}
+
+.customer-content-edit {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-content-header {
+  display: flex;
+  margin-bottom: 27px;
+}
+
+.customer-content-avatar {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.customer-content-header-img {
+  width: 36px;
+  height: 36px;
+  background-size: 100% 100%;
+  border-radius: 50%;
+}
+
+.customer-content-po {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 15px;
+  background: rgba(0, 0, 0, .64);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 9px;
+  font-weight: 400;
+  color: #FFFFFF;
+
+}
+
+.customer-contacts-li-del {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.customer-contacts-li-add {
+  width: 174px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 400;
+  color: #8E9BA7;
+  cursor: pointer;
+}
+
+.customer-invoice-content{
+  width: 100%;
+  border-radius: 2px 2px 0px 0px;
+  border: 1px solid #496278;
+}
+
+.customer-invoice-content-add{
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 400;
+  color: #8E9BA7;
+  cursor: pointer;
+}
+
+.customer-button{
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 41px;
+}
+
+.customer-button-style{
+  width: 108px;
+  height: 44px;
+  background: #009BD7;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-button-cancel{
+  border: 1px solid #8E9BA7;
+  color: #8E9BA7;
+  background: none;
+  margin-left: 33px;
+}
+
+.textarea-class{
+  padding:0 !important;
+  height: 54px !important;
+}
+
+.select-address{
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 21px;
+
+}
+
+.select-class{
+  width: 88px !important;
+  height: 36px !important;
+  margin-right: 7px;
+
+}
+
+/* 添加联系人 */
+.addContacts-tabs{
+  width: 576px;
+  height: 75px;
+  background: #2B4760;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  margin-bottom: 32px;
+
+}
+
+.addContacts-tabs-item{
+  font-size: 13px;
+  font-weight: 400;
+  color: #D8DCE6;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.addContacts-tabs-item-img{
+  width: 16px;
+  height: 16px;
+  background-size:100% 100% ;
+  margin-right: 8px;
+
+}
+
+.addContacts-content{
+  padding: 29px 32px 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-scroll{
+  height: 515px;
+}
+
+.add-box-class{
+  margin-bottom: 20px;
+}
+
+.add-select-address{
+  display: flex;
+  padding-left: 122px;
+  box-sizing: border-box;
+}
+
+/* 按钮 */
+.apply-button-box {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.button-box_style{
+  margin-top: 0px !important;
+}
+.customerDetail-tabs_editStatus{
+  margin-top: 60px;
+}
+
+.apply-button {
+  width: 108px;
+  height: 44px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.apply-sumbit{
+  background: #0081B2;
+}
+
+.apply-sumbit:hover{
+  background: #009BD7;
+}
+
+.apply-draft {
+  border: 1px solid #83919F;
+  color: #D8DCE6;
+  margin-left: 33px;
+  cursor: pointer;
+}
+
+.apply-draft:hover{
+  /* border: 1px solid #009BD7; */
+  /* background: #FFFFFF; */
+  /* color: #009BD7; */
+  border: 1px solid #B2BCC5;
+}
+
+.customer-position{
+  /* width: 28px; */
+  padding: 0 2px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.17);
+  border-radius: 1px;
+  font-size: 8px;
+  font-weight: 400;
+  color: #CAF0FF;
+  box-sizing: border-box;
+  margin-left: 5px;
+}
+
+.customer-content-title{
+  width: 100%;
+  height: 20px;
+  font-size: 14px;
+  font-family: PingFangSC-Heavy, PingFang SC;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  /* margin-top: 30px; */
+}
+
+.viewStars{
+  width: 100%;
+  height: 36px;
+  display: flex;
+  font-size: 13px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #8E9BA7;
+  margin-bottom: 27px;
+  align-items: center;
+}
+
+.viewStars-title{
+  width: 68px;
+}
+
+/* 客户详情 */
+.contactDetail-content{
+  padding: 30px 44px 0 44px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #496278;
+  margin-top: 30px;
+
+}
+
+.contactDetail-list{
+  margin-top: 24px;
+}
+
+.select-address-title{
+  /* width: 122px; */
+  width: 70px;
+  font-size: 13px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #83919F;
+  
+}
+
+/* 2022.01.17 添加 */
+.cont_tag{
+  padding: 0 6px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.17);
+  border-radius: 1px;
+  font-size: 8px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #CAF0FF;
+  line-height: 14px;
+  margin-left: 5px;
+}
+
+.date-picker{
+  width: 224px;
+  height: 40px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #909399;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.date-picker-value{
+  width: 170px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+.date-picker-value-active{
+  /* color: #000; */
+  color: #fff;
+}
+
+.picker-date-del{
+  width: 12px;
+  height: 12px;
+  background-size:100% 100% ;
+}
+
+.apply-file-fileSize{
+  font-size: 10px;
+  font-weight: 400;
+  color: #8E9BA7;
+  margin-left: 10px;
+}
+
+.progress-radio-list{
+  width: 100%;
+  height: 45px;
+  /* background: rgba(255, 255, 255, 0.14); */
+  background:rgba(54, 80, 104, 1);
+  border-radius: 2px;
+  border: 1px solid;
+  border-image: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)) 1 1;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  padding:12px 45px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+
+.radio-container {
+  /* margin-top: 40px; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: PingFangSC-Regular, PingFang SC;
+  margin-bottom: 24px;
+}
+.rightArea{
+  margin-top: 50px;
+}
+.radio-title{
+  width: 122px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #83919F;
+  display: flex;
+}
+.radio-box{
+  width:160px;
+}
+
+.radio_necessary {
+  color: transparent;
+}
+.radio_necessary_active{
+  color: #FA7D7C;
+}
+
+.project_process_box{
+  width:100% !important;
+  box-sizing: border-box;
+}
+.opation_style{
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.contacts_con{
+  padding:20px 0 20px 44px;
+}
+.apply-button-box_contacts{
+  margin-top: 10px;
+}
+.customerDetail_img-class{
+  margin-right: 64px !important;
+}
+.logo_project_l{
+  width: 150px !important;
+}
+.project_process_i_c_start_i{
+  width: 20% !important;
+}
+.project_process_i_title_curr{
+  text-align: left  !important;
+  margin-left: 120px !important;
+}
+.project_process_i_c_start_r_curr{
+  margin-left: 150px;
+}
+.enclosureBox{
+  display: flex;
+  /* align-items: center; */
+  margin-bottom: 24px;
+}
+.enclosureBox_label{
+    padding-top: 5px !important;
+    width: 70px !important;
+    font-size: 13px!important;
+    font-weight: 400;
+    color: #83919F;
+    display: flex;
+}
+.necessary{
+  color: transparent;
+}
+.necessary_active{
+  color: #D95D5C;
+}
+.uploadStart{
+    width: 84px;
+    height: 28px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #8E9BA7;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #909399;
+    line-height: 28px;
+}
+.uploadStart:hover{
+  border: 1px solid #fff;
+}
+.uploadItem{
+  width: 224px;
+  background: #2B4760;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 10px;
+  font-size:12px;
+  color: #909399;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.uploadItem_i{
+  display: flex;
+  align-items: center;
+}
+.uploadItem_img{
+  width: 18px;
+  height: 18px;
+  margin-right:5px;
+}
+
+.uploadItem_img_del{
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  right: -3px;
+  top: -4px;
+}
+.fileNameBox{
+  width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.qcContactsArray_title{
+  padding-bottom:20px;
+  font-size: 18px;
+  font-family: PingFang-SC-Bold, PingFang-SC;
+  font-weight: bold;
+  color: #F4F5F8;
+}
+.promptText{
+  margin-top:10px;
+  color:#83919F;
+  font-size: 13px;
+}

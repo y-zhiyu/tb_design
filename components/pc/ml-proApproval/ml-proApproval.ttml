@@ -1,0 +1,80 @@
+
+<view class="approve_useTime" style="background:{{themColor.blockBg}}" tt:if="{{approveUseTimeList.length>0}}">
+    <view class="all_user_time" tt:if="{{totalUseTime}}">
+        累计用时：{{totalUseTime}}
+    </view>
+    <view class="approve_useTime_title">单人审批总用时统计 <text>（按小时统计）</text></view>
+    <view class="approve_useTime_static">
+        <view class="approve_useTime_static_silde_conFather">
+
+            <block tt:for="{{approveUseTimeList}}" tt:key="index">
+                <view class="approve_useTime_static_silde">
+                    <view class="imageBox">
+                        <image class="imageBoximg"
+                            src="{{item.fs_avatar_url?item.fs_avatar_url:publicImgUrl+'/img/xcxCommon/newIcon/PAteamMDef.png'}}">
+
+                        </image>
+                    </view>
+                    <view class="approve_useTime_static_silde_con" style="height:{{item.height}}px"></view>
+                    <!-- <view class="approve_show_notetext">{{item.use_time}}</view> -->
+                </view>
+            </block>
+            
+            <view class="approve_useTime_static_silde_conFather_line"></view>
+
+        </view>
+
+        <view class="approve_useTime_static_silde_text">
+            <block tt:for="{{approveUseTimeList}}" tt:key="index">
+                <view class="approve_useTime_static_silde_text_i">{{item.use_time}}</view>
+            </block>
+        </view>
+    </view>
+</view>
+<view class="approval" style="background:{{themColor.blockBg}}">
+    <block tt:for="{{dynamicsList}}" tt:key="index">
+        <view class="approval_i">
+            <view class="approval_i_t">
+                <image class="approval_i_t_img"
+                    src="{{item.meta.fs_avatar_url?item.meta.fs_avatar_url:publicImgUrl+'/img/pcPAlark/pc_upload_avaturl.png'}}">
+                </image>
+                <view class="approval_i_t_r">
+                    <view class="approval_i_t_r_name">{{item.meta.uc_name}}</view>
+                    <view class="approval_i_t_r_time">{{item.fs_start_time}}</view>
+                </view>
+            </view>
+            <view class="approval_i_b">
+                <view class="approval_file" data-item="{{item}}" catchtap="clickItem">
+                    <view class="approval_file_l">
+                        <image class="approval_file_l_img" src="{{publicImgUrl}}/img/pcPAlark/pc_fileicon.png">
+                        </image>
+                        <view class="approval_file_l_r">
+                            <view class="">{{item.fs_approval_name}}</view>
+                            <view class="approval_file_l_r_use_time">累计用时：{{item.meta.use_time}}</view>
+
+                            <!-- <view tt:if="{{item.fileNoet}}" class="approval_file_l_r_note">{{item.fileNoet}}</view>
+                            <view tt:if="{{item.peopleList}}" class="approval_file_l_r_note">
+                                参会人：
+                                <block tt:for="{{item.peopleList}}" tt:for-item="people" tt:for-index="peopleIndex" tt:key="peopleIndex">
+                                    {{ people }}
+                                </block>
+                            </view> -->
+
+                        </view>
+                    </view>
+                    <view class="approval_file_r">
+                        <view class="approval_status">{{item.meta.fs_instance_status_value}}</view>
+                        <image class="approval_file_r_img" src="{{publicImgUrl}}/img/pcPAlark/pc_fileiconLeft.png">
+                        </image>
+                    </view>
+                </view>
+                <view class="send_chatGroup" data-item="{{item}}" catchtap="sendChatGroup">
+                    <image class="send_chatGroup_img" src="{{publicImgUrl}}/img/pcPAlark/pc_pro_sendGroup.png">
+                    </image>
+                    发至项目群
+                </view>
+                <view class="approval_line"></view>
+            </view>
+        </view>
+    </block>
+</view>

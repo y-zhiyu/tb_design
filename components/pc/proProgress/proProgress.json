@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-logList":"/components/pc/logList/logList"
+    }
+}

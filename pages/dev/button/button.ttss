@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+}
+
+.container-left {
+  width: 200px;
+}
+
+.container-right {
+  display: flex;
+}
+
+.btn_class {
+  margin-right: 20px;
+}

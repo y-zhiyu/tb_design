@@ -1,0 +1,262 @@
+<view class="customerDetail-box" style="background:{{themColor.blockBg}}">
+  <view class="customerDetail {{contactType=='add' && 'customerDetail-height'}}">
+
+    <view class="customer-nav" style="background:{{themColor.blockBg}}">
+      <view class="customer-nav-back">
+        <view class="back-arrow" catchtap="getBack">
+          <image class="customer-nav-back-img" src="{{publicImgUrl+'/img/pcPAlark/pc_backDis.png'}}"></image>
+        </view>
+        <view tt:if="{{contactType=='add'}}">新建联系人</view>
+      </view>
+      <view class="customer-nav-right" tt:if="{{contactType=='detail'}}">
+        <!-- <view class="customer-nav-number">
+          <view class="customer-nav-text">项目</view>
+          <view>{{contactDetail.meta.prj_count}}</view>
+        </view>
+        <view class="customer-nav-number">
+          <view class="customer-nav-text">商机</view>
+          <view>{{contactDetail.meta.business_opportunities_count}}</view>
+        </view> -->
+
+        <!-- <view class="customer-nav-number">
+          <view class="customer-nav-text">已结算</view>
+          <view>0</view>
+        </view> -->
+
+      </view>
+    </view>
+
+    <view class="customer-detail" style="background:{{themColor.blockBg}}">
+
+      <!-- 1、详情部分 -->
+      <block tt:if="{{!editStatus}}">
+        <!-- 基本信息 -->
+        <view class="customer-detail-name">
+          <tt-richText type='default'
+            imgUrl="{{contactDetail.ac_contact_avatar_url?contactDetail.ac_contact_avatar_url:publicImgUrl+'/img/pcPAlark/pc_upload_avaturl.png'}}"
+            title="{{contactDetail.ac_contact_name}}" img-class="customerDetail_img-class"
+            content="{{contactDetail.updated_at}}" />
+          <view class="customer-edit" bindtap="getEdit">编辑</view>
+        </view>
+
+        <!-- 详情 -->
+        <view class="customer-content">
+          <view class="customer-list-left">
+            <tt-list listArray="{{listArray}}" placeType='left' placeStatus />
+          </view>
+          <view class="customer-list-right">
+            <tt-list listArray="{{listArray}}" placeType='right' placeStatus />
+          </view>
+        </view>
+
+      </block>
+
+      <!-- 2、编辑部分 -->
+      <block tt:if="{{editStatus}}">
+        <view class="contact-flex">
+          <view class="contact-flex_i">
+            <view class="customer-radio-tabs ">
+              <tt-radio radioTabs="{{radioTabs}}" publicImgUrl="{{publicImgUrl}}" tabType="{{radioTabType}}"
+                bindchange='getTabChange' />
+            </view>
+          </view>
+          <view class="contact-flex_i">
+            <view class="customer-content-avatar" bindtap="{{radioTabType=='defaultAddress' && 'getAvatar'}}">
+              <image class="customer-content-header-img" src="{{imgArr[0]?imgArr[0]:defaultAvatar}}"></image>
+              <view class="customer-content-po" tt:if="{{radioTabType=='defaultAddress'}}">上传</view>
+            </view>
+          </view>
+
+
+        </view>
+
+        <view class="customer-content">
+          <view class="customer-list-left">
+            <block tt:for="{{listArray}}" tt:key="index" tt:if="{{item.placeType=='left'}}">
+              <tt-input tt:if="{{item.isShow && item.viewType=='input'}}" type="{{item.inputType}}"
+                data-type="{{item.type}}" data-index="{{index}}" id="{{item.type}}" necessary="{{item.necessary}}"
+                placeholder="{{item.placeholder}}" maxlength="{{item.maxlength}}" length="{{item.maxlength}}"
+                lable="{{item.title}}" value="{{item.value}}" box-class="input-box-class"
+                lable-class="input-lable-class" bindchange="getInputChange" />
+
+              <tt-select tt:if="{{item.isShow && item.viewType=='select'}}" data-type="{{item.type}}"
+                data-index="{{index}}" id="{{item.type}}" lable="{{item.title}}" value="{{item.value}}"
+                box-class="input-box-class" necessary="{{item.necessary}}" selectedId="{{item.selectedId}}"
+                lable-class="input-lable-class" selectArray="{{item.selectArray}}" bindchange="getSelectChange"
+                data-placeType="contact" isSearch="{{item.selectArray.length>5?true:false}}"
+                bindinputChange="getSelectInputChange" />
+
+              <tt-textarea tt:if="{{item.isShow && item.viewType=='textarea'}}" data-type="{{item.type}}"
+                data-index="{{index}}" id="{{item.type}}" lable="{{item.title}}" value="{{item.value}}"
+                box-class="input-box-class" textarea-inside-class="textarea-inside-class" necessary="{{item.necessary}}" lable-class="input-lable-class"
+                textarea-class="textarea-class" bindchange="getInputChange" />
+
+              <view class="select-address" tt:if="{{item.isShow && item.viewType=='select-address'}}">
+                <view class="input-lable-class">
+                  <text class="necessary {{item.necessary?'necessary_active':''}}">*</text>所在区域
+                </view>
+                <tt-addressSelect areaCodeObj="{{contactAreaCodeObj}}" data-type="add"
+                  bindgetChange="getAddressChange" />
+              </view>
+
+              <view class="radio-container" tt:if="{{ item.isShow && item.viewType=='radio'}}">
+                <view tt:if="{{item.title}}" class="radio-title">
+                  <view class="radio_necessary {{item.necessary?'radio_necessary_active':''}}">*</view>
+                  <view>{{item.title}}</view>
+                </view>
+                <view class='radio-box'>
+                  <tt-radio radioTabs="{{item.radioTabs}}" publicImgUrl="{{publicImgUrl}}"
+                    tabType="{{item.radioTabType}}" data-type="{{item.type}}" bindchange="getRadio">
+                  </tt-radio>
+                </view>
+              </view>
+
+            </block>
+          </view>
+
+          <view class="customer-list-right">
+            <block tt:for="{{listArray}}" tt:key="index" tt:if="{{item.placeType=='right'}}">
+
+              <tt-input tt:if="{{item.isShow && item.viewType=='input'}}" type="{{item.inputType}}"
+                data-type="{{item.type}}" data-index="{{index}}" id="{{item.type}}" necessary="{{item.necessary}}"
+                placeholder="{{item.placeholder}}" maxlength="{{item.maxlength}}" length="{{item.maxlength}}"
+                lable="{{item.title}}" value="{{item.value}}" box-class="input-box-class"
+                lable-class="input-lable-class" bindchange="getInputChange" />
+
+              <tt-select tt:if="{{item.isShow && item.viewType=='select'}}" data-type="{{item.type}}"
+                data-index="{{index}}" id="{{item.type}}" lable="{{item.title}}" value="{{item.value}}"
+                box-class="input-box-class" necessary="{{item.necessary}}" selectedId="{{item.selectedId}}"
+                lable-class="input-lable-class" selectArray="{{item.selectArray}}" bindchange="getSelectChange"
+                data-placeType="contact" isSearch="{{item.selectArray.length>5?true:false}}"
+                bindinputChange="getSelectInputChange" />
+
+              <tt-textarea tt:if="{{item.isShow && item.viewType=='textarea'}}" data-type="{{item.type}}"
+                data-index="{{index}}" id="{{item.type}}" lable="{{item.title}}" value="{{item.value}}"
+                box-class="input-box-class" textarea-inside-class="textarea-inside-class" necessary="{{item.necessary}}" lable-class="input-lable-class"
+                textarea-class="textarea-class" bindchange="getInputChange" />
+
+              <view class="select-address" tt:if="{{item.isShow && item.viewType=='select-address'}}">
+                <view class="input-lable-class">
+                  <text class="necessary {{item.necessary?'necessary_active':''}}">*</text>所在区域
+                </view>
+                <tt-addressSelect areaCodeObj="{{contactAreaCodeObj}}" data-type="add"
+                  bindgetChange="getAddressChange" />
+              </view>
+
+              <view class="radio-container" tt:if="{{ item.isShow && item.viewType=='radio'}}">
+                <view tt:if="{{item.title}}" class="radio-title">
+                  <view class="radio_necessary {{item.necessary?'radio_necessary_active':''}}">*</view>
+                  <view>{{item.title}}</view>
+                </view>
+                <view class='radio-box'>
+                  <tt-radio radioTabs="{{item.radioTabs}}" publicImgUrl="{{publicImgUrl}}"
+                    tabType="{{item.radioTabType}}" data-type="{{item.type}}" bindchange="getRadio">
+                  </tt-radio>
+                </view>
+              </view>
+
+            </block>
+          </view>
+        </view>
+      </block>
+
+      <!-- 所属客户 -->
+      <view class="customer-contacts" tt:if="{{!editStatus && contactType=='detail'}}">
+        <view class="customer-contacts-title">所属客户</view>
+        <view class="customer-contacts-list">
+          <view class="customer-contacts-li" tt:for="{{customerItem}}" tt:key="index" data-item="{{item}}"
+            data-modaltype="customerDetail" bindtap="getCustomerDetail">
+
+            <tt-richText type='default'
+              imgUrl="{{item.ac_account_logo_url?item.ac_account_logo_url:publicImgUrl+'/img/pcPAlark/pc_upload_avaturl.png'}}"
+              title="{{item.ac_account_name}}" content="{{'更新时间:'+item.updated_at}}" img-class="richText-img"
+              title-class="richText-title" value-class="richText-title" titleSlot="{{true}}">
+            </tt-richText>
+          </view>
+        </view>
+      </view>
+
+      <!-- button按钮 -->
+      <view class="apply-button-box" tt:if="{{editStatus}}">
+        <!-- <view class="apply-button apply-sumbit" bindtap="getContactSubmit">保存</view>
+        <view class="apply-button apply-draft" bindtap="getCancel">取消</view> -->
+        <tt-button btnType="group" button-box_style="button-box_style" saveText="保存" cancelText="取消"
+          bindsubmit="getContactSubmit" bindcancel="getCancel"></tt-button>
+      </view>
+
+    </view>
+  </view> 
+  <view class="customerDetail-tabs" style="background:{{themColor.blockBg}}" tt:if="{{contactType=='detail'}}">
+    <tt-newTabs tabList="{{tabList}}" tabActiveIdx="{{tabActiveIdx}}" lineStatus="true" bindselectTab='selectTab' />
+
+    <!-- 联系人日志 -->
+    <view tt:if="{{tabsType=='customerLog'}}">
+      <view class="project_process_box" tt:if="{{contactLogList.length>0 }}">
+        <block tt:for="{{contactLogList}}">
+          <view class="project_process_i">
+            <view class="project_process_i_title project_process_i_title_curr ">{{item.key}}</view>
+            <view class="project_process_i_c">
+              <view class="project_process_i_c_start">
+                <view class=" project_process_i_c_start_l"></view>
+                <view class=" project_process_i_c_start_r  project_process_i_c_start_r_curr"></view>
+              </view>
+              <block tt:for="{{item.value}}" tt:for-item="list" tt:for-index="listIndex" tt:key="listIndex">
+                <tt-logList
+                  avatarUrl="{{list.tb_uc2e_employee.fs_avatar_url?list.tb_uc2e_employee.fs_avatar_url:publicImgUrl+'/img/pcPAlark/pc_upload_avaturl.png'}}"
+                  operationName="{{list.tb_uc2e_employee.uc_name}}" operationType="{{list.show_color}}"
+                  operationTime="{{list.created_at}}" project_l='logo_project_l'
+                  operationTitle="{{list.tb_ac_account_contact_log_type.log_type_name}}"
+                  operationConent="{{list.format_operator_content}}"></tt-logList>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <block tt:if="{{contactLogList.length==0 }}">
+        <tt-noDate top="60" publicImgUrl="{{publicImgUrl}}" />
+      </block>
+    </view>
+
+    <!-- 跟进记录 -->
+    <view tt:if="{{tabsType=='record'}}">
+      <tt-addRecord themColor="{{themColor}}" publicImgUrl="{{publicImgUrl}}" recordId="{{contactsId}}" customerId="{{customerId}}"
+        viewType="contact" editStatus="{{editStatus}}" />
+    </view>
+
+    <!-- 商机 -->
+    <view tt:if="{{tabsType=='business'}}">
+      <view class="customerDetail-record-content">
+        <view class="customerDetail-record-add">
+          <image class="customerDetail-record-add-img" src="{{publicImgUrl+'/img/pcPAlark/pc_add.png'}}"></image>
+          新建商机
+        </view>
+        <view class="customerDetail-record">
+          <tt-richText type="pureText" title="张惠惠的跟进记录" content="拜访内容：我是一条拜访记录" time="2021-11-11 11:16" />
+        </view>
+        <view class="customerDetail-record">
+          <tt-richText type="pureText" title="张惠惠的跟进记录" content="拜访内容：我是一条拜访记录" time="2021-11-11 11:16" />
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+<!-- 客户详情 -->
+<tt-modal themColor="{{themColor}}"  tt:if="{{customerDetailStatus}}" show="{{customerDetailStatus}}" title="{{modalTitle}}" width="450"
+  height='663' publicImgUrl="{{publicImgUrl}}" data-modalType="customerDetail" bindclose="closeModal">
+
+  <view class="contactDetail-content">
+    <tt-richText type='default'
+      imgUrl="{{customerDetail.ac_account_logo_url?customerDetail.ac_account_logo_url:defaultAvatar}}"
+      title="{{customerDetail.ac_account_name}}" img-class="customerDetail_img-class "
+      content="更新时间: {{customerDetail.updated_at}}" />
+
+    <view class="contactDetail-list">
+      <tt-list listArray="{{customerDetailList}}" />
+    </view>
+  </view>
+
+</tt-modal>

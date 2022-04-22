@@ -1,0 +1,35 @@
+<block tt:if='{{!placeStatus}}'>
+    <view class="list-content" tt:for="{{listArray}}" tt:key="index"
+        tt:if="{{listArray.length>0 && item.title && item.isShow}}">
+        <view class="list-title">{{item.title}}</view>
+        <view class="list-value">{{item.value}}</view>
+        <slot />
+    </view>
+
+</block>
+
+<block tt:if='{{placeStatus}}'>
+    <view class="list-content" tt:for="{{listArray}}" tt:key="index"
+        tt:if="{{listArray.length>0 && item.title && item.placeType==placeType && item.isShow}}">
+        <block tt:if="{{item.type=='lead_attach_prj_base_info'  }}">
+            <view class="list-title">{{item.title}}</view>
+            <view  tt:if="{{item.value && item.fileName}}" class="uploadItem" data-extension="{{item.extension}}" data-url="{{item.value}}" catchtap="lookEnclosure">
+                <view class="uploadItem_l uploadItem_i">
+                    <!-- {{item.extension}} -->
+                    <image tt:if="{{item.extension && ( item.extension=='doc' || item.extension=='docx')}}" class="uploadItem_img"  src="{{publicImgUrl+'/img/pcPAlark/pc_file.png'}}"></image>
+                    <image tt:elif="{{item.extension && ( item.extension=='xls' || item.extension=='xlsx')}}" class="uploadItem_img"  src="{{publicImgUrl+'/img/pcPAlark/pc_file_excel.png'}}"></image>
+                    <image tt:elif="{{item.extension && ( item.extension=='ppt' || item.extension=='pptx')}}" class="uploadItem_img"  src="{{publicImgUrl+'/img/pcPAlark/pc_file_pdf.png'}}"></image>
+                    <image tt:elif="{{item.extension && item.extension=='pdf'}}" class="uploadItem_img"  src="{{publicImgUrl+'/img/xcxCommon/newIcon/PAppt.png'}}"></image>
+                      <image tt:else class="uploadItem_img"  src="{{publicImgUrl+'/img/pcPAlark/pc_file_wz.png'}}"></image>
+                    <view class="fileNameBox">{{item.fileName}}</view>
+                </view>
+            </view>
+        </block>
+        <block tt:if="{{item.type!='lead_attach_prj_base_info'}}">
+            <view class="list-title">{{item.title}}</view>
+            <view class="list-value">{{item.value}}</view>
+        </block>
+
+        <slot />
+    </view>
+</block>

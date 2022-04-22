@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-button":"../../common/button/button",
+        "tt-imageGroup":"../imageGroup/imageGroup"
+    }
+}

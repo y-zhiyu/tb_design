@@ -1,0 +1,10 @@
+<view class="progress" tt:if="{{progressList.length>0}}">
+  <block tt:for="{{progressList}}" tt:key="index">
+    <view class="detail_progress_alone" style="background:url('{{item.status==1?publicImgUrl+'/img/pcPAlark/pc_progress_finish.png':publicImgUrl+'/img/pcPAlark/pc_progress_default.png'}}');
+            background-size: 100% 100%;
+            z-index:{{progressList.length-index}};">
+      {{item.text}} 
+    <image class="detail_progress_alone_img" src="{{publicImgUrl}}{{item.status==1?'/img/pcPAlark/pc_wc.png':'/img/pcPAlark/pc_nowc.png'}}"></image>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,68 @@
+<view class="customerDetail-record-content">
+    <view class="customerDetail-record-add" data-modalType="recordAdd" bindtap="getAddModal">
+        <image class="customerDetail-record-add-img" src="{{publicImgUrl+'/img/pcPAlark/pc_add.png'}}"></image>
+        {{viewType=='business'?'新建验证记录':'新建跟进记录'}}
+    </view>
+    <block tt:if="{{viewType == 'customer' || viewType == 'contact'}}">
+        <view class="customerDetail-record" tt:if="{{recordList.length>0 && !loading}}" tt:for="{{recordList}}"
+            tt:key="index" data-item="{{item}}" data-modalType="recordList" bindtap='getAddModal'>
+            <tt-richText type="pureText" title="{{item.created_by_name+'的跟进记录'}}" content="拜访内容：{{item.follow_content}}"
+                time="{{item.created_at}}" titleSlot="{{true}}">
+                <image class="record-img" tt:if="{{item.follow_images.length>0}}"
+                    src="{{publicImgUrl+'/img/pcPAlark/pc_pic.png'}}"></image>
+            </tt-richText>
+        </view>
+    </block>
+    <block tt:if="{{viewType == 'business'}}">
+        <view class="customerDetail-record" tt:if="{{recordList.length>0 && !loading}}" tt:for="{{recordList}}"
+            tt:key="index" data-item="{{item}}" data-modalType="recordList" bindtap='getAddModal'>
+            <tt-richText type="pureText" title="{{item.created_by_name+'的验证记录'}}" content="拜访内容：{{item.verify_content}}"
+                time="{{item.created_at}}" titleSlot="{{true}}">
+                <image class="record-img" tt:if="{{item.verify_images.length>0}}"
+                    src="{{publicImgUrl+'/img/pcPAlark/pc_pic.png'}}"></image>
+            </tt-richText>
+        </view>
+    </block>
+
+    <!-- <block tt:if="{{recordList.length==0 && !loading}}">
+        <tt-noDate top="60" publicImgUrl="{{publicImgUrl}}" />
+    </block> -->
+</view>
+
+
+<!-- 添加跟进记录  -->
+<tt-modal themColor="{{themColor}}" show="{{addRecordStatus}}" title="{{modalTitle}}" width="450" height='613' publicImgUrl="{{publicImgUrl}}"
+    data-modalType="recordAdd" bindclose="closeModal">
+    <view class="addContacts-content">
+        <tt-select tt:if="{{viewType == 'customer'}}" lable="联系人" value="{{selectedValue}}" selectedId="{{selectedId}}"
+            selectArray="{{selectArray}}" bindchange="getSelectChange" box-class="input-box-class" />
+
+        <tt-textarea id="content" lable="跟进内容" value="{{textareaValue}}" bindchange="getInputChange"
+            necessary="{{true}}" />
+
+        <view class="picker">(最多9张)</view>
+        <!-- <tt-image-picker size="3" count="9" max-image-size="20971520" urls="{{imgArr}}" size-type="compressed"
+            bindlinchange="onChangeTap" bindlinremove="deleteImg" publicImgUrl="{{publicImgUrl}}" /> -->
+             <tt-chooseIamge publicImgUrl="{{publicImgUrl}}" bindonChangeTap="chooseImage" urls="{{imgArr}}"
+            bindremove="deleteImg"></tt-chooseIamge>
+
+        <!-- 按钮 -->
+        <view class="record-button">
+            <tt-button btnType='bg' showText='提交' bindclick='getSubmit' />
+        </view>
+    </view>
+</tt-modal>
+
+<!-- 跟进记录详情  -->
+<tt-modal themColor="{{themColor}}" show="{{detailRecordStatus}}" title="{{modalTitle}}" width="450" publicImgUrl="{{publicImgUrl}}"
+    data-modalType="recordList" bindclose="closeModal">
+    <view class="addContacts-content">
+        <tt-list listArray="{{detailList}}" />
+        <view class="picker" tt:if="{{imgArr.length>0}}">(最多9张)</view>
+        <tt-imageGroup imgList="{{imgArr}}" />
+       
+    </view>
+</tt-modal>
+
+<!-- 加载 -->
+<tt-loading show='{{loading}}' />

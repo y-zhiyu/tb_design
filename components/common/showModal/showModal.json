@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-button":"../../common/button/button"
+    }
+}

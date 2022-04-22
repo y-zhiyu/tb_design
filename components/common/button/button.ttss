@@ -1,0 +1,70 @@
+/* 按钮 */
+.button-box {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 108px;
+  height: 44px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sumbit{
+  background: #0081B2;
+}
+
+.sumbit:hover{
+  background: #009BD7;
+
+}
+
+.draft {
+  border: 1px solid #83919F;
+  color: #D8DCE6;
+  margin-left: 33px;
+  cursor: pointer;
+}
+
+.draft:hover{
+  border: 1px solid #B2BCC5;
+}
+.btn-line{
+    border: 1px solid #6D7A87;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.btn-line:hover{
+      border: 1px solid #83919F;
+}
+.btn-bg{
+    width: 108px;
+    height: 44px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 15px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    background: #0081B2;
+    line-height: 44px;
+    cursor: pointer;
+}
+.btn-bg:hover{
+     background: #009BD7;
+}

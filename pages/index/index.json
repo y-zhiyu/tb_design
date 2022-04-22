@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "tb-menu": "/components/menu/menu",
+        "tb-button": "/components/button/button"
+    }
+}

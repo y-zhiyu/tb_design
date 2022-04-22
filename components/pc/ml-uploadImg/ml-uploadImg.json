@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-chooseIamge":"/components/common/chooseIamge/chooseIamge",
+        "tt-textarea": "../../common/textarea/textarea",
+        "tt-button":"../../common/button/button",
+        "tt-image-picker": "../../common/image-picker/image-picker"
+    }
+}

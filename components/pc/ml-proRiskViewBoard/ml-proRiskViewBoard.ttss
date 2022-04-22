@@ -1,0 +1,72 @@
+/* 风险看板 */
+.risk_view_board{
+  padding: 18px 30px;
+  background: #365068;
+  border-radius: 2px;
+}
+.risk_view_board_title{
+  font-size: 15px;
+  font-family: PingFangSC-Heavy, PingFang SC;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+.risk_view_board_con{
+  /* max-width: 400px; */
+  margin-top: 27px;
+}
+.risk_view_board_center{
+  /* max-width: 400px; */
+  margin: 27px auto ;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.risk_view_board_con_item{
+  width: 147px;
+  /* height: 40px; */
+  /* border-right: 1px solid #6D7A87; */
+  display:flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.risk_content{
+  width: 88px;
+  height: 72px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.risk_content:hover{
+  background: #4C6174;
+}
+
+.risk_view_board_con_item_line{
+  /* position: absolute; */
+  /* width: 1px;
+  height: 40px;
+  right: 0;
+  top: 10px;
+  border-right: 1px solid #6D7A87; */
+  width: 1px;
+  height: 39px;
+  background: #6D7A87;
+}
+.risk_view_board_con_item_data_count{
+  font-size: 25px;
+  font-family: PingFangSC-Heavy, PingFang SC;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+.risk_view_board_con_item_data_note{
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #FFFFFF;
+}

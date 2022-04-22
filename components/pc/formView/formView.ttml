@@ -1,0 +1,33 @@
+<view class="fromView">
+    <view class="fromView_title">
+        <block tt:for="{{title}}" tt:key="index">
+            <view class="fromView_title_i">{{item.title}}</view>
+        </block>
+    </view>
+    <view class="fromViewlist">
+        <block tt:for="{{list}}" tt:key="index">
+            <view class="fromViewlist_i">
+                <block tt:for="{{item.row}}" tt:for-item="row" tt:for-index="rowIndex">
+                    <view tt:if="{{row.type=='image'}}" class="goodspic fromViewlist_i_i">
+                        <image class="goodspic_img" data-current="{{row.value}}" catchtap = "previewImg" src=" {{row.value}}" ></image>
+                    </view>
+                    <!-- 默认情况下 -->
+                    <view tt:if="{{row.type==''}}" class="fromViewlist_i_i">
+                        {{row.value}}
+                    </view>
+                    <!-- 状态   不同颜色区分 -->
+                     <view tt:if="{{row.type=='status'}}" class="fromViewlist_i_i">
+                         <view tt:if="{{row.value=='进行中'}}" class="duration">{{row.value}}</view> 
+                         <view tt:else >{{row.value}}</view> 
+                    </view>
+                    <!-- 按钮 -->
+                    <view tt:if="{{row.type=='button'}}" class="fromViewlist_i_i">
+                        <block tt:for="{{row.value}}" tt:for-item="btn" tt:for-index="btnIndex">
+                            <view class="action_btn" data-type="{{btn.type}}" catchtap="action">{{btn.text}}</view>
+                        </block>
+                    </view>
+                </block>
+            </view>
+        </block>
+    </view>
+</view>

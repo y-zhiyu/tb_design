@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-input": "/components/common/input/input",
+        "tt-select": "/components/common/select/select",
+        "tt-textarea": "/components/common/textarea/textarea",
+        "tt-popover": "/components/common/popover/popover"
+    }
+}

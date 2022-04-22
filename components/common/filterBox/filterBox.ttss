@@ -1,0 +1,91 @@
+.filterBox{
+  /* background: rgba(0, 0, 0, 0.5); */
+  position: absolute;
+  top: 160px;
+  right: 40px;
+  width: 237px;
+  display: flex;
+  box-sizing: border-box;
+  z-index: 20;
+  background: #1E3B56;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.37);
+}
+
+.filterBoxCon {
+  /* width: 398px; */
+  width: 100%;
+  height: 100%;
+  background: #365068;
+  box-shadow: -2px 0px 4px 0px #163450;
+  /* overflow: hidden;
+  overflow-y: auto;
+  margin-right: -398px; */
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.filterBox_close {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius:4px;
+}
+.filterBox_close:hover{
+  background-color:#2B4760;
+}
+.filterBox_closeImg {
+  width: 14px;
+  height: 14px;
+  background-size: 100% 100%;
+}
+.filterBoxCon_title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-family: PingFangSC-Heavy, PingFang SC;
+  font-weight: 800;
+  color: #FFFFFF;
+  padding: 16px 14px;
+  border-bottom: 1px solid #496278;
+}
+
+.arrow {
+  position: absolute;
+  top: -9px;
+  right: 65px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #1E3B56;
+}
+.filterBox_con{
+  width: 100%;
+  height: 355px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.btnClass{
+  width: 100% !important;
+  height: 100% !important;
+  line-height: 50px !important;
+  background: #2B4760 !important;
+  color: #D8DCE6 !important;
+
+}
+.fbBox_btnRest{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 50px;
+  width: 100%;
+
+}

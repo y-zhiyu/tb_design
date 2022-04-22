@@ -1,0 +1,9 @@
+<view class="sildeBox">
+    <block tt:for="{{list}}" tt:key="index">
+        <view tt:if="{{item.isShow}}" style="background:{{activeType==item.type?themColor.silderBarBgActive:''}}" class="silde_i" data-type="{{item.type}}"
+            catchtap="selectSildbar">
+            <image class="silde_i_img" src="{{item.imgSrc}}"></image>
+            {{item.title}}
+        </view>
+    </block>
+</view>

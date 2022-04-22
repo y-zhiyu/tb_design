@@ -1,0 +1,16 @@
+.canvas-box{
+  width: 37px;
+  height: 37px;
+  position: relative;
+}
+
+.canvas{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 37px;
+  height: 37px;
+  z-index: 99;
+}

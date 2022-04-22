@@ -1,0 +1,119 @@
+<scroll-view scroll-y="{{scroll}}" scroll-top="{{scrollTop}}" class="scroll" scroll-into-view="{{scrollView}}">
+  <view class="apply-box" tt:if="{{listEditArray.length>0}}">
+    <block tt:for="{{listEditArray}}" tt:key="index">
+      <tt-input tt:if="{{item.type=='input' || item.type=='amount' || item.type=='date'}}"
+        data-item="{{item}}"
+        data-index="{{index}}"
+        type="{{item.type=='amount'?'number':'text'}}"
+        id="{{item.id}}"
+        lable="{{item.name}}"
+        value="{{item.value}}"
+        necessary="{{item.necessary}}"
+        placeholder="{{item.placeholder}}"
+        box-class="apply-box-class"
+        lable-class="input-lable-class"
+        bindchange="getInputChange"
+        disabled="{{item.disabled}}"
+        isSlot="{{item.type=='date'?false:true}}">  
+
+        <!-- 日期 -->
+        <view class="date-picker" tt:if="{{item.type=='date'}}">
+          <picker mode="date"
+            class="date-picker-value"
+            data-item="{{item}}"
+            data-index="{{index}}"
+            value="{{item.value}}"
+            bindchange="getInputChange"
+            fields="day">
+            <view class="{{item.value && 'date-picker-value-active'}}">
+              {{item.value ? item.value : item.placeholder}}</view>
+          </picker>
+          <image class="picker-date-del" 
+            tt:if="{{item.value && publicImgUrl}}"
+            src="{{publicImgUrl+'/img/pcPAlark/pc_date_del.png'}}"
+            data-index="{{index}}"
+            bindtap="getInvoiceDateDelete">
+          </image>
+        </view>
+      </tt-input>
+
+      <tt-textarea tt:if="{{item.type=='textarea'}}"
+        data-item="{{item}}"
+        data-index="{{index}}"
+        id="{{item.id}}"
+        lable="{{item.name}}"
+        value="{{item.value}}"
+        box-class="apply-box-class"
+        necessary="{{item.necessary}}"
+        placeholder="{{item.placeholder}}"
+        lable-class="input-lable-class"
+        bindchange="getInputChange"
+        isSlot="{{item.picker?item.isSlot:true}}"
+        disabled="{{item.disabled}}"/>
+
+      <tt-select tt:if="{{item.type=='radioV2'|| item.type=='checkboxV2'}}"
+        data-item="{{item}}"
+        data-index="{{index}}"
+        id="{{item.id}}"
+        lable="{{item.name}}"
+        value="{{item.value}}"
+        selectedId="{{item.select_id}}"
+        box-class="apply-box-class"
+        data-index="{{index}}"
+        lable-class="input-lable-class"
+        selectArray="{{item.option}}"
+        data-placetype="business"
+        necessary="{{item.necessary}}"
+        isSearch="{{item.option.length > 5 ? true : false}}"
+        bindchange="getSelectChange"
+        bindinputChange="getSelectInputChange"
+        disabled="{{item.disabled}}" />
+
+      <view tt:if="{{item.type=='attachmentV2'|| item.type=='attachment'}}">
+        <view class="apply-enclosure-content">
+        <view class="apply-title">
+          <view class="apply-necessary" tt:if="{{item.necessary}}">*</view>
+          <view>{{item.name}}</view>
+        </view>
+        <view class="apply-add" data-index="{{index}}" bindtap="addFile">添加附件</view>
+      </view>
+      <view class="apply-file" tt:for="{{item.fileList}}" tt:for-item="file" tt:for-index="fileIndex" tt:key="fileIndex">
+        <view class="apply-file-left">
+          <image tt:if="{{publicImgUrl}}" src="{{publicImgUrl+'/img/pcPAlark/pc_file.png'}}" />
+          <view class="apply-file-name">{{file.name}}</view>
+          <view class="apply-file-fileSize">{{file.fileSize}}</view>
+        </view>
+        <view class="apply-file-img">
+          <image tt:if="{{publicImgUrl}}" data-index="{{index}}" data-fileIndex="{{fileIndex}}"
+            src="{{publicImgUrl+'/img/pcPAlark/pc_look.png'}}" bindtap="getLook" />
+          <image tt:if="{{publicImgUrl}}" data-index="{{index}}" data-fileIndex="{{fileIndex}}"
+            src="{{publicImgUrl+'/img/pcPAlark/pc_download.png'}}" bindtap="getDownload" />
+          <image tt:if="{{publicImgUrl}}" data-index="{{index}}" data-fileIndex="{{fileIndex}}"
+            src="{{publicImgUrl+'/img/pcPAlark/pc_delete.png'}}" bindtap="getDelete" />
+        </view>
+      </view>
+      </view>
+
+      <view tt:if="{{item.type=='text' && item.value}}" class="apply-tips">
+        <rich-text class="richText" nodes="{{item.value}}"></rich-text>
+      </view>
+
+    </block>
+
+    <!-- 流程 -->
+    <view class="apply-steps" tt:if="{{stepList.length>0}}">
+      <view class="apply-steps-name">流程</view>
+      <tt-steps stepList="{{stepList}}" publicImgUrl='{{publicImgUrl}}' bindgotoTask='gotoTask'>
+      </tt-steps>
+    </view>
+
+    <!-- 按钮 -->
+    <view class="apply-button-box">
+      <view class="apply-button apply-sumbit" bindtap="getSubmit">{{buttonText}}</view>
+      <!-- <view class="apply-button apply-draft" bindtap="getPreservation">保存草稿</view> -->
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 加载 -->
+<tt-loading show='{{loading}}' />

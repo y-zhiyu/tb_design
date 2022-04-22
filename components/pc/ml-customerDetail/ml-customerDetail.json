@@ -1,0 +1,20 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-richText": "/components/common/richText/richText",
+        "tt-list": "/components/common/list/list",
+        "tt-table": "/components/common/table/table",
+        "tt-newTabs": "/components/pc/newTabs/newTabs",
+        "tt-proProgress": "/components/pc/proProgress/proProgress",
+        "tt-input": "/components/common/input/input",
+        "tt-select": "/components/common/select/select",
+        "tt-textarea": "/components/common/textarea/textarea",
+        "tt-logList": "/components/pc/logList/logList",
+        "tt-modal": "/components/common/modal/modal",
+        "tt-radio": "/components/common/radio/radio",
+        "tt-noDate": "/components/pc/noDate/noDate",
+        "tt-button": "/components/common/button/button",
+        "tt-addressSelect": "/components/common/address-select/address-select",
+        "tt-addRecord": "/components/pc/ml-addRecord/ml-addRecord"
+    }
+}

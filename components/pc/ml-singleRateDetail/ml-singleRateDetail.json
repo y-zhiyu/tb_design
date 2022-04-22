@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-table": "/components/common/table/table",
+        "tt-noDate": "/components/pc/noDate/noDate",
+        "tt-pagination": "/components/pc/pagination/pagination"
+    }
+}

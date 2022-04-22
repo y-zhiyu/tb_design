@@ -1,0 +1,22 @@
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.app-container-left {
+  width: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.app-container-left::-webkit-scrollbar {
+  display: none
+}
+
+.app-container-right {
+  display: flex;
+  flex: auto;
+  padding: 25px;
+  box-sizing: border-box;
+}

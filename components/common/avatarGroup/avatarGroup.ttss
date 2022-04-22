@@ -1,0 +1,31 @@
+.member,
+.concatMember{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-top:0px;
+}
+.member_i{
+    font-size: 10px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #83919F; 
+    text-align: center; 
+}
+.member_i{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.member_i_img{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-bottom: 6px;
+    display: block;
+}
+.nameBox{
+    width: 35px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

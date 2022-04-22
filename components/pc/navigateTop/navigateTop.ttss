@@ -1,0 +1,218 @@
+page {
+  font-family: PingFang-SC-Regular, PingFang-SC;
+  font-size: 12px;
+}
+
+.navigateTop {
+  width: 100%;
+  height: 60px;
+  background: #223D57;
+  z-index: 100;
+  padding: 0 30px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: auto;
+  box-shadow: 0px 2px 4px 0px #173047;
+}
+
+.fixedStyle {
+  position: sticky;
+  top: 44px;
+}
+
+.nav_left {
+  width: 100%;
+  height: 30px;
+  display: flex;  
+  align-items: center;
+
+}
+.nav_left_l{
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.nav_identity_downImg{
+  margin-right:25px ;
+}
+
+.nav_center {
+  display: flex;
+  flex: auto;
+  border: 1px red solid;
+}
+
+.layout_center {
+  justify-content: center;
+}
+
+.nav_tabs {
+  padding: 0 19px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.nav_active {
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.nav_right {
+  /* min-width: 130px; */
+  /* background: red; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 14px;
+  padding: 15px 0;
+  position: relative;
+}
+
+.role_name{
+  white-space: nowrap;
+  margin-right: 14px;
+}
+.nav_identity ,
+.nav_right{
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  /* cursor: pointer; */
+}
+
+.nav_identity_down {
+  width: 10px;
+  height: 10px;
+  background-size: 100% 100%;
+  margin-left: 4px;
+  margin-right: 15px;
+}
+
+.nav_header {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.nav_header_img{
+  width: 30px;
+  height: 30px;
+  background-size:100% 100%;
+  border-radius: 50%;
+}
+
+/* .nav_right:hover>.nav_roleList {
+  display: block;
+} */
+
+.nav_roleList {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  width: 144px;
+  background: #375169;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.23);
+  border: 1px solid #365068;
+  border-radius: 2px;
+  z-index: 20;
+}
+
+.nav_roleList_c {
+  padding: 18px 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  position: relative;
+}
+
+.sj {
+  position: absolute;
+  top: -10px;
+  right: 39px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #375169;
+}
+
+.nav_roleList_c_i {
+  padding: 10px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #D8DCE6;
+  text-align: center;
+}
+
+.nav_roleList_c_i:hover {
+  background: #83919F;
+  cursor: pointer;
+}
+
+.roleActive {
+  /* color: #009BD7; */
+  background: #2B4760;
+
+}
+
+/* 切换模块入口 */
+.nav_left_l:hover > .modulePageCon{
+  display: block;
+}
+.modulePageCon{
+  position: absolute;
+  top: 45px;
+  left: -20px;
+  width: 144px;
+  /* min-height: 100px; */
+  background-color: #375169;
+  border-radius: 2px;
+  z-index: 20;
+  display: none;
+}
+.modulePageCon_c {
+  padding: 18px 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 1);
+}
+
+.sj1 {
+  position: absolute;
+  top: -5px;
+  right: 53px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #375169;
+}
+
+.modulePageCon_c_i {
+  padding: 10px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #D8DCE6;
+  text-align: center;
+}
+
+.modulePageCon_c_i:hover {
+  background: #83919F;
+  cursor: pointer;
+}
+.modulePageactive{
+  /* color: #009BD7; */
+  background: #2B4760;
+}

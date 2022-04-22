@@ -1,0 +1,74 @@
+
+.dynamics_i{
+    padding: 20px 30px 0px ;   
+}
+.dynamics_i + .dynamics_i{
+    margin-top: 20px;
+}
+.dynamics_i_t{
+    display: flex;
+    align-items: center;
+}
+.dynamics_i_t_img{
+    width: 37px;
+    height: 37px;
+    border-radius: 100%;
+}
+.dynamics_i_t_r{
+    margin-left: 10px;
+}
+.dynamics_i_t_r_name{
+    font-size: 13px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.dynamics_i_t_r_time{
+    margin-top:3px;
+    font-size: 10px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #8E9BA7;
+}
+.dynamics_file{
+    margin-top: 10px;
+    width: 450px;
+    height: 58px;
+    border-radius: 2px;
+    background: #546A7F;
+    padding: 20px 12px 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.dynamics_file_l{
+    display: flex;
+    align-items: center;
+}
+.dynamics_file_l_img{
+    width: 20px;
+    height: 20px;
+}
+.dynamics_file_l_r{
+    margin-left: 10px;
+    font-size: 13px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 18px;
+}
+.dynamics_file_r_img{
+    width: 18px;
+    height: 18px;
+}
+.dynamics_file_l_r_note{
+    margin-top: 5px;
+    font-size: 11px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #DBDBDB;
+}
+.dynamics_line{
+    margin-top: 40px;
+    border-bottom: 1px solid #496278;
+}

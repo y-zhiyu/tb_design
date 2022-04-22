@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-canvas":"/components/pc/canvas/canvas"
+    }
+}

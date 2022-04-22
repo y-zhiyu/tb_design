@@ -1,0 +1,42 @@
+.newTabsBox{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top:0px;
+    background-color: #365068;
+    z-index: 10;
+}
+.newTabsBox_i{
+    padding:15px 5px 15px;
+    font-size: 13px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #8E9BA7;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+}
+.newTabsBox_i_line{
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: transparent;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+}
+.newTabsBox_i_line_active{
+ background: #fff;
+}
+.leftStyle + .leftStyle{
+    margin-left: 45px;
+}
+.default{
+     margin-left: 30px;
+}
+.default +  default{
+     margin-left: 38px;
+}
+.newTabsBox_i_active{
+    color: #FFFFFF;
+}

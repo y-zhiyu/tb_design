@@ -1,0 +1,7 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="modal">
+    <view class="content">
+        <tb-button text="默认" bindonclick="getClick" />
+        <tb-modal themColor="{{themColor}}" show="{{modalStatus}}" title="标题文案" width="450" height='400'
+            bindclose="getClose" />
+    </view>
+</tb-navLeft>

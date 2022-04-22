@@ -1,0 +1,19 @@
+.noNetWokBox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.noNetWokBox_img{
+    width:300px ;
+    height:267px;
+    /* background: pink; */
+}
+.noNetWokBoxText{
+    padding-top: 13px;
+    font-size: 15px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #83919F; 
+}

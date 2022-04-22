@@ -1,0 +1,71 @@
+<sjs module="util" src="../../../utils/util.sjs"></sjs>
+<!-- <view class="project_process_i_c_i">
+  <view class="project_process_i_c_i_l project_process_i_c_i_i">
+    <image class="avatvar"
+      src="{{avatarUrl}}">
+    </image>
+    <view class="project_process_i_c_i_l_r">
+      <view class="nickName">{{operationName}}</view>
+      <view class="dataTime">{{util.formatMDHM(operationTime,'/')}}</view>
+    </view>
+  </view>
+  <view class="project_process_i_c_i_r project_process_i_c_i_i">
+    {{list.operationTitle}}
+  </view>
+  <view class="project_process_i_c_i_type">
+    <image tt:if="{{operationType=='create'}}" class="type_img"
+      src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_CreatePro.png">
+    </image>
+    <image tt:if="{{operationType=='fininshed'}}" class="type_img"
+      src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_finPro.png">
+    </image>
+    <image tt:if="{{operationType=='upload'}}" class="type_img"
+      src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_uploadD.png">
+    </image>
+    <image tt:if="{{operationType=='common'}}" class="type_img"
+      src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_proComment.png">
+    </image>
+  </view>
+</view> -->
+<view class="project_process_i_c_i">
+  <view class="project_process_i_c_i_l project_process_i_c_i_i project_l">
+    <image class="avatvar" src="{{avatarUrl}}">
+    </image>
+    <view class="project_process_i_c_i_l_r">
+      <view class="nickName">{{operationName}}</view>
+      <view class="dataTime">{{util.formatMDHM(operationTime,'/')}}</view>
+    </view>
+  </view>
+  <view class="project_process_i_c_i_r project_process_i_c_i_i">
+    <view class="project_process_i_c_i_r_title">{{operationTitle}}</view>
+    <view class="project_process_i_c_i_r_content">{{operationConent}}</view>
+
+    <view class="project_process_i_c_i_type">
+
+      <image tt:if="{{operationType=='create'}}" class="type_img"
+        src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_CreatePro.png">
+      </image>
+      <image tt:if="{{operationType=='fininshed'}}" class="type_img"
+        src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_finPro.png">
+      </image>
+      <image tt:if="{{operationType=='upload'}}" class="type_img"
+        src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_uploadD.png">
+      </image>
+      <image tt:if="{{operationType=='common'}}" class="type_img"
+        src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_proComment.png">
+      </image>
+
+      <!-- 新增 -->
+      <image tt:if="{{operationType=='blue'}}" class="type_img"
+        src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_CreatePro.png">
+      </image>
+      <image tt:if="{{operationType=='orange'}}" class="type_img"
+        src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_log_edit.png">
+      </image>
+      <image tt:if="{{operationType=='green'}}" class="type_img"
+        src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_finPro.png">
+      </image>
+
+    </view>
+  </view>
+</view>

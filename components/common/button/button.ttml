@@ -1,0 +1,6 @@
+<view class="button-box button-box_style" tt:if="{{btnType=='group'}}">
+    <view class="button sumbit" tt:if="{{saveText}}" bindtap="getSubmit">{{saveText}}</view>
+    <view class="button draft" tt:if="{{cancelText}}" bindtap="getCancel">{{cancelText}}</view>
+</view>
+<view tt:if="{{btnType=='line'}}" class="btn-line btnClass" style="width:{{width}}px;height:{{height}}px;" catchtap="click">{{showText}}</view> 
+<view tt:if="{{btnType=='bg'}}" class="btn-bg btnClass" style="width:{{width}}px;height:{{height}}px;" catchtap="click">{{showText}}</view> 

@@ -1,0 +1,63 @@
+<view class="customerDetail-record-content {{hasPassed?'nopadding':''}}">
+    <view tt:if="{{!hasPassed}}" class="customerDetail-record-add " data-modalType="recordAdd" bindtap="inspectNec">
+        <image class="customerDetail-record-add-img" src="{{publicImgUrl+'/img/pcPAlark/pc_add.png'}}"></image>
+        发起立项申请 
+    </view>
+    <!-- tt:if="{{viewType == 'customer' || viewType == 'contact'}}" -->
+
+    <view class="approval">
+        <block tt:for="{{recordList}}" tt:key="index">
+            <view class="approval_i">
+                <view class="approval_i_t">
+                    <image class="approval_i_t_img"
+                        src="{{item.tb_uc2e_employee?item.tb_uc2e_employee.fs_avatar_url:publicImgUrl+'/img/pcPAlark/pc_upload_avaturl.png'}}">
+                    </image>
+                    <view class="approval_i_t_r">
+                        <view class="approval_i_t_r_name">{{item.tb_uc2e_employee.uc_name}}</view>
+                        <view class="approval_i_t_r_time">{{item.fs_start_time}}</view>
+                    </view>
+                </view>
+                <view class="approval_i_b">
+                    <view class="approval_file" data-item="{{item}}" catchtap="clickItem">
+                        <view class="approval_file_l">
+                            <image class="approval_file_l_img" src="{{publicImgUrl}}/img/pcPAlark/pc_fileicon.png">
+                            </image>
+                            <view class="approval_file_l_r">
+                                <view class="">{{item.fs_approval_name}}</view>
+                                <view tt:if="{{item.use_time}}"  class="approval_file_l_r_use_time">累计用时：{{item.use_time}}</view>
+                            </view>
+                        </view>
+                        <view class="approval_file_r">
+                            <view tt:if="{{item.fs_instance_status=='REJECTED'}}" class="approval_status">拒绝</view>
+                            <view tt:if="{{item.fs_instance_status=='PENDING'}}" class="approval_status">审批中</view>
+                            <view tt:if="{{item.fs_instance_status=='CANCELED'}}" class="approval_status">撤回</view>
+                            <view tt:if="{{item.fs_instance_status=='DELETED'}}" class="approval_status">已删除</view>
+                            <view tt:if="{{item.fs_instance_status=='APPROVED'}}" class="approval_status">已通过</view>
+                            <image class="approval_file_r_img" src="{{publicImgUrl}}/img/pcPAlark/pc_fileiconLeft.png">
+                            </image>
+                        </view>
+                    </view>
+                    <!-- <view class="send_chatGroup" data-item="{{item}}" catchtap="sendChatGroup">
+                        <image class="send_chatGroup_img" src="{{publicImgUrl}}/img/pcPAlark/pc_pro_sendGroup.png">
+                        </image>
+                        发至项目群
+                    </view> -->
+                    <view class="approval_line"></view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <!-- <block tt:if="{{recordList.length==0 && !loading}}">
+        <tt-noDate top="60" publicImgUrl="{{publicImgUrl}}" />
+    </block> -->
+</view>
+
+<!-- showModal 用户询问框  跳过任务 完成任务 -->
+	<tt-showModal  themColor="{{themColor}}" show="{{showModal}}" title="{{busLeadApplyErrorMsg}}" publicImgUrl="{{publicImgUrl}}"
+		bindcloseShowModalBbox="closeShowModal" leftText="完善信息" rightText="取消" data-type="{{showModalType}}" bindbtnCancel="btnCancel"
+		bindbtnSubmit="btnSubmit">
+	</tt-showModal>
+
+<!-- 加载 -->
+<tt-loading show='{{loading}}' />

@@ -1,0 +1,6 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="pagination">
+    <tb-pagination themColor="{{themColor}}" allTotal="{{allTotal}}" total="{{total}}" current="{{current}}"
+        pageSize="{{pageSize}}" pageNumber="{{pageNumber}}" bindchange="getPageChange" bindpageSize="getPageSize"
+        bindpageInput="getPageInput" bindgetconfirm="getconfirm">
+    </tb-pagination>
+</tb-navLeft>

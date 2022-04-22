@@ -1,0 +1,234 @@
+.select-container {
+  display: flex;
+  align-items: center;
+  font-family: PingFangSC-Regular, PingFang SC;
+
+}
+
+.select-title {
+  width: 122px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #83919F;
+  display: flex;
+}
+
+.select-necessary {
+  color: transparent;
+
+}
+.select-necessary_active{
+  color: #D95D5C;
+}
+
+.select-box {
+  width: 224px;
+  height: 40px;
+  /* background: #E1E4E8;  */
+  border-radius: 4px;
+  border: 1px solid #8E9BA7;
+  position: relative;
+  box-sizing: border-box;
+
+}
+
+.select-box:hover{
+  border: 1px solid #FFFFFF;
+}
+
+.select-content {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px 0 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.select-content-input{
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.select-input-arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 38px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  box-sizing: content-box;
+  cursor: pointer;
+
+}
+
+.select-arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #909399;
+}
+
+.select-img {
+  transition: all .3s ease;
+  width: 8px;
+  height: 5px;
+}
+
+.select-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 400;
+  /* color: #333333; */
+  color: #fff;
+}
+
+.text-disabled{
+  /* padding-left: 15px; */
+  box-sizing: border-box;
+  color: #333;
+}
+
+.text-disabled-padding{
+  padding-left: 15px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.select-normal {
+  color: #909399;
+}
+
+.select-list-position {
+  width: 100%;
+  max-height: 230px;
+  position: absolute;
+  left: -1px;
+  z-index: 9999;
+  margin-top: 5px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #375169;
+  /* box-sizing: border-box; */
+  background: #375169;
+  box-shadow: 0px 2px 5px 0px #163046;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.select-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  border-top: none;
+  padding: 7px 0;
+  box-sizing: border-box;
+}
+
+.select-item {
+  width: 100%;
+  /* height: 34px; */
+  padding:10px 30px;
+  box-sizing: border-box;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+  /* border-radius: 0px 0px 4px 4px; */
+  font-size: 14px;
+  font-weight: 400;
+  color: #D8DCE6;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+.select-item:hover {
+  background: #83919F;
+}
+
+.select-item-flex {
+  justify-content: space-between;
+  padding: 10px 40px;
+  box-sizing: border-box;
+}
+
+.select-text-selected {
+  background: #2B4760;
+}
+
+.select-error {
+  border: 1px solid #D95D5C;
+}
+
+.select-error-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #D95C5C;
+  margin-left: 25px;
+}
+
+.select-input {
+  width: 224px;
+  height: 40px;
+  border: none;
+  background: none;
+  padding-right: 20px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.select-disabled{
+  background: #99A6B2;
+  border: 1px solid #D8DCE6;
+  cursor: no-drop;
+  border-radius: 4px;
+}
+
+.value-disabled{
+  color: #99A6B2;
+  cursor: no-drop;
+  text-decoration: line-through;
+}
+.opation{
+  color: #D8DCE6;
+  cursor: pointer;
+}
+.opation:hover{
+  color: #fff;
+}
+.searchOpation_text{
+  font-size: 13px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #8E9BA7;
+  margin-top: 10px;
+}
+.opation_btn{
+  width: 108px;
+  height: 34px;
+  line-height: 34px;
+  /* padding: 5px; */
+  border-radius: 4px;
+  border: 1px solid #8E9BA7;
+  text-align: center;
+  font-size: 13px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #8E9BA7;
+  margin: 10px auto;
+
+}

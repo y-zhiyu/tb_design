@@ -1,0 +1,6 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="menu">
+    <!-- <tb-menu menuList="{{itemList}}" selectedType="{{itemSelectedType}}" binditemChange="getItemChange1"
+            modeType="inline" /> -->
+    <tb-menu menuList="{{itemList}}" selectedType="{{itemSelectedType}}" binditemChange="getItemChange1"
+        modeType="horizontal" />
+</tb-navLeft>

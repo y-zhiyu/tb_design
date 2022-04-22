@@ -1,0 +1,6 @@
+<view class="noNetWokBox" style="margin-top:{{top?top+'px':''}}">
+    <!-- <view class="noDateBox_img"></view> -->
+    <image class="noNetWokBox_img" src="{{publicImgUrl}}//img/pcPAlark/pc_noDateV2.png"></image>
+    <text class="noNetWokBoxText">{{noNetWokBoxText}}</text>
+</view>
+          

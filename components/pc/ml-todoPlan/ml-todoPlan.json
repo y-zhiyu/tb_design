@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-todoItem":"/components/pc/ml-todoItem/ml-todoItem"
+    }
+}

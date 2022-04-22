@@ -1,0 +1,103 @@
+<sjs module="util" src="../../../utils/util.sjs"></sjs>
+<view class="proMsgBox">
+  <view class="proMsgBox_i">
+    <view class="proMsgBox_i_title" catchtap="{{proBaseMsg?'seeProDetail':''}}">
+      <view class="proMsgBox_i_title_l">项目信息</view>
+      <view class="proMsgBox_i_title_r" tt:if="{{proBaseMsg}}">详情</view>
+      </view>
+    <view class="proMsgBox_i_con proMsg">
+      <view class="proMsg_l">
+        <image class="proMsg_l_img" src="{{proBaseMsg.fs_avatar_url}}">
+        </image>
+      </view>
+      <view class="proMsg_r">
+        <view class="proName">{{proBaseMsg.pm_p_name}}</view>
+        <view class="creatTime">创建时间：{{util.formatDATE(proBaseMsg.created_at)}} </view>
+      </view>
+    </view>
+  </view>
+  <view class="proMsgBox_i">
+    <view class="proMsgBox_i_title" catchtap="editorMember">
+      <view class="proMsgBox_i_title_l">项目成员</view>
+      <view class="proMsgBox_i_title_r" tt:if="{{proBaseMsg &&  proBaseMsg.pm_p_progress_status_id >-1}}">编辑</view>
+    </view>
+    <view class="proMsgBox_i_con member">
+      <view class="member">
+        <block tt:for="{{proBaseMsg.meta.prj_principal}}" tt:key="index">
+          <block tt:if="{{item.type_id !=4 && item.type_id !=6}}">
+            <tt-avatarGroup name="{{item.uc_name}}"
+              avatar_url="{{item.fs_avatar_url?item.fs_avatar_url:publicImgUrl+'/img/pcPAlark/pc_upload_avaturl.png'}}">
+            </tt-avatarGroup>
+          </block>
+
+        </block>
+      </view>
+
+    </view>
+  </view>
+  <view class="proMsgBox_i">
+    <view class="proMsgBox_i_title" catchtap="setGroupGetMsg">
+      <view class="proMsgBox_i_title_l">项目群 <text class="proMsgBox_i_title_l_note"
+          tt:if="{{proBaseMsg.need_remind==0}}">(群提醒已关闭) </text></view>
+      <view class="proMsgBox_i_title_r">设置</view>
+    </view>
+    <!-- <view class="proMsgBox_i_title" bindtap="getOpenSchema">项目群1</view> bindtap="getEnterChat" -->
+    <view class="proMsgBox_i_con progroup" bindtap="getToggleChat">
+      <view class="progroup_i">
+        <view class="progroup_i_l">
+          <view class="progroup_i_l_l">
+            <image class="progroup_i_l_img" src="{{chatGroupMsg.avatarUrls[2]}}">
+            </image>
+          </view>
+          <view class="progroup_i_l_r">
+            <view class="progroup_name">{{chatGroupMsg.name}}</view>
+            <view class="progroup_count">未读消息数：{{chatGroupMsg.badge}}</view>
+          </view>
+
+        </view>
+        <view class="progroup_i_r">
+          <image class="progroup_i_r_img" src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_proleft.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="testbox" catchtap="click">adsasd</view> -->
+
+  <view class="proMsgBox_i">
+    <view class="proMsgBox_i_title">客户信息</view>
+    <view class="proMsgBox_i_con customMsg" data-type="{{proBaseMsg.pm_ref_ac_2type}}" catchtap="showCustomMsg">
+      <view class="customMsg_i">
+        <view class="customMsg_i_l">
+          <view class="customMsg_i_l_r">
+            <view class="customMsg_name">{{proBaseMsg.ac_name}}</view>
+            <!-- <view class="customMsg_count">与本项目相关的联系人有（5位）</view> -->
+          </view>
+        </view>
+        <view class="customMsg_i_r">
+          <image class="customMsg_i_r_img" src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_proleft.png">
+          </image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="proMsgBox_i">
+    <view class="proMsgBox_i_title">
+      <view class="proMsgBox_i_title_l">施工方</view>
+      <view class="proMsgBox_i_title_r" data-type="worker" catchtap="showCustomMsg">编辑</view>
+    </view>
+    <view class="proMsgBox_i_con customMsg" data-type="worker" catchtap="showCustomMsg">
+      <view class="customMsg_i">
+        <view class="customMsg_i_l">
+          <view class="customMsg_i_l_r">
+            <view class="customMsg_name">{{workerName}}</view>
+            <!-- <view class="customMsg_count">与本项目相关的联系人有（5位）</view> -->
+          </view>
+        </view>
+        <view class="customMsg_i_r">
+          <image class="customMsg_i_r_img" src="https://oss.tb.tokoyi.com/img/pcPAlark/pc_proleft.png">
+          </image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

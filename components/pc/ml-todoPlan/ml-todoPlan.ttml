@@ -1,0 +1,68 @@
+<view class="todo-four-container_item" tt:if="{{receivable_list.length>0}}">
+    <view class="todo-four-container_item_title">
+        <view class="todo-four-container_item_title_l">应收计划</view>
+        <view class="todo-four-container_item_title_r" data-todotype="createCollectPlan" data-todoName="编辑应收计划"
+            catchtap="editor">编辑</view>
+    </view>
+    <view class="todo-four-container_item_list">
+        <block tt:for="{{receivable_list}}" tt:key="index">
+            <tt-todoItem status="{{item.receivable_status}}" todoType="createCollectPlan" data-index="{{index}}"
+                data-id="{{item.receivable_id}}" data-todotype="createCollectPlan" catchtap="selectTodoFin"
+                publicImgUrl="{{publicImgUrl}}" title="{{item.receivable_type_name}}" dateNote="收款时间"
+                date="{{item.receivable_date}}" ratioNote="收款比例" ratio="{{item.receivable_ratio}}"></tt-todoItem>
+        </block>
+    </view>
+</view>
+<!-- todoList: [
+      { name: '创建应收计划',type:'createCollectPlan'},
+      { name: '创建应付计划', type:'createPayPlan'},
+      { name: '创建项目完工验收计划',type:'createFinishedPlan' },
+      { name: '创建交底环节约定事项',type:'createAppointmentPlan' },
+    ] -->
+<view class="todo-four-container_item" tt:if="{{payable_list.length>0}}">
+    <view class="todo-four-container_item_title">
+        <view class="todo-four-container_item_title_l">应付计划</view>
+        <view class="todo-four-container_item_title_r" data-todotype="createPayPlan" data-todoName="编辑应付计划"
+            catchtap="editor">编辑</view>
+    </view>
+    <view class="todo-four-container_item_list">
+        <block tt:for="{{payable_list}}" tt:key="index">
+            <tt-todoItem status="{{item.payable_status}}" data-id="{{item.payable_id}}" todoType="createPayPlan"
+                data-index="{{index}}" data-todotype="createPayPlan" catchtap="selectTodoFin"
+                publicImgUrl="{{publicImgUrl}}" title="{{item.payable_type_name}}" dateNote="付款时间"
+                date="{{item.payable_date}}" ratioNote="付款比例" ratio="{{item.payable_ratio}}">
+            </tt-todoItem>
+        </block>
+    </view>
+</view>
+<view class="todo-four-container_item" tt:if="{{completion_acceptance_list.length>0}}">
+    <view class="todo-four-container_item_title">
+        <view class="todo-four-container_item_title_l">完工验收计划</view>
+        <view class="todo-four-container_item_title_r" data-todotype="createFinishedPlan" data-todoName="编辑项目完工验收计划"
+            catchtap="editor">编辑</view>
+    </view>
+    <view class="todo-four-container_item_list">
+        <block tt:for="{{completion_acceptance_list}}" tt:key="index">
+            <tt-todoItem status="{{item.acceptance_status}}" data-id="{{item.acceptance_id}}"
+                todoType="createFinishedPlan" todoTypeId="{{item.acceptance_type_id}}" data-index="{{index}}"
+                data-todotype="createFinishedPlan" catchtap="selectTodoFin" publicImgUrl="{{publicImgUrl}}"
+                title="{{item.acceptance_type_name}}" dateNote="收款时间" date="{{item.acceptance_date}}" ratioNote=''>
+            </tt-todoItem>
+        </block>
+    </view>
+</view>
+<view class="todo-four-container_item" tt:if="{{clarification_agreement_list.length>0}}">
+    <view class="todo-four-container_item_title">
+        <view class="todo-four-container_item_title_l">交底环节约定</view>
+        <view class="todo-four-container_item_title_r" data-todotype="createAppointmentPlan" data-todoName="编辑交底环节约定事项"
+            catchtap="editor">编辑</view>
+    </view>
+    <view class="todo-four-container_item_list">
+        <block tt:for="{{clarification_agreement_list}}" tt:key="index">
+            <tt-todoItem status="{{item.agreement_status}}" data-id="{{item.agreement_id}}"
+                todoType="createAppointmentPlan" data-index="{{index}}" data-todotype="createAppointmentPlan"
+                catchtap="selectTodoFin" publicImgUrl="{{publicImgUrl}}" title="{{item.agreement_thing}}" dateNote="时间"
+                date="{{item.agreement_date}}" ratioNote="备注" ratio="{{item.agreement_note}}"></tt-todoItem>
+        </block>
+    </view>
+</view>

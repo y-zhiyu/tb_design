@@ -1,0 +1,21 @@
+<!-- <view class="sildePanelBox {{show?'showMoveRight':'hideMoveRight'}}" tt:if="{{show}}" catchtap="closeShowSildePanel">
+    <view class="sildePanel" catchtap="stop">
+        <image class="sildePanel_closeImg" catchtap="closeShowSildePanel" src="{{publicImgUrl}}/img/pcPAlark/pc_close.png"></image>
+        <slot></slot>
+    </view>
+    
+</view> -->
+<!-- tt:if="{{show}}" -->
+<view class="sildePanelBox" style="padding-top:{{top}}px;" animation="{{maskAnimation}}" catchtap="closeShowSildePanel">
+    <view class="sildePanel" style="background:{{themColor.blockBg}}" animation="{{centerAnimation}}" catchtap="stop">
+        <view class="sildePanelBox_title">
+            {{title}}
+            <view class="sildePanel_close" catchtap="closeShowSildePanel">
+                <image class="sildePanel_closeImg" src="{{publicImgUrl}}/img/pcPAlark/pc_mode_colse.png"></image>
+            </view>
+        </view>
+
+        <slot></slot>
+    </view>
+
+</view>

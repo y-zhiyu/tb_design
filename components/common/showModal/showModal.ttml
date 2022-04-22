@@ -1,0 +1,18 @@
+<view class="showModalBbox"  tt:if="{{show}}" catchtap="closeShowModalBbox">
+    <view class="showModalBbox_con" style="background:{{themColor.blockBg}}" catchtap="stop">
+        <view class="showModalBbox_conImgBox" catchtap="closeShowModalBbox">
+            <image class="showModalBbox_conImg" src="{{publicImgUrl}}/img/pcPAlark/pc_close.png"></image>
+        </view>
+        <view tt:if="{{title}}" class="showModalBbox_title title-class">{{title}}</view>
+        <slot></slot>
+
+        <view class="btnGroup">
+            <!-- <view class="btnGroup_i btnSubmit" catchtap="btnSubmit">确定</view>
+            <view class="btnGroup_i btnCancel" catchtap="btnCancel">取消</view> -->
+            <!-- <tt-button btnType="bg" showText="{{leftText}}" bindclick="btnSubmit"></tt-button>
+            <tt-button btnType="line" btnClass="btnCancel" showText="{{rightText}}" bindclick="btnCancel"></tt-button> -->
+            <tt-button btnType="group" button-box_style="button-box_style" saveText="确定" cancelText="取消"
+                bindsubmit="btnSubmit" bindcancel="btnCancel"></tt-button>
+        </view>
+    </view>
+</view>

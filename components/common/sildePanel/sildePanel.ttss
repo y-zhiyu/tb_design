@@ -1,0 +1,89 @@
+.sildePanelBox {
+  /* background: rgba(0, 0, 0, 0.5); */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 220;
+
+  box-sizing: border-box;
+}
+
+.sildePanel {
+  /* width: 398px; */
+  width: 0px;
+  height: 100%;
+  background: #365068;
+  box-shadow: -2px 0px 4px 0px #163450;
+  overflow: hidden;
+  overflow-y: auto;
+  margin-right: -398px;
+  /* padding-top:28px; */
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* animation: moveRight 0.3s ease-in-out ; */
+
+}
+
+.showMoveRight {
+  animation: moveRight 0.3s ease-in-out;
+}
+
+.hideMoveRight {
+  animation: hideRight 0.3s ease-in-out;
+}
+
+@keyframes moveRight {
+  from {
+    margin-right: -400px;
+  }
+
+  to {
+    margin-right: 0px;
+  }
+}
+
+@keyframes hideRight {
+  from {
+    margin-right: 0px;
+  }
+
+  to {
+    margin-right: -400px;
+  }
+}
+
+.sildePanel_close {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius:4px;
+}
+.sildePanel_close:hover{
+  background-color:#2B4760;
+}
+.sildePanel_closeImg {
+  width: 14px;
+  height: 14px;
+  background-size: 100% 100%;
+}
+.sildePanelBox_title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-family: PingFangSC-Heavy, PingFang SC;
+  font-weight: 800;
+  color: #FFFFFF;
+  padding: 25px;
+}

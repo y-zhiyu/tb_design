@@ -1,0 +1,18 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tt-loading": "/components/pc/loading/loading",
+        "tt-modal": "/components/common/modal/modal",
+        "tt-button": "/components/common/button/button",
+        "tt-select": "/components/common/select/select",
+        "tt-image-picker": "/components/common/image-picker/image-picker",
+        "tt-textarea": "/components/common/textarea/textarea",
+        "tt-radio": "/components/common/radio/radio",
+        "tt-richText": "/components/common/richText/richText",
+        "tt-imageGroup": "/components/pc/imageGroup/imageGroup",
+        "tt-noDate": "/components/pc/noDate/noDate",
+        "tt-input": "/components/common/input/input",
+         "tt-showModal": "/components/common/showModal/showModal",
+        "tt-list": "/components/common/list/list"
+    }
+}

@@ -1,0 +1,6 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="button">
+    <tb-button text="default" btn_class="btn_class" />
+    <tb-button text="primary" type='primary' btn_class="btn_class" />
+    <tb-button text="danger" type='danger' btn_class="btn_class" />
+    <tb-button text="disabled" type='disabled' disabled="{{true}}" btn_class="btn_class" />
+</tb-navLeft>

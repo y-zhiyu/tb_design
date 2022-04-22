@@ -1,0 +1,8 @@
+<view class="app-container">
+    <view class="app-container-left">
+        <tb-menu menuList="{{menuList}}" selectedType="{{selectedType}}" binditemChange="getItemChange" />
+    </view>
+    <view class="app-container-right">
+        <slot />
+    </view>
+</view>

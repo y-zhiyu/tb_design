@@ -1,0 +1,36 @@
+<!-- 图片,文本 -->
+<block tt:if="{{type=='default'}}">
+    <view class="richText-box box-class">
+        <image class="richText-header img-class" src="{{imgUrl}}" />
+        <view class="richText-text">
+            <view class="richText-name title-class">
+                <view class="titlecon-class">{{title}}</view>
+                <block tt:if="{{titleSlot}}">
+                    <slot />
+                </block>
+            </view>
+            <view class="richText-time value-class">
+                {{content}}
+                <block tt:if="{{contentSlot}}">
+                    <slot />
+                </block>
+            </view>
+        </view>
+    </view>
+</block>
+
+<!-- 纯文本 -->
+<block tt:if="{{type=='pureText'}}">
+    <view class="richText-pureText-box box-class">
+        <view class="richText-pureText-text">
+            <view class="richText-pureText-name title-class">
+                {{title}}
+                <block tt:if="{{titleSlot}}">
+                    <slot />
+                </block>
+            </view>
+            <view class="richText-pureText-content value-class">{{content}}</view>
+        </view>
+        <view class="richText-pureText-time time-class">{{time}}</view>
+    </view>
+</block>

@@ -1,0 +1,39 @@
+@import '../../../styles/process.ttss';
+/* 项目概况日志时间轴 */
+
+.project_process_box{
+    margin-left: 76px;
+    width: 320px;
+    padding: 30px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+/* .project_process_i + .project_process_i{
+    margin-top: 45px;
+}
+.project_process_i_title{
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #E5E5E5;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.project_process_i_c{
+   position: relative;
+   padding-top: 1px;
+}
+
+.project_process_i_c_start{
+   display: flex;
+   align-items: center;
+}
+.project_process_i_c_start_i{
+    width: 50%;
+}
+.project_process_i_c_start_r{
+    border-left: 1px solid rgba(142, 155, 167, 1);
+    height: 39px;
+    box-sizing: border-box;
+}
+ */

@@ -1,0 +1,25 @@
+.progress{
+    display: flex;
+}
+
+.detail_progress_alone {
+  padding: 0 10px 0 8px;
+  height: 18px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin-left: -15px;
+  font-size: 9px;
+  font-weight: 400;
+  color: #E7E7E7;
+}
+
+.detail_progress_alone:nth-child(n+2){
+  padding: 0px 15px 0px 20px;
+}
+.detail_progress_alone_img{
+  display: block;
+  width: 11px;
+  height: 11px;
+  margin-left: 4px;
+}

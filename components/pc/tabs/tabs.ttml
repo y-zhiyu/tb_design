@@ -1,0 +1,10 @@
+<view class="tab {{isFixed && 'tab-fixed'}}">
+  <block tt:for="{{tabList}}" tt:key="index" tt:if="{{item.status}}">
+    <view catchtap="selectTab" data-type="{{item.type}}" data-id="{{item.id}}"
+      class="tab_i tab_style {{tabActiveIdx==index?'active':''}}">
+      <view class="tab_i_text">{{item.text}}</view>
+      <block tt:if="{{item.count}}">{{'('+item.count+')'}}</block>
+      <view tt:if="{{lineStatus && tabActiveIdx==index }}" class="tab-line line_style"></view>
+    </view>
+  </block>
+</view>

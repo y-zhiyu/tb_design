@@ -1,0 +1,47 @@
+.noDateBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.noDateBox_img {
+  width: 300px;
+  height: 267px;
+  /* background: pink; */
+}
+
+.noDateText {
+  margin-top: 13px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #83919F;
+}
+
+.noDateText1{
+  margin-top: 5px;
+}
+
+.button-flex {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
+
+}
+
+.button-text {
+  width: 108px;
+  height: 44px;
+  border-radius: 4px;
+  border: 1px solid #8E9BA7;
+  font-size: 15px;
+  font-weight: 400;
+  color: #8E9BA7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

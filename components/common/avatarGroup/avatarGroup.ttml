@@ -1,0 +1,6 @@
+<view  tt:if="{{name && avatar_url }}" class="member_i avatar-item-class">
+    <image class="member_i_img"
+        src="{{avatar_url}}">
+    </image>
+    <view class="nameBox">{{name}}</view>
+</view>

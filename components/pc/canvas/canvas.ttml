@@ -1,0 +1,5 @@
+<view class="canvas-box">
+  <canvas class='canvas' canvas-id="{{canvasId+'bg'}}" id="{{canvasId+'bg'}}"
+    style="width:{{width}};height:{{height}}"></canvas>
+  <canvas class='canvas' canvas-id="{{canvasId}}" id="{{canvasId}}" style="width:{{width}};height:{{height}}"></canvas>
+</view>

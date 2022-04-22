@@ -1,0 +1,148 @@
+<view class="proTaskBox">
+  <view class="proTaskBox_header" style="background:{{themColor.fromTitleBg}}">
+    <block tt:for="{{header}}" tt:key="index">
+      <view class="proTaskBox_header_i {{item.title=='任务名称'?'proTaskBox_header_i_width':''}}">{{item.title}}
+      </view>
+    </block>
+  </view>
+  <view class="proTaskBox_content">
+    <block tt:if="{{taskListStatus==1}}" tt:for="{{listData}}" tt:key="index">
+      <view class="proTaskBox_content_i">
+        <view class="proTaskBox_content_i_title" data-show="{{item.isShow}}" data-index="{{index}}" catchtap="showItem">
+          <view class="proTaskBox_content_i_title_l">
+            <view class="point"></view>
+            {{item.tg_name}}
+          </view>
+          <view class="proTaskBox_content_i_title_r">
+            <image class="proTaskBox_content_i_title_r_img"
+              src="{{publicImgUrl}}{{item.isShow?'/img/pcPAlark/pc_up.png':'/img/pcPAlark/pc_down.png'}}"></image>
+          </view>
+        </view>
+        <view class="proTaskBox_content_list" tt:if="{{item.isShow}}">
+          <block tt:for="{{item.tasks}}" tt:for-item="list" tt:for-index="listIndex" tt:key="listIndex">
+            <view class="list_i {{listIndex==item.tasks.length-1?'noBorder':''}}" data-item="{{list}}"
+              catchtap="selectList">
+              <view class="list_i_i  list_i_i_title">{{listIndex+1}}. {{list.pm_t_subject}}</view>
+              <view class="list_i_i" data-type="startTime" data-item="{{list}}" catchtap="{{list.pm_t_status_id==1 || list.pm_t_status_id==2?'getTime':''}}">
+                <!-- {{list.pm_t_start_date}} -->
+                <picker tt:if="{{list.pm_t_status_id==1 || list.pm_t_status_id==2}}" class="picker" mode="date"
+                  value="{{list.pm_t_start_date}}" start="{{start}}" end="{{end}}" bindchange="pickerChangeDate"
+                  fields="day">
+                  <view class="picker-trigger">
+                    {{list.pm_t_start_date}}
+                    <view class="date-icon"></view>
+                  </view>
+                </picker>
+                <view tt:if="{{list.pm_t_status_id==0 || list.pm_t_status_id==3}}">{{list.pm_t_start_date}}</view>
+              </view>
+
+              <view class="list_i_i" data-type="endTime" data-item="{{list}}" catchtap="{{list.pm_t_status_id==1 || list.pm_t_status_id==2?'getTime':''}}">
+                <!-- {{list.pm_t_due_date}} -->
+                <picker tt:if="{{list.pm_t_status_id==1 || list.pm_t_status_id==2}}" class="picker" mode="date"
+                  value="{{list.pm_t_due_date}}" start="{{start}}" end="{{end}}" bindchange="pickerChangeDate"
+                  fields="day">
+                  <view class="picker-trigger">
+                    {{list.pm_t_due_date}}
+                    <view class="date-icon"></view>
+                  </view>
+                </picker>
+                <view tt:if="{{list.pm_t_status_id==0 || list.pm_t_status_id==3}}">{{list.pm_t_due_date}}</view>
+              </view>
+
+              <view class="list_i_i">无</view>
+
+              <!-- list.pm_t_status_id  -->
+              <view tt:if="{{list.pm_t_status_id==3}}" class="list_i_i list_i_i_status  fininshed">
+                <image class="list_i_i_status_img"
+                  src="https://tb-test-erp.oss-cn-beijing.aliyuncs.com/img/pcPAlark/pc_fin.png">
+                </image>
+                已完成
+              </view>
+              <view tt:if="{{list.pm_t_status_id==1}}" class="list_i_i list_i_i_status  noStart">
+                <image class="list_i_i_status_img"
+                  src="https://tb-test-erp.oss-cn-beijing.aliyuncs.com/img/pcPAlark/pc_during.png">
+                </image>
+                未开始
+              </view>
+              <view tt:if="{{list.pm_t_status_id==2}}" class="list_i_i list_i_i_status  during">
+                <image class="list_i_i_status_img"
+                  src="https://tb-test-erp.oss-cn-beijing.aliyuncs.com/img/pcPAlark/pc_during.png">
+                </image>
+                进行中
+              </view>
+              <view tt:if="{{list.pm_t_status_id==0}}" class="list_i_i list_i_i_status  jump">
+                <image class="list_i_i_status_img"
+                  src="https://tb-test-erp.oss-cn-beijing.aliyuncs.com/img/pcPAlark/pc_during.png">
+                </image>
+                已跳过
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+
+    <!-- 无节点 -->
+    <block tt:if="{{taskListStatus==0}}" tt:for="{{listData}}" tt:key="index">
+      <view class="proTaskBox_content_i">
+        <view class="proTaskBox_content_list">
+          <view class="list_i {{listIndex==listData.length-1?'noBorder':''}}" data-item="{{item}}"
+            catchtap="selectList">
+            <view class="list_i_i  list_i_i_title">{{index+1}}. {{item.pm_t_subject}}</view>
+            <view class="list_i_i" data-type="startTime" data-item="{{item}}" catchtap="{{item.pm_t_status_id==1 || item.pm_t_status_id==2?'getTime':''}}">
+              <picker tt:if="{{item.pm_t_status_id==1 || item.pm_t_status_id==2}}" class="picker" mode="date"
+                value="{{item.pm_t_start_date}}" start="{{start}}" end="{{end}}" bindchange="pickerChangeDate"
+                fields="day">
+                <view class="picker-trigger">
+                  {{item.pm_t_start_date}}
+                  <view class="date-icon"></view>
+                </view>
+              </picker>
+              <view tt:if="{{item.pm_t_status_id==0 || item.pm_t_status_id==3}}">{{item.pm_t_start_date}}</view>
+
+              <!-- {{item.pm_t_start_date}} -->
+            </view>
+            <view class="list_i_i" data-type="endTime" data-item="{{item}}" catchtap="{{item.pm_t_status_id==1 || item.pm_t_status_id==2?'getTime':''}}">
+              <picker tt:if="{{item.pm_t_status_id==1 || item.pm_t_status_id==2}}" class="picker" mode="date"
+                value="{{item.pm_t_due_date}}" start="{{start}}" end="{{end}}" bindchange="pickerChangeDate"
+                fields="day">
+                <view class="picker-trigger">
+                  {{item.pm_t_due_date}}
+                  <view class="date-icon"></view>
+                </view>
+              </picker>
+              <view tt:if="{{item.pm_t_status_id==0 || item.pm_t_status_id==3}}">{{item.pm_t_due_date}}</view>
+            </view>
+            <view class="list_i_i">无</view>
+
+            <!-- list.pm_t_status_id   0 初始化  10/20 待验收  25已验收  30 已驳回-->
+            <view tt:if="{{item.pm_t_status_id==3}}" class="list_i_i list_i_i_status  fininshed">
+              <image class="list_i_i_status_img"
+                src="https://tb-test-erp.oss-cn-beijing.aliyuncs.com/img/pcPAlark/pc_fin.png">
+              </image>
+              已完成
+            </view>
+            <view tt:if="{{item.pm_t_status_id==1}}" class="list_i_i list_i_i_status  noStart">
+              <image class="list_i_i_status_img"
+                src="https://tb-test-erp.oss-cn-beijing.aliyuncs.com/img/pcPAlark/pc_during.png">
+              </image>
+              未开始
+            </view>
+            <view tt:if="{{item.pm_t_status_id==2}}" class="list_i_i list_i_i_status  during">
+              <image class="list_i_i_status_img"
+                src="https://tb-test-erp.oss-cn-beijing.aliyuncs.com/img/pcPAlark/pc_during.png">
+              </image>
+              进行中
+            </view>
+            <view tt:if="{{item.pm_t_status_id==0}}" class="list_i_i list_i_i_status  jump">
+              <image class="list_i_i_status_img"
+                src="https://tb-test-erp.oss-cn-beijing.aliyuncs.com/img/pcPAlark/pc_during.png">
+              </image>
+              已跳过
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

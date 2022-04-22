@@ -1,0 +1,52 @@
+<!-- 添加联系人 -->
+<tt-modal show="{{addContactsStatus}}" title="添加联系人" width="640" publicImgUrl="{{publicImgUrl}}"
+    bindclose="closeAddContacts">
+
+    <scroll-view scroll-y="{{scroll}}" scroll-top="{{scrollTop}}" class="add-scroll" scroll-into-view="{{scrollView}}">
+        <view class="addContacts-content">
+
+            <view class="addContacts-tabs">
+                <view class="addContacts-tabs-item" tt:for="{{addContactsTabs}}" tt:key="index" data-index="{{index}}"
+                    data-type="{{item.type}}" data-id="{{item.id}}" catchtap="tabsChange">
+                    <image class="addContacts-tabs-item-img"
+                        src="{{item.isSelected?publicImgUrl+'/img/pcPAlark/pc_choose_active.png':publicImgUrl+'/img/pcPAlark/pc_choose_default.png'}}">
+                    </image>
+                    <view>{{item.name}}</view>
+                </view>
+            </view>
+
+            <block tt:for="{{addContactsList}}">
+
+                <tt-input tt:if="{{item.viewType=='input'}}" data-type="{{item.type}}" id="{{item.type}}"
+                    necessary="{{item.necessary}}" lable="{{item.title}}" box-class="add-box-class"
+                    value="{{item.value}}" bindchange="getInputChange" />
+
+                <tt-select tt:if="{{item.viewType=='select'}}" data-type="{{item.type}}" id="{{item.type}}"
+                    necessary="{{item.necessary}}" lable="{{item.title}}" value="{{item.value}}"
+                    selectArray="{{item.selectArray}}" box-class="add-box-class" bindchange="getSelectChange" />
+
+                <tt-textarea tt:if="{{item.viewType=='textarea'}}" data-type="{{item.type}}" id="{{item.type}}"
+                    box-class="add-box-class" lable="{{item.title}}" value="{{item.value}}"
+                    necessary="{{item.necessary}}" bindchange="getInputChange" />
+
+                <view class="add-select-address" tt:if="{{item.viewType=='select-address'}}">
+                    <block tt:for="{{selectContactArray}}" tt:for-item="contact" tt:key="contactIndex"
+                        tt:for-index="contactIndex">
+                        <tt-select data-addressType="2" data-type="{{contact.type}}" necessary="{{contact.necessary}}"
+                            data-index="{{contactIndex}}" id="{{contact.type}}" selectedId="{{contact.selectedId}}"
+                            value="{{contact.value}}" select-class="select-class" selectArray="{{contact.selectArray}}"
+                            box-class="add-box-class" bindchange="getSelectAddressChange" />
+                    </block>
+                </view>
+
+            </block>
+
+            <!-- 按钮 -->
+            <view class="apply-button-box">
+                <view class="apply-button apply-sumbit" bindtap="getContactSubmit">保存</view>
+                <view class="apply-button apply-draft" bindtap="getAgainAdd">再次新建</view>
+            </view>
+        </view>
+    </scroll-view>
+
+</tt-modal>

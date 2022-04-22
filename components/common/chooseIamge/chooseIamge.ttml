@@ -1,0 +1,17 @@
+<view class="chooseImgBbox">
+
+    <block tt:for="{{urls}}">
+        <view class="chooseImgBbox_urls_img">
+            <image class="imgestyle" mode="{{mode}}" tt:if="{{publicImgUrl}}" src="{{item}}"></image>
+            <view class="deleteImg" data-id="{{index}}" catchtap="onTapRemove">
+                <image class="deleteImg_img" tt:if="{{publicImgUrl}}" 
+                    src="{{publicImgUrl+'/img/xcxCommon/newIcon/PAClose.png'}}">
+            </view>
+        </view>
+    </block>
+    <view tt:if="{{urls.length<9}}" class="chooseImgBbox_add" catchtap="onChangeTap">
+        <image class="chooseImgBbox_add_img" tt:if="{{publicImgUrl}}" 
+            src="{{publicImgUrl+'/img/xcxCommon/newIcon/PAadd.png'}}"></image>
+    </view>
+
+</view>

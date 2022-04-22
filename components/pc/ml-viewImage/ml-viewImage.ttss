@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+}
+
+.view-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  margin-left: 14px;
+}
+
+.view-icon:hover {
+  background: #2B4760;
+  border-radius: 1px;
+}
+
+.popover {
+  display: none;
+}
+
+.view-icon:hover>.popover {
+  display: block;
+}
+
+.showlist_img {
+  width: 16px;
+  height: 16px;
+  background-size: 100% 100%;
+}

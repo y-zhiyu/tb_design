@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "tb-navLeft": "../../common/nav-left/nav-left"
+  }
+}

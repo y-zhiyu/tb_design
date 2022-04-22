@@ -1,0 +1,8 @@
+<view class="noDateBox" style="margin-top:{{top?top+'px':''}}">
+    <image class="noDateBox_img" src="{{imgUrl?imgUrl:publicImgUrl+'/img/pcPAlark/pc_noDateV2.png'}}"></image>
+    <text class="noDateText">{{noDateText}}</text>
+    <text class="noDateText noDateText1" tt:if="{{noDateText1}}">{{noDateText1}}</text>
+    <view class="button-flex" tt:if="{{buttonText}}">
+        <view class="button-text" bindtap="onclickButton">{{buttonText}}</view>
+    </view>
+</view>

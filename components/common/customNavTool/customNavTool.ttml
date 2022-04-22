@@ -1,0 +1,23 @@
+<view class="cnTool {{fixed?'fixedStyle':''}} " style="height:{{cnToolHeight}}px">
+    <view class="cnTool_l  cnTool_l_btn">
+        <view class="cnTool_l_btn_i {{lDis?'clickStyle':'noClickStyle'}}" catchtap="{{lDis?'back':''}}">
+            <image class="cnTool_l_btn_i_img"
+                src="{{publicImgUrl}}{{lDis?'/img/pcPAlark/pc_back.png':'/img/pcPAlark/pc_backDis.png'}}"></image>
+        </view>
+        <!-- <view class="cnTool_l_btn_i {{rDis?'clickStyle':'noClickStyle'}}" catchtap="{{rDis?'forword':''}}">
+             <image class="cnTool_l_btn_i_img" src="{{publicImgUrl}}{{rDis?'/img/pcPAlark/pc_forword.png':'/img/pcPAlark/pc_forwordDis.png'}}"></image>
+        </view> -->
+        <!-- <view tt:if="{{showBackHome}}" class="cnTool_l_btn_i " catchtap="backHome">
+            <image class="cnTool_l_btn_i_img" src="{{publicImgUrl}}/img/pcPAlark/pc_backHome.png"></image>
+        </view> -->
+        <view class="cnTool_l_btn_i clickStyle" catchtap="refresh">
+            <image class="cnTool_l_btn_i_img" src="{{publicImgUrl}}/img/pcPAlark/pc_refresh.png"></image>
+        </view>
+
+    </view>
+    <view class="cnTool_c">
+        <view class="navtitle">{{navTitle}}</view>
+        <view class="vertion" tt:if="{{vertion}}">{{vertion}}</view>
+    </view>
+    <view class="cnTool_r"></view>
+</view>

@@ -1,0 +1,224 @@
+.proMDetailBox{
+    display: flex;
+}
+.proMDetailBox_l{
+    width: 68%;
+}
+
+.proMDetailBox_l_i_c_title_l{
+    display: flex; 
+    align-items: center;
+    color: #fff;
+}
+.pc_moduleBack_img{
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+.proMDetailBox_l_i{
+    padding:1px;
+    background: linear-gradient(138deg, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.3) 100%);
+    border-radius: 2px;
+}
+.proMDetailBox_l_i + .proMDetailBox_l_i{
+    margin-top:10px
+}
+.proMDetailBox_l_i_c{
+    background:#365068;
+    /* height: 100%; */
+    border-radius: 2px;
+    padding-bottom: 30px;
+}
+.proMDetailBox_l_i_c_title{
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    border-bottom: 1px solid #496278;
+
+}
+.submitArr{
+    width: 54px !important;
+    height: 22px !important;
+    font-size:9px !important; 
+    line-height: 22px !important;
+}
+.proMDetailBox_l_i_c_c{
+    padding: 0 15px;
+}
+.proMDetailBox_l_i_c_c_i{
+    display: flex;
+}
+.proMDetailBox_l_i_c_c_i_l{
+    width: 123px;
+    font-size: 13px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #8E9BA7;
+    padding-top: 20px;
+}
+.ohtertop{
+    margin-top: 20px;
+}
+.proMDetailBox_l_i_c_c_i_r{
+    font-size: 13px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    word-break: break-all;
+    flex: 1;
+}
+.novalue{
+    color: #83919F;
+}
+
+/* 采购内的表格 */
+.c_table{
+    width: 100%;
+    border-radius: 2px 2px 0px 0px;
+    border: 1px solid #496278;
+}
+.c_table_header{
+    display: flex;
+    align-items: center;
+    background: #496278;
+    border-radius: 2px 2px 0px 0px;
+    border: 1px solid #496278;
+    font-size: 13px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.c_table_list{
+    max-height:150px;
+    overflow: hidden;
+    overflow-y:auto ;
+}
+.c_table_header_i{
+    padding:13px 0 ;
+    text-align: center;
+}
+.c_table_header_i,
+.c_table_list_i_i{
+    width:40% ;
+  
+}
+.c_table_header_i:nth-child(2),
+.c_table_list_i_i:nth-child(2){
+    width:20% ;
+}
+.c_table_list_i{
+    display: flex;
+    align-items: center;
+    padding:14px;
+    text-align: center;
+    border-bottom: 1px solid #496278;;
+}
+.c_table_list_i_i{
+    font-size: 13px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF; 
+}
+.companyType{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.companyTypeTag{
+   margin-left: 26px;
+   padding: 2px 4px;
+   border-radius: 1px;
+   background: #586E82;
+   font-size: 8px;
+   font-family: PingFangSC-Regular, PingFang SC;
+   font-weight: 400;
+   color: #FFFFFF;
+}
+.noBorder{
+    border-bottom: 1px solid transparent;
+}
+/* 项目信息 */
+
+.proMDetailBox_r{
+    margin-left: 10px;
+    width: 32%;
+    border-radius: 2px;
+    background: #365068;
+    padding:0 15px 23px 15px;
+    box-sizing: border-box;  
+}
+.proMsg_title{
+    padding: 20px 0;
+    font-size: 14px;
+    font-family: PingFangSC-Heavy, PingFang SC;
+    font-weight: 800;
+    color: #E5E5E5;  
+}
+
+
+/* 分页测试 */
+.pagation{
+    display: flex;
+    align-items: center;
+}
+.pagation_i{
+    color: #fff;
+    font-size: 15px;
+}
+.pagation_center{
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.pagation_center_i{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid #fff;
+}
+.active{
+     border: 1px solid red;
+     background:red;
+}
+.pagation_center_i + .pagation_center_i{
+    margin-left: 20px;
+}
+.Noborder{
+    border: none;
+}
+/* 日志  */
+.project_process_box{
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+.project_process_i + .project_process_i{
+    margin-top: 45px;
+}
+.project_process_i_title{
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #E5E5E5;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.project_process_i_c{
+   position: relative;
+   padding-top: 1px;
+}
+
+.project_process_i_c_start{
+   display: flex;
+   align-items: center;
+}
+.project_process_i_c_start_i{
+    width: 50%;
+}
+.project_process_i_c_start_r{
+    border-left: 1px solid rgba(142, 155, 167, 1);
+    height: 39px;
+    box-sizing: border-box;
+}
+

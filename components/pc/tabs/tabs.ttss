@@ -1,0 +1,45 @@
+/* tab */
+.tab {
+  width: 100%;
+  z-index: 10;
+  display: flex;
+}
+
+.tab-fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.tab_i {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 26px;
+  font-size: 15px;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+  color: #83919F;
+}
+
+.tab_i_text{
+  padding: 6px 0;
+  box-sizing: border-box;
+}
+
+
+.active {
+  font-size: 16px;
+  font-family: PingFangSC-Heavy, PingFang SC;
+  font-weight: 800;
+  color: #F4F5F8;
+}
+
+.tab-line {
+  width: 70%;
+  height: 3px;
+  background: #FFFFFF;
+  border-radius: 2px;
+}

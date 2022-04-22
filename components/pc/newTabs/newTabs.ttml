@@ -1,0 +1,9 @@
+<view class="newTabsBox"  style="top:{{top}}px; background:{{themColor.blockBg}}">
+    <block tt:for="{{tabList}}" tt:key="index" tt:if="{{item.status}}">
+        <view class="newTabsBox_i {{align=='left'?'leftStyle':'default'}} {{tabActiveIdx==index && 'newTabsBox_i_active'}} table-class " catchtap="selectTab"
+            data-type="{{item.type}}" data-id="{{item.id}}">
+            {{item.text}}
+            <view class="newTabsBox_i_line {{tabActiveIdx==index?'newTabsBox_i_line_active':''}}"></view>
+        </view>
+    </block>
+</view>

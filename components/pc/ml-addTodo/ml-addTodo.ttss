@@ -1,0 +1,139 @@
+.scroll {
+  height: 520px;
+}
+
+.todo-container {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.todo-add {
+  padding: 35px 40px 10px 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #6A7D8F;
+  position: relative;
+}
+
+.input-box-class {
+  margin-bottom: 24px;
+}
+
+.input-lable-class {
+  width: 122px !important;
+  font-size: 15px !important;
+}
+
+.footer {
+  display: flex;
+  margin-top: 41px;
+  margin-bottom: 31px;
+  height: 44px;
+  padding-left: 42px;
+  box-sizing: border-box;
+}
+
+.footer-conserve {
+  width: 108px;
+  height: 44px;
+  background: #0081B2;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.footer-conserve:hover {
+  background: #009BD7;
+}
+
+.footer-add {
+  width: 232px;
+  height: 44px;
+  border-radius: 4px;
+  border: 1px solid #83919F;
+  font-size: 15px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #D8DCE6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.footer-add:hover {
+  background: #2B4760;
+}
+
+.footer-add-img {
+  width: 16px;
+  height: 16px;
+  background-size: 100% 100%;
+}
+
+.date-picker {
+  width: 224px;
+  height: 40px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #909399;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.date-picker-value {
+  width: 170px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  box-sizing: border-box;
+
+}
+
+.picker-date-del {
+  width: 12px;
+  height: 12px;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.todo-del-flex {
+  position: absolute;
+  top: 34px;
+  right: 7px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-del {
+  width: 22px;
+  height: 22px;
+  background-size: 100% 100%;
+}
+
+.popover {
+  display: none;
+}
+
+.todo-del-flex:hover>.popover {
+  display: block;
+}
+
+.textarea-class{
+  height: 80px !important;
+  
+}

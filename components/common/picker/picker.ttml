@@ -1,0 +1,16 @@
+<view class="pickerBox">
+    <view class="pickerBox_i box-class" tt:if="{{pickerType =='date'}}">
+        <view class="pickerBox_i_title" tt:if="{{lable}}">
+            <view class="input-necessary {{necessary?'input-necessary_active':''}}">*</view>
+            {{lable}}
+        </view>
+        <picker class="picker {{errorText?'picker-error':''}}" mode="date" value="{{date}}" start="{{start}}" end="{{end}}"
+            bindchange="bindDayDateChange" fields="day">
+            <view class="picker-trigger {{dayDate?'':'picker-trigger-default'}} ">
+                {{dayDate?dayDate:'请选择'}}
+              
+            </view> 
+        </picker>
+        <view class="picker-error-text" tt:if="{{errorText}}">{{errorText}}</view>
+    </view>
+</view>

@@ -1,0 +1,48 @@
+<view class="steps-page" tt:if="{{stepstype=='default'}}">
+  <view class="steps" tt:for="{{stepList}}" tt:key="index" data-index='{{index}}' data-item="{{item}}"
+    bindtap="gotoTask" tt:if="{{item.user_data.length>0 || item.cc_user_data.length>0}}">
+    <view class="steps-content-title">{{item.node_name}}</view>
+
+    <view class="cc_nummber" tt:if="{{item.cc_user_data.length>0}}">{{'抄送'+item.cc_user_data.length+'人'}}</view>
+    
+    <view class="steps-content-detail"
+      tt:for="{{item.user_data.length>0?item.user_data:item.cc_user_data.length>0?item.cc_user_data:[]}}"
+      tt:key="index">
+      <image class="steps-content-image"
+        src="{{item.fs_avatar_url?item.fs_avatar_url:publicImgUrl+'/img/pcPAlark/pc_upload_avaturl.png'}}"></image>
+      <view class="steps-content-name">{{item.uc_name}}</view>
+    </view>
+    <view class="steps-icon-bg">
+      <image class="steps-icon" tt:if="{{publicImgUrl}}"
+        src="{{item.cc_user_data.length>0?publicImgUrl+'/img/pcPAlark/pc_cc2.png':publicImgUrl+'/img/pcPAlark/pc_approve2.png'}}">
+      </image>
+    </view>
+  </view>
+</view>
+
+<!-- type=='success -->
+<view class="steps-success-page" tt:if="{{stepstype=='success'}}">
+  <view class="steps-success" tt:for="{{stepList}}" tt:key="index" data-index='{{index}}' data-item="{{item}}"
+    bindtap="gotoTask">
+    <view class="steps-success-content-detail">
+      <view>
+        <view class="steps-success-content-title">{{item.node_name}}</view>
+        <view class="steps-success-content-name">{{item.status==0?'抄送':item.status==1?'已通过':'发起审批'}}</view>
+      </view>
+      <view class="steps-success-content-time">{{item.time}}</view>
+    </view>
+    <view class="steps-success-content-msg" tt:if="{{item.msg}}">{{item.msg}}</view>
+    <view class="steps-success-cc-flex">
+      <view class="steps-success-cc" tt:if="{{item.status==0}}">
+        <image class="steps-success-cc-image" src="{{publicImgUrl+'/img/pcPAlark/pc_upload_avaturl.png'}}"></image>
+        <text>liuzhiyu</text>
+      </view>
+    </view>
+    <view class="steps-success-icon-bg">
+      <image class="steps-success-icon" tt:if="{{publicImgUrl}}" src="{{publicImgUrl+'/img/pcPAlark/pc_approve2.png'}}">
+      </image>
+      <image class="steps-success-icon-status" tt:if="{{publicImgUrl}}"
+        src="{{publicImgUrl+'/img/pcPAlark/pc_apply_success.png'}}"></image>
+    </view>
+  </view>
+</view>

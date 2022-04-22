@@ -1,0 +1,20 @@
+<view class="filterBox filterBox_style" catchtap="closeFilterBox">
+    <view class="filterBoxCon" style="background:{{themColor.blockBg}}" catchtap="stop">
+        <view class="filterBoxCon_title filterBoxCon_title_style">
+            {{title}}
+            <view class="filterBox_close" catchtap="closeFilterBox">
+                <image class="filterBox_closeImg" src="{{publicImgUrl}}/img/pcPAlark/pc_mode_colse.png"></image>
+            </view>
+        </view>
+        <view class="arrow"></view>
+        <view class="filterBox_con filterBox_con_style">
+            <slot></slot>
+        </view>
+
+        <view class="fbBox_btnRest fbBox_btnRest_style">
+            <tt-button btnType="bg" btnClass="btnClass btnClass_style" showText="重置" bindclick="btnRest"></tt-button>
+        </view>
+    </view>
+
+</view>
+<!-- animation="{{centerAnimation}}" -->

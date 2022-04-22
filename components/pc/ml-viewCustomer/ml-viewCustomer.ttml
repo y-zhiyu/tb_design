@@ -1,0 +1,27 @@
+<view class="view-list">
+	<view class='view-item' tt:for="{{dataViewList}}" tt:key="index" data-item="{{item}}"
+		id="id_{{item.ac_account_id}}" bindtap="getDetail">
+		<image mode='aspectFit' class="view-item-left-img"
+			src="{{item.ac_account_logo_url?item.ac_account_logo_url:publicImgUrl+'/img/pcPAlark/pc_customer_logo.png'}}">
+		</image>
+
+		<!-- <view class="view-item-left" tt:if="{{!item.ac_account_logo_url}}">
+			<image class="view-item-default-img" src="{{publicImgUrl+'/img/pcPAlark/pc_customer_logo.png'}}">
+			</image>
+		</view> -->
+
+		<view class='view-item-right'>
+			<view class='view-item-name'>{{item.ac_account_name}}</view>
+			<view class='view-item-address'>{{item.ac_account_splice_addr}}</view>
+			<view class='view-item-content'>
+				<tt-rate rate-img-class='rate-img-class' count="{{item.ac_account_priority_id}}"
+					starCount="{{item.ac_account_priority_id}}" publicImgUrl="{{publicImgUrl}}"
+					bindchange="getStarsChange" />
+			</view>
+			<view class='view-item-content'>
+				<view class='view-item-number'>商机{{item.meta.business_opportunities_count}}</view>
+				<view class='view-item-number'>项目{{item.meta.prj_count}}</view>
+			</view>
+		</view>
+	</view>
+</view>
