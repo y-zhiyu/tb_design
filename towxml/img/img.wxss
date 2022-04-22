@@ -1,0 +1,2 @@
+/**基础风格样式**/
+@import '../style/main.wxss';

@@ -1,15 +1,19 @@
-.container {
-  display: flex;
-}
-
-.container-left {
-  width: 200px;
-}
-
-.container-right {
-  display: flex;
-}
-
 .btn_class {
   margin-right: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+}
+
+.content-button {
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.content-md{
+  width:100%;
 }

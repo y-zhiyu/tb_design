@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "md-config": "node ./md.config"
+    }
+}

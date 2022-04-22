@@ -14,8 +14,7 @@ Component({
       type: String,
       value: "",
       observer: function (newVal, oldVal, changedPath) {
-        console.log("selectedType", this.data.selectedType);
-
+        
         this.init(this.data.selectedType);
       },
     },
