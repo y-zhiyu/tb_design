@@ -1,6 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "tt-popover": "/components/common/popover/popover"
-    }
-}

@@ -5,6 +5,7 @@
     "pages/dev/input/input",
     "pages/dev/modal/modal",
     "pages/dev/icon/icon",
+    "pages/dev/checkBox/checkBox",
     "pages/dev/pagination/pagination",
     "pages/dev/menu/menu"
   ],

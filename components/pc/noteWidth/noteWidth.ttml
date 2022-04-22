@@ -1,7 +1,0 @@
-<view class="noteWidthBox" tt:if="{{isClose}}">
-    <view class="noteWidthBox_con">
-        为了保证您的使用体验，请将窗口拉伸至 1340px 以上 (目前的高度为 <text class="noteWidthBox_con_text">{{currWidth}}</text>px )
-        <image catchtap="closeNote" class="noteWidthBox_con_img" src="{{publicImgUrl}}/img/pcPAlark/pc_mode_colse.png"></image>
-    </view>
-</view>
-          

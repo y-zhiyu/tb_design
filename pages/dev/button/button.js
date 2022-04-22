@@ -7,15 +7,15 @@ Page({
    */
   data: {
     article: {},  // 内容数据
-    
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const source = require('./md/doc.js');
-    const article = app.towxml(source, 'markdown');
+    let source = require('./md/doc.js');
+    let article = app.towxml(source, 'markdown');
 
     this.setData({
       article: article

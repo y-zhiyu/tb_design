@@ -1,6 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "tt-table": "/components/common/table/table"
-    }
-}

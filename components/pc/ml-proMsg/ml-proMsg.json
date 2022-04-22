@@ -1,6 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "tt-avatarGroup":"../../common/avatarGroup/avatarGroup"
-    }
-}
