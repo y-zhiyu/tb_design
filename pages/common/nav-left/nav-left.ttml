@@ -13,6 +13,6 @@
                 <towxml nodes="{{article}}" />
             </view>
         </view>
-        
+
     </view>
 </view>

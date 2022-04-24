@@ -1,5 +1,5 @@
 Component({
-  externalClasses: ["btn_class"],
+  externalClasses: ["btn_class", "btn_icon"],
   /**
    * 组件的属性列表
    */
@@ -23,6 +23,17 @@ Component({
       type: Boolean,
       value: false,
     },
+
+    imgStatus: {
+      type: Boolean,
+      value: false,
+    },
+
+    imgUrl: {
+      type: String,
+      value: "",
+    },
+
   },
 
   /**

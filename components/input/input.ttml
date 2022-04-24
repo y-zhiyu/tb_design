@@ -1,10 +1,13 @@
 <view class="input-container box_class">
-  <view tt:if="{{lable}}" class="input-title lable-class">
+  <view tt:if="{{lable}}" class="input-title lable_class">
     <view class="input-necessary {{necessary?'input-necessary_active':''}}">*</view>
     <view>{{lable}}</view>
   </view>
-  <view class='input-box {{errorText && "input-error"}} input-class {{disabled && "input-disabled"}}'>
+  <view class='input-box {{errorText && "input-error"}} input_class {{disabled && "input-disabled"}}'>
     <view class="input-content" tt:if="{{!disabled}}">
+      <view class="input-left" tt:if="{{imgPosition=='left'}}" catchtap="getIconClick">
+        <image class="input-icon" src="{{imgUlr?imgUlr:'/components/images/searchOutlined.svg'}}"></image>
+      </view>
       <input
         tt:if="{{isSlot}}"
         type="{{type}}"
@@ -21,9 +24,14 @@
       <block tt:if="{{!isSlot}}">
         <slot />
       </block>
+
+      <view class="input-right" tt:if="{{imgPosition=='right'}}" catchtap="getIconClick">
+        <image class="input-icon" src="{{imgUlr?imgUlr:'/components/images/searchOutlined.svg'}}"></image>
+      </view>
+
     </view>
     <block tt:if="{{disabled}}">{{value}}</block>
-
   </view>
+
   <view class="input-error-text" tt:if="{{errorText}}">{{errorText}}</view>
 </view>

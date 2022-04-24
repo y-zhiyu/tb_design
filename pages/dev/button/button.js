@@ -7,7 +7,7 @@ Page({
    */
   data: {
     article: {},  // 内容数据
-
+    imgUrl: ''
   },
 
   /**
@@ -71,5 +71,13 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+  onCLick() {
+    console.log('点击---');
+    this.setData({
+      imgUrl: '/components/images/loadingOutlined.png'
+    })
+
+  }
 
 })

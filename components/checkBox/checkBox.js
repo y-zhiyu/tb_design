@@ -1,20 +1,19 @@
 Component({
-    externalClasses: ["btn_class"],
+    externalClasses: ["check_class", "check_item_class", "check_item_left_class", "check_icon_class"],
     /**
      * 组件的属性列表
      */
     properties: {
-        type: {
-            type: String,
-            value: "default",
-        },
-
-        size: {
+        text: {
             type: String,
             value: "",
         },
 
-        text: {
+        checked: {
+            type: Boolean,
+            value: false,
+        },
+        imgUrl: {
             type: String,
             value: "",
         },
@@ -23,6 +22,16 @@ Component({
             type: Boolean,
             value: false,
         },
+
+        checkBoxList: {
+            type: Array,
+            value: [],
+        },
+
+        direction: {
+            type: String,
+            value: "row",// column
+        }
     },
 
     /**
@@ -34,11 +43,18 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        onClick() {
+        onChange() {
             let { disabled } = this.data;
             if (disabled) return;
 
-            this.triggerEvent("onclick");
+            this.triggerEvent("onChange");
         },
+
+        onChangeItem(e) {
+            let { item, index } = e.currentTarget.dataset;
+            if (item.disabled) return;
+
+            this.triggerEvent("onChange", { item, index });
+        }
     },
 });

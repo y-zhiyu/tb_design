@@ -7,7 +7,13 @@ Page({
      */
     data: {
         article: {},  // 内容数据
-
+        checked: false,
+        checkBoxList: [
+            { 'id': '1', 'text': '选项一', checked: false, disabled: true },
+            { 'id': '2', 'text': '选项二', checked: true, },
+            { 'id': '3', 'text': '选项三', checked: false, },
+            { 'id': '4', 'text': '选项四', checked: false, }
+        ],
     },
 
     /**
@@ -70,5 +76,21 @@ Page({
     onShareAppMessage: function () {
 
     },
+
+    getChange() {
+        this.setData({
+            checked: !this.data.checked
+        })
+    },
+
+    getChangeValue(e) {
+        let { checkBoxList } = this.data;
+        let { item, index } = e.detail;
+        console.log('item', item)
+
+        this.setData({
+            [`checkBoxList[${index}].checked`]: !checkBoxList[index].checked
+        })
+    }
 
 })

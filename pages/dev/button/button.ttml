@@ -1,8 +1,20 @@
 <tb-navLeft menuList="{{menuList}}" selectedType="button" article="{{article}}">
+    <view class="content">
+        <view class="content-title">默认</view>
+        <view class="content-flex">
+            <tb-button text="default" btn_class="btn_class" />
+            <tb-button text="primary" type='primary' btn_class="btn_class" />
+            <tb-button text="danger" type='danger' btn_class="btn_class" />
+            <tb-button text="disabled" type='disabled' disabled="{{true}}" btn_class="btn_class" />
+        </view>
+    </view>
 
-    <tb-button text="default" btn_class="btn_class" />
-    <tb-button text="primary" type='primary' btn_class="btn_class" />
-    <tb-button text="danger" type='danger' btn_class="btn_class" />
-    <tb-button text="disabled" type='disabled' disabled="{{true}}" btn_class="btn_class" />
+    <view class="content">
+        <view class="content-title">按钮图标</view>
+        <view class="content-flex">
+            <tb-button text="add" imgStatus="{{true}}" btn_class="btn_class" />
+            <tb-button text="add" type='primary' imgStatus="{{true}}" btn_class="btn_class" />
+        </view>
+    </view>
 
 </tb-navLeft>

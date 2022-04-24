@@ -1,7 +1,4 @@
 {
-    "navigationBarTitleText": "",
-    "usingComponents": {
-        "tb-menu": "/components/menu/menu",
-        "tb-button": "/components/button/button"
-    }
+    "navigationBarTitleText": "飞书小程序组件库",
+    "usingComponents": {}
 }

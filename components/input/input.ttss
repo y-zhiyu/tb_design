@@ -10,10 +10,10 @@
 }
 
 .input-title {
-  width: 122px;
+  width: 120px;
   font-size: 15px;
   font-weight: 400;
-  color: #83919F;
+  color: #666666;
   display: flex;
 }
 
@@ -41,7 +41,7 @@
 
 .input-box:active {
   border: 1px solid #1890FF;
-  box-shadow: 0px 0px 4px 2px rgba(73,144,226, 0.3);
+  box-shadow: 0px 0px 4px 2px rgba(73, 144, 226, 0.3);
 }
 
 .input-box-selected {
@@ -69,12 +69,8 @@
   font-weight: 400;
   box-sizing: border-box;
   border: none;
-  color: #fff;
+  color: #141414;
   background: none;
-}
-
-.input-normal {
-  color: #909399;
 }
 
 .input-error {
@@ -95,14 +91,43 @@
 .input-disabled {
   width: 224px;
   height: 40px;
-  background: #99A6B2;
-  border: 1px solid #D8DCE6;
+  background: #F6F6F6;
+  border: 1px solid #E0E0E0;
   cursor: no-drop;
   padding-left: 15px;
   box-sizing: border-box;
   font-size: 13px;
   font-weight: 400;
-  color: #333333;
+  color: #D4D4D4;
   display: flex;
   align-items: center;
+}
+
+.input-disabled:hover {
+  border: 1px solid #E0E0E0;
+  box-shadow: none;
+}
+
+.input-left {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.input-right {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.input-icon {
+  width: 14px;
+  height: 14px;
+  background-size: 100% 100%;
 }

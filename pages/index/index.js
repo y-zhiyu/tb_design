@@ -1,13 +1,9 @@
-const app = getApp();
-import { getMenuList } from '../../utils/menu.js'
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    selectedType: "button"
   },
 
   /**
@@ -15,7 +11,6 @@ Page({
    */
   onLoad: function (options) {
 
-    getMenuList()
   },
 
   /**
@@ -65,15 +60,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  getItemChange(e) {
-    let { type, index } = e.detail;
-    this.setData({
-      selectedType: type
-    })
-
-    tt.navigateTo({ 'url': `/pages/dev/${type}/${type}` });
   },
 
 

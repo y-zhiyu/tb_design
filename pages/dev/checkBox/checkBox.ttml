@@ -1,3 +1,18 @@
 <tb-navLeft menuList="{{menuList}}" selectedType="checkBox" article="{{article}}">
-    <tb-checkBox />
+
+    <view class="content">
+        <view class="content-title">单个checkbox</view>
+        <tb-checkBox text='checkBox' checked="{{checked}}" bindonChange="getChange" />
+    </view>
+
+    <view class="content">
+        <view class="content-title">禁止态</view>
+        <tb-checkBox text='checkBox' disabled="{{true}}" />
+    </view>
+
+    <view class="content">
+        <view class="content-title">checkbox组</view>
+        <tb-checkBox text='checkBox' checkBoxList="{{checkBoxList}}" direction="column" bindonChange="getChangeValue" />
+    </view>
+
 </tb-navLeft>

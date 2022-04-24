@@ -17,7 +17,7 @@
   },
   "ext": {
     "defaultPages": {
-      "sidebarMode": "pages/dev/button/button",
+      "sidebarMode": "pages/index/index",
       "PCMode": "pages/dev/button/button"
     }
   }

@@ -1,0 +1,69 @@
+.checkBox-contanier {
+  display: flex;
+}
+
+.checkBox-item {
+  display: flex;
+  align-items: center;
+  color: #141414;
+  font-size: 14px;
+}
+
+.checkBox-item:hover .checkBox-border {
+  border: 1px #1890FF solid;
+  box-sizing: border-box;
+}
+
+.checkBox-border {
+  width: 14px;
+  height: 14px;
+  border: 1px #E0E0E0 solid;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.checkBox-icon {
+  width: 10px;
+  height: 10px;
+  background-size: 100% 100%;
+  transform: translateY(-1em);
+  filter: drop-shadow(0 1em 0 #fff);
+}
+
+.checkBox-checked {
+  background-color: #1890FF;
+  border: none;
+}
+
+.checkBox-group {
+  margin-right: 20px;
+}
+
+.checkBox-group-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkBox-group-row {
+  margin-bottom: 10px;
+}
+
+
+/* 禁止 */
+.checkBox-disabled{
+  color: #D4D4D4;
+  cursor: not-allowed;
+}
+
+.checkBox-disabled .checkBox-border{
+  background: #F6F6F6;
+  border: 1px #E0E0E0 solid;
+}
+
+.checkBox-disabled:hover .checkBox-border {
+  border: 1px #E0E0E0 solid;
+}

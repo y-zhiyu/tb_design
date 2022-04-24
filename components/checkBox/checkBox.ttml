@@ -1,1 +1,23 @@
-<text>Hello, world!</text>
+<view class="checkBox-contanier {{direction=='column' && 'checkBox-group-flex'}} check_class">
+
+    <!-- 单个 -->
+    <view tt:if="{{checkBoxList.length==0}}" class="checkBox-item {{disabled && 'checkBox-disabled'}} check_item_class"
+        bindtap="onChange">
+        <view class="checkBox-border {{checked && 'checkBox-checked'}} check_item_left_class">
+            <image tt:if="{{checked}}" class="checkBox-icon check_icon_class"
+                src="{{imgUrl?imgUrl:'/components/images/checkOutlined.svg'}}"></image>
+        </view>
+        {{text}}
+    </view>
+
+    <!-- 组 -->
+    <view tt:if="{{checkBoxList.length>0}}" tt:for="{{checkBoxList}}" tt:key="index"
+        class="checkBox-item checkBox-group {{direction=='column' && 'checkBox-group-row'}} {{item.disabled && 'checkBox-disabled'}} check_item_class"
+        data-index="{{index}}" data-item="{{item}}" bindtap="onChangeItem">
+        <view class="checkBox-border {{item.checked && 'checkBox-checked'}} check_item_left_class">
+            <image tt:if="{{item.checked}}" class="checkBox-icon check_icon_class"
+                src="{{imgUrl?imgUrl:'/components/images/checkOutlined.svg'}}"></image>
+        </view>
+        {{item.text}}
+    </view>
+</view>

@@ -22,10 +22,42 @@
    hover: #ff7875;
  */
 
+/* disabled
+  background: #F6F6F6;
+  color: #D4D4D4;
+  border: 1px solid #E0E0E0;
+   */
 
 
 /* 公共 */
 page {
   font-family: PingFangSC-Regular, PingFang SC;
   font-size: 14px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+.content-flex {
+  display: flex;
+}
+
+.content-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-title {
+  height: 30px;
+  color: #323232;
+  margin-bottom: 20px;
+  font-size: 12px;
+  border-bottom: 1px solid #e0e0e0;
 }

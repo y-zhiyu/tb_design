@@ -6,6 +6,7 @@
 
 .app-container-left {
   width: 200px;
+  min-width: 200px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -26,10 +27,12 @@
   display: flex;
   flex-direction: column;
   flex: auto;
+  overflow-y:auto;
+  overflow-x: hidden;
 }
 
 .app-content-components {
-  display: flex;
+  /* display: flex; */
   margin-bottom: 30px;
   margin-top: 30px;
 }

@@ -1,7 +1,7 @@
-// import { isChinaNameValue, isEnglish } from "../../../utils/util.js";
+import { isChina, isEnglish } from "../utils/index.js";
 
 Component({
-  externalClasses: ["box_class", "lable-class", "input-class"],
+  externalClasses: ["box_class", "lable_class", "input_class"],
   /**
    * 组件的属性列表
    */
@@ -29,36 +29,40 @@ Component({
     value: {
       type: String,
       value: "",
-      observer: function (newVal, oldVal, changedPath) {
-        // console.log('input组件newVal-----', this.data.value)
-        // console.log('input组件oldVal-----', oldVal);
-      },
     },
     maxlength: {
-      type: Number,
+      type: Number || String,
       value: 255,
     },
     disabled: {
       type: Boolean,
       value: false,
     },
+
     isSlot: {
       type: Boolean,
       value: true,
     },
-    isLimit: {
+
+    chinaStatus: {
       type: Boolean,
       value: false,
     },
 
-    length: {
-      type: Number,
-      value: 0,
+    englishStaus: {
+      type: Boolean,
+      value: false,
     },
-    regType: {
+
+    imgPosition: {
       type: String,
       value: "",
     },
+
+    imgUlr: {
+      type: String,
+      value: "",
+    }
   },
 
   /**
@@ -69,25 +73,26 @@ Component({
   /**
    * 组件的方法列表
    */
+
   methods: {
     onChange(e) {
       // console.log(e);
       let value = e.detail.value;
 
-      let { isLimit, length, regType } = this.data;
+      let { maxlength, chinaStatus, englishStaus } = this.data;
 
       // 只能输入中文
-      if (isLimit) {
-        value = isChinaNameValue(value);
+      if (chinaStatus) {
+        value = isChina(value);
       }
 
       // 限制最大长度
-      if (length > 0) {
-        value = value.substring(0, length);
+      if (maxlength > 0) {
+        value = value.substring(0, maxlength);
       }
 
       // 不能输入中文
-      if (regType == "isEnglish") {
+      if (englishStaus) {
         value = isEnglish(value);
       }
 
@@ -103,17 +108,24 @@ Component({
         value,
       });
     },
+
     onBlur(e) {
       let value = e.detail.value;
       this.triggerEvent("blur", {
         value,
       });
     },
+
     onConfim(e) {
       let value = e.detail.value;
       this.triggerEvent("confim", {
         value,
       });
     },
+
+    getIconClick() {
+      this.triggerEvent("search");
+    }
+
   },
 });

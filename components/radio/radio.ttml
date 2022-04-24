@@ -1,0 +1,22 @@
+<view class="radio-tabs">
+    <view class="radio-tabs-item {{isProgress && 'progress-item'}}" tt:for="{{radioTabs}}" tt:key="index"
+        data-index="{{index}}" data-item="{{item}}" catchtap="tabsChange">
+
+        <block tt:if="{{!isProgress}}">
+            <image class="radio-tabs-item-img"
+                src="{{item.type==tabType?publicImgUrl+'/img/pcPAlark/pc_choose_active.png':publicImgUrl+'/img/pcPAlark/pc_choose_default.png'}}">
+            </image>
+            <view>{{item.name}}</view>
+        </block>
+
+        <block tt:if="{{isProgress}}">
+            <view class="progress-left {{item.id==tabType && 'active'}}">
+                <view class="progress-index {{item.id==tabType && 'active-index'}}">{{item.id}}</view>
+                {{item.name}}
+            </view>
+            <image class="progress-img" tt:if="{{index !=radioTabs.length-1}}"
+                src="{{publicImgUrl+'/img/pcPAlark/pc_fileiconLeft.png'}}"></image>
+        </block>
+
+    </view>
+</view>

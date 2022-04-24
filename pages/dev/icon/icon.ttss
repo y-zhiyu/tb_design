@@ -1,6 +1,7 @@
 .content-icon {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .icon-item {

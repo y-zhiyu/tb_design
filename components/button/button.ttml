@@ -1,5 +1,9 @@
 <view
     class="btn-box {{type=='default' && 'btn-default'}} {{type=='primary' && 'btn-primary'}} {{type=='danger' && 'btn-danger'}} {{disabled && 'btn-disabled'}} btn_class"
     bindtap="onClick">
+    <!-- <image class="btn-img" tt:if="{{imgStatus}}" src="{{imgUrl?imgUrl:'/components/images/addOutlined.png'}}"></image> -->
+    <view class="svg-icon btn_icon" tt:if="{{imgStatus}}">
+        <image class="svg-icon-inner" src="{{imgUrl?imgUrl:'/components/images/addOutlined.svg'}}" />
+    </view>
     {{text}}
 </view>
