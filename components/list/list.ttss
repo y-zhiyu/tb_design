@@ -1,0 +1,27 @@
+.list-content {
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  margin-bottom: 24px;
+}
+
+.list-title {
+  width: 100px;
+  height: 16px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #8E9BA7;
+  white-space:nowrap;
+  min-width: 77px;
+}
+
+.list-value {
+  flex: auto;
+  font-size: 13px;
+  font-weight: 400;
+  color: #FFFFFF;
+  /* word-break:normal;  */
+  word-break:break-all; 
+  word-wrap:break-word; 
+  
+}

@@ -1,0 +1,17 @@
+<block tt:if='{{!placeStatus}}'>
+    <view class="list-content" tt:for="{{listArray}}" tt:key="index" tt:if="{{listArray.length>0 && item.title}}">
+        <view class="list-title">{{item.title}}</view>
+        <view class="list-value">{{item.value}}</view>
+        <slot />
+    </view>
+
+</block>
+
+<block tt:if='{{placeStatus}}'>
+    <view class="list-content" tt:for="{{listArray}}" tt:key="index"
+        tt:if="{{listArray.length>0 && item.title && item.placeType==placeType}}">
+        <view class="list-title">{{item.title}}</view>
+        <view class="list-value">{{item.value}}</view>
+        <slot />
+    </view>
+</block>

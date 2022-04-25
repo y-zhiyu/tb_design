@@ -18,7 +18,7 @@
         bindinput='onChange'
         bindfocus='onFocus'
         bindblur="onBlur"
-        bindconfirm="onConfim"
+        bindconfirm="onConfirm"
         placeholder-style="placeholder-style" />
 
       <block tt:if="{{!isSlot}}">

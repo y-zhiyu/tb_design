@@ -1,0 +1,8 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="datePicker" article="{{article}}">
+    <view class="content">
+        <view class="content-title">默认</view>
+        <view class="content-flex">
+            <tb-datePicker />
+        </view>
+    </view>
+</tb-navLeft>

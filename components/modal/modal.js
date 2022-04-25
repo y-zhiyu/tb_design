@@ -1,12 +1,10 @@
 Component({
+  externalClasses: ["modal_class", "title_class", "icon_class"],
+
   /**
    * 组件的属性列表
    */
   properties: {
-    themColor: {
-      type: Object,
-      value: null,
-    },
     show: {
       type: Boolean,
       value: false,
@@ -27,13 +25,9 @@ Component({
       type: String,
       value: "",
     },
-    publicImgUrl: {
-      type: String,
-      value: "",
-    },
     isLayout: {
       type: Boolean,
-      value: true,
+      value: false,
     },
   },
 
@@ -46,8 +40,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    
     getClose() {
       this.triggerEvent("close");
     },
+
+    getLayout() {
+      this.triggerEvent("layout");
+    },
+
   },
 });

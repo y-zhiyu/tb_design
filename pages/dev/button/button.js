@@ -72,7 +72,7 @@ Page({
 
   },
 
-  onCLick() {
+  onClick() {
     console.log('点击---');
     this.setData({
       imgUrl: '/components/images/loadingOutlined.png'

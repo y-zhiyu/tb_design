@@ -3,10 +3,7 @@
   height: 46px;
   display: flex;
   align-items: center;
-  /* justify-content: space-around; */
-  /* background: #365068; */
   box-sizing: border-box;
-
 }
 
 .pagination_i {
@@ -25,14 +22,12 @@
   color: #8E9BA7;
 }
 
-.totalPicker,
-.pagination_i_inputBox {
+.totalPicker{
   margin: 0 8px;
-  width: 58px;
-  height: 26px !important;
+  width: 60px;
+  height: 26px;
   border: 1px solid #DCDFE6;
   border-radius: 3px;
-  /* padding: 0px 10px; */
   box-sizing: border-box;
   font-size: 13px;
   font-family: SFProText-Regular, SFProText;
@@ -95,4 +90,19 @@
   font-family: SFProText-Medium, SFProText;
   font-weight: 500;
   color: #1989FA;
+}
+
+.input_class {
+  width: 60px !important;
+  height: 26px !important;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.icon-disabled{
+  cursor: no-drop;
 }

@@ -1,6 +1,36 @@
-<tb-navLeft menuList="{{menuList}}" selectedType="pagination">
-    <tb-pagination themColor="{{themColor}}" allTotal="{{allTotal}}" total="{{total}}" current="{{current}}"
-        pageSize="{{pageSize}}" pageNumber="{{pageNumber}}" bindchange="getPageChange" bindpageSize="getPageSize"
-        bindpageInput="getPageInput" bindgetconfirm="getconfirm">
-    </tb-pagination>
+<tb-navLeft menuList="{{menuList}}" selectedType="pagination" article="{{article}}">
+
+    <view class="content">
+        <view class="content-title">分页</view>
+        <view class="content-flex">
+            <tb-pagination 
+                total="{{total}}" 
+                isSelect="{{true}}"
+                current="{{current}}" 
+                pageSize="{{pageSize}}" 
+                pageNumber="{{pageNumber}}"
+                bindchange="getPageChange"
+                bindpageSize="getPageSize"
+                bindpageInput="getPageInput"
+                bindpageConfirm="getPageConfirm"/>
+        </view>
+    </view>
+
+        <view class="content">
+        <view class="content-title">可输入跳转页数</view>
+        <view class="content-flex">
+            <tb-pagination 
+                isInput="{{true}}"
+                isSelect="{{true}}"
+                total="{{total}}" 
+                current="{{current}}" 
+                pageSize="{{pageSize}}" 
+                pageSizeArr="{{pageSizeArr}}"
+                pageNumber="{{pageNumber}}"
+                bindchange="getPageChange"
+                bindpageSize="getPageSize"
+                bindpageInput="getPageInput"
+                bindpageConfirm="getPageConfirm"/>
+        </view>
+    </view>
 </tb-navLeft>

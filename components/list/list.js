@@ -4,10 +4,6 @@ Component({
      * 组件的属性列表
      */
     properties: {
-         publicImgUrl: {
-            type: String,
-            value: ''
-        },
         listArray: {
             type: Array,
             value: false
@@ -33,10 +29,6 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        lookEnclosure(e){
-            // console.log(e)
-            let { url ,extension} = e.currentTarget.dataset;
-            this.triggerEvent('lookEnclosure',{ failePath:url,extension})
-        }
+
     }
 })

@@ -1,7 +1,21 @@
-<tb-navLeft menuList="{{menuList}}" selectedType="modal">
+<tb-navLeft menuList="{{menuList}}" selectedType="modal" article="{{article}}">
+
     <view class="content">
-        <tb-button text="默认" bindonclick="getClick" />
-        <tb-modal themColor="{{themColor}}" show="{{modalStatus}}" title="标题文案" width="450" height='400'
-            bindclose="getClose" />
+        <view class="content-title">默认</view>
+        <view class="content-flex">
+            <tb-button text="点击" bindonClick="getClick" />
+            <tb-modal show="{{modalStatus}}" title="标题文案" bindclose="getClose" />
+
+        </view>
     </view>
+
+    <view class="content">
+        <view class="content-title">有遮罩层</view>
+        <view class="content-flex">
+            <tb-button text="点击" bindonClick="getClick1" />
+            <tb-modal show="{{modalStatus1}}" title="标题文案" isLayout="{{true}}" width="400" height='250'
+                bindclose="getClose1" bindlayout="getLayout1" />
+        </view>
+    </view>
+
 </tb-navLeft>

@@ -17,6 +17,7 @@ const getMenuList = (data) => {
         { label: 'Textarea', labelCn: "多行文本框", type: 'textarea' },
         { label: 'Table', labelCn: "表格", type: 'table' },
         { label: 'Toast', labelCn: "提示", type: 'toast' },
+        { label: 'utils', labelCn: "公共方法", type: 'utils' },
     ];
     let pageCurrentPage = getCurrentPages()[getCurrentPages().length - 1];
 

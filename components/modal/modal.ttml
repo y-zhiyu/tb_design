@@ -1,8 +1,9 @@
-<view class="modal {{isLayout && 'mask-bg'}}" tt:if="{{show}}">
-  <view class="modal-content" style="width:{{width}}px;height:{{height}}px; background:{{themColor.moadlContainerBg}}">
-    <view class="modal-title" style="background:{{themColor.moadlContainerBg}}">
+<view class="modal {{isLayout && 'mask-bg'}}" tt:if="{{show}}" catchtap="getLayout">
+  <view class="modal-content modal_class"
+    style="width:{{width}}px;height:{{height}}px; background:{{themColor.moadlContainerBg}}">
+    <view class="modal-title" class="title_class">
       <view tt:if="{{title}}">{{title}}</view>
-      <view class="modal-close_box" catchtap='getClose'>
+      <view class="modal-close_box icon_class" catchtap='getClose'>
         <image class="modal-close" src="../images/closeOutlined.png" />
       </view>
     </view>

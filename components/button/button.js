@@ -48,8 +48,7 @@ Component({
     onClick() {
       let { disabled } = this.data;
       if (disabled) return;
-
-      this.triggerEvent("onclick");
+      this.triggerEvent("onClick");
     },
   },
 });

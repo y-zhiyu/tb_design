@@ -1,52 +1,94 @@
+const app = getApp();
+
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    allTotal: 10,
     total: 10,
     current: 1,
     pageSize: 10,
     pageNumber: 1,
+    pageSizeArr: [10, 20]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    let source = require('./md/doc.js');
+    let article = app.towxml(source, 'markdown');
+    console.log('article------', article)
+
+    this.setData({
+      article: article
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {},
+  onReady: function () { },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {},
+  onShow: function () { },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {},
+  onHide: function () { },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {},
+  onUnload: function () { },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {},
+  onPullDownRefresh: function () { },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {},
+  onReachBottom: function () { },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {},
+  onShareAppMessage: function () { },
+
+  // 分页
+  getPageChange(e) {
+    let { current } = e.detail;
+    this.setData({
+      current: current
+    })
+  },
+
+  // 每页多少条
+  getPageSize(e) {
+    let { pageSize } = e.detail;
+    this.setData({
+      pageSize: pageSize
+    })
+  },
+
+  // 跳转第几页
+  getPageInput(e) {
+    console.log('e----------', e);
+
+  },
+
+  getPageConfirm(e) {
+    let { pageNumber } = e.detail;
+    console.log('外部pageNumber', pageNumber)
+
+    this.setData({
+      current: pageNumber,
+      pageNumber: pageNumber
+    })
+  },
 });

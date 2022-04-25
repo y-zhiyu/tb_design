@@ -3,56 +3,56 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    allTotal: {
-      type: Number,
-      value: 1,
-    },
     total: {
       type: Number,
-      value: 0,
+      value: -1,
       observer: function (newVal, oldVal, changedPath) {
         // console.log("total========", this.data.total);
         this.totalToArr();
       },
     },
-    themColor: {
-      type: Object,
-      value: null,
-    },
     current: {
       type: Number,
-      value: 1,
+      value: -1,
       observer: function (newVal, oldVal, changedPath) {
         this.totalToArr();
       },
     },
 
-    navigation: {
-      type: Number,
-      value: 1,
-    },
-
     pageSize: {
-      type: Number,
-      value: 10,
+      type: Number || String,
+      value: -1,
       observer: function (newVal, oldVal, changedPath) {
         this.changPageSize(newVal);
       },
     },
 
+    isInput: {
+      type: Boolean,
+      value: false,
+    },
+    
+    isSelect: {
+      type: Boolean,
+      value: false,
+    },
+
     pageNumber: {
       type: Number,
-      value: 1,
+      value: -1,
       observer: function (newVal, oldVal, changedPath) {
         this.changPageNumber(newVal);
       },
     },
 
-    publicImgUrl: {
-      type: String,
-      value: "",
+    pageSizeArr: {
+      type: Array,
+      value: [10, 20, 30, 40, 50],
+      observer: function (newVal, oldVal, changedPath) {
+      },
     },
   },
+
   ready() {
     // this.totalToArr();
   },
@@ -61,8 +61,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    paginationArr: [10, 20, 30, 40, 50],
-    paginationArrIndex: 0,
+
   },
 
   /**
@@ -75,43 +74,49 @@ Component({
         pageNumber,
       });
     },
+
     //changPageSize
     changPageSize(newVal) {
-      let paginationArrIndex = this.data.paginationArr.findIndex((o, i) => {
+      // console.log('this.data.pageSizeArr-----------', this.data.pageSizeArr);
+
+      let pageSizeArrIndex = this.data.pageSizeArr.findIndex((o, i) => {
         return o == newVal;
       });
       this.setData({
-        paginationArrIndex,
+        pageSizeArrIndex,
       });
     },
+
     bindPickerChange: function (e) {
-      console.log("picker发送选择改变，携带值为", e.detail);
-      let paginationArr = this.data.paginationArr;
+      // console.log("picker发送选择改变，携带值为", e.detail);
+      let pageSizeArr = this.data.pageSizeArr;
 
       this.setData({
-        paginationArrIndex: e.detail.value,
+        pageSizeArrIndex: e.detail.value,
       });
-      let pageSize = paginationArr[e.detail.value];
+      let pageSize = pageSizeArr[e.detail.value];
 
       this.triggerEvent("pageSize", { pageSize });
     },
+
     getoPageNum(e) {
       let pageNumber = e.detail.value;
       pageNumber = parseInt(pageNumber);
-      // console.log(pageNumber);
+      console.log('pageNumber----------', pageNumber);
 
       // this.setData({
       //   pageNumber,
       // });
-      // this.triggerEvent("pageInput", { pageNumber });
+      this.triggerEvent("pageInput", { pageNumber });
     },
-    getconfirm(e) {
+
+    getConfirm(e) {
       let pageNumber = e.detail.value;
-      this.triggerEvent("getconfirm", { pageNumber });
+      this.triggerEvent("pageConfirm", { pageNumber });
     },
 
     onChange(e) {
-      console.log("e=======", e.currentTarget.dataset);
+      // console.log("e=======", e.currentTarget.dataset);
 
       let { current } = e.currentTarget.dataset;
       let { total } = this.data;

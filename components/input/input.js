@@ -116,9 +116,9 @@ Component({
       });
     },
 
-    onConfim(e) {
+    onConfirm(e) {
       let value = e.detail.value;
-      this.triggerEvent("confim", {
+      this.triggerEvent("confirm", {
         value,
       });
     },
