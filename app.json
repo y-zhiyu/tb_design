@@ -8,6 +8,7 @@
     "pages/dev/checkBox/checkBox",
     "pages/dev/pagination/pagination",
     "pages/dev/datePicker/datePicker",
+    "pages/dev/select/select",
     "pages/dev/menu/menu"
   ],
   "window": {

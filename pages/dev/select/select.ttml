@@ -1,0 +1,18 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="select" article="{{article}}">
+
+    <view class="content">
+        <view class="content-title">默认</view>
+        <view class="content-flex">
+            <tb-select selectArray="{{selectArray}}" value="{{value}}" bindchange="getSelectChange" />
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">可搜索</view>
+        <view class="content-flex">
+            <tb-select isSearch="{{true}}" selectKey="option_key" selectText="option_value"
+                selectArray="{{selectArray1}}" value="{{value1}}" bindchange="getSelectChange1" />
+        </view>
+    </view>
+
+</tb-navLeft>

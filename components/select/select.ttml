@@ -1,0 +1,63 @@
+<view class="select-container box-class">
+  <view class="select-title lable-class" tt:if="{{lable}}">
+    <text class="select-necessary {{necessary?'select-necessary_active':''}}">*</text>
+    <text>{{lable}} </text>
+  </view>
+
+  <view class="select-box {{errorText && 'select-error'}} select-class {{disabled && 'select-disabled'}}">
+    <view 
+      class="select-content select-class" 
+      data-labeType="{{labeType}}" 
+      catchtap="selectTap">
+      <view class="select-text {{!value && placeholder && 'select-normal'}} {{disabled && 'text-disabled'}}">
+        {{value?value:placeholder}}
+      </view>
+      <view tt:if="{{!imgUrl}}" class="select-arrow" animation="{{animationData}}"></view>
+      <image tt:if="{{imgUrl}}" class="select-img" src="{{imgUrl}}" animation="{{animationData}}"></image>
+    </view>
+
+
+    <view class="select-list-position" tt:if="{{selectShow}}">
+      <view class='select-list'>
+
+        <!-- 搜索框 -->
+        <view tt:if="{{isSearch}}" class='select-content select-content-input'>
+          <input
+              type="text"
+              maxlength="{{maxlength?maxlength:255}}"
+              value="{{inputValue}}"
+              focus="{{inputFocus}}"
+              placeholder="可搜索"
+              bindinput="onChange"
+              bindfocus='onFocus'
+              bindblur="onBlur"
+              bindconfirm="onConfim"
+              class="select-input">
+          </input>
+        </view>
+
+        <!-- option数据 -->
+        <view 
+          tt:for="{{!isSearch?selectArray:searchSelectArray}}" 
+          tt:key='index' 
+          data-index="{{index}}"
+          data-item="{{item}}"
+          class='select-item {{item.text && "select-item-flex"}} {{item.selected && "select-text-selected"}} {{item.disabled && "value-disabled"}}'
+          catchtap='{{!item.disabled && "setText"}}'>
+          <view tt:if="{{item.value}}">{{item.value}}</view>
+        </view>
+
+      </view>
+    </view>
+
+    <input
+      tt:if="{{!isSearch}}"
+      class="input"
+      type="text"
+      adjust-position="{{false}}"
+      focus="{{focus}}"
+      style="position: absolute;top: 20px;left:-999999px;border:1px red sold"
+      bindblur="getOnBlur" />
+  </view>
+  <view class="select-error-text" tt:if="{{errorText}}">{{errorText}}</view>
+</view>

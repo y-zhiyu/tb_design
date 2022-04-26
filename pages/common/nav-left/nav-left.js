@@ -41,10 +41,6 @@ Component({
 
     getItemChange(e) {
       let { type, index } = e.detail;
-      // this.setData({
-      //     selectedType: type
-      // })
-
       tt.redirectTo({ url: `/pages/dev/${type}/${type}` });
     },
   },
