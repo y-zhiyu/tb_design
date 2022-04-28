@@ -12,10 +12,10 @@ const getMenuList = (data) => {
         { label: 'Pagination', labelCn: "分页", type: 'pagination' },
         { label: 'Popup', labelCn: "消息提示", type: 'popup' },
         { label: 'Radio', labelCn: "单选框", type: 'radio' },
-        { label: 'Serach', labelCn: "搜索", type: 'serach' },
+        { label: 'Search', labelCn: "搜索", type: 'search' },
         { label: 'Select', labelCn: "选择器", type: 'select' },
-        { label: 'Textarea', labelCn: "多行文本框", type: 'textarea' },
         { label: 'Table', labelCn: "表格", type: 'table' },
+        { label: 'Textarea', labelCn: "多行文本框", type: 'textarea' },
         { label: 'Toast', labelCn: "提示", type: 'toast' },
         { label: 'utils', labelCn: "公共方法", type: 'utils' },
     ];

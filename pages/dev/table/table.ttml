@@ -1,0 +1,8 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="table" article="{{article}}">
+    <view class="content">
+        <view class="content-title">默认</view>
+        <view class="content-flex">
+            <tb-table />
+        </view>
+    </view>
+</tb-navLeft>

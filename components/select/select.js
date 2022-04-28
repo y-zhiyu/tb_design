@@ -98,12 +98,13 @@ Component({
   data: {
     selectShow: false,
     animationData: {},
-    isSelect: true,
     newSelectArray: [],
     searchSelectArray: [],
     inputValue: "",
     inputFocus: false,
-    focus: false,
+    outsideFocus: false,
+    isSelect: true,
+    isBlurStatus: false,
   },
 
   ready() {
@@ -181,21 +182,40 @@ Component({
     //option的显示与否
     selectTap: function (e) {
       if (this.data.disabled) return;
-      let { selectShow, focus, isSelect } = this.data;
-
-      console.log('点击select框focus---------', focus);
-
+      let { selectShow, outsideFocus, isBlurStatus, } = this.data;
       this.setAnimation(selectShow);
+      console.log('点击之前22222222222222222-------', selectShow);
 
       this.setData({
+        outsideFocus: !outsideFocus,
         selectShow: !selectShow,
-        focus: !selectShow,
-        isSelect: isSelect,
+        isSelect: true
       }, () => {
-        console.log("select框点击------selectShow, focus", this.data.selectShow, this.data.focus)
+        console.log('点击之后22222222222222222-------', isBlurStatus, outsideFocus, selectShow);
 
-      });
+      })
     },
+
+    getOnfocus() {
+      console.log('获取焦点',this.data.outsideFocus)
+
+    },
+
+    // 失去焦点
+    getOnBlur() {
+      console.log('失去焦点')
+
+
+    },
+
+    getLayout() {
+      console.log('getLayout-----------------',)
+
+      this.setData({
+        selectShow: false,
+      })
+    },
+
 
     //创建动画
     setAnimation(selectShow) {
@@ -240,9 +260,7 @@ Component({
         selectArray: nowArr,
         searchSelectArray: nowArr,
         selectShow: false,
-        // value: value,
-        // placeholder: '',
-        focus: false,
+        outsideFocus: false,
         animationData: this.animation.export(),
       });
       this.triggerEvent("change", {
@@ -267,8 +285,6 @@ Component({
         }
       };
       console.log('_newarray', _newarray);
-
-
       this.setData({
         searchSelectArray: _newarray,
         selectShow: true,
@@ -299,19 +315,22 @@ Component({
 
     },
 
-    // 失去焦点
-    getOnBlur() {
-      let { isSelect, selectShow, focus } = this.data;
+    getonmouseenter() {
+      console.log('getonmouseenter-----------',)
+    },
 
-      console.log('失去焦点:this.data.selectShow------', this.data.selectShow, this.data.isSelect, this.data.focus);
 
-      // this.setData({
-      //   focus: false,
-      //   selectShow: false,
-      //   isSelect: false,
-      // })
+    getonmouseleave() {
+      console.log('getonmouseleave-----------',)
 
     },
+
+    catchTouchMove() {
+      console.log('catchTouchMove-----------',)
+
+    }
+
+
 
   },
 

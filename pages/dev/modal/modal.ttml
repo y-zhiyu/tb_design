@@ -5,7 +5,6 @@
         <view class="content-flex">
             <tb-button text="点击" bindonClick="getClick" />
             <tb-modal show="{{modalStatus}}" title="标题文案" bindclose="getClose" />
-
         </view>
     </view>
 

@@ -2,14 +2,22 @@
   "pages": [
     "pages/index/index",
     "pages/dev/button/button",
-    "pages/dev/input/input",
-    "pages/dev/modal/modal",
-    "pages/dev/icon/icon",
     "pages/dev/checkBox/checkBox",
-    "pages/dev/pagination/pagination",
     "pages/dev/datePicker/datePicker",
+    "pages/dev/icon/icon",
+    "pages/dev/input/input",
+    "pages/dev/list/list",
+    "pages/dev/loading/loading",
+    "pages/dev/menu/menu",
+    "pages/dev/modal/modal",
+    "pages/dev/pagination/pagination",
+    "pages/dev/popup/popup",
+    "pages/dev/radio/radio",
+    "pages/dev/search/search",
     "pages/dev/select/select",
-    "pages/dev/menu/menu"
+    "pages/dev/table/table",
+    "pages/dev/textarea/textarea",
+    "pages/dev/toast/toast"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,5 +1,7 @@
 Component({
 
+    externalClasses: ["item_class", "left_class", "right_class"],
+
     /**
      * 组件的属性列表
      */
@@ -8,14 +10,6 @@ Component({
             type: Array,
             value: false
         },
-        placeType: {
-            type: String,
-            value: 'left'
-        },
-        placeStatus: {
-            type: Boolean,
-            value: false
-        }
     },
 
     /**

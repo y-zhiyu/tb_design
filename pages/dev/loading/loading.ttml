@@ -1,0 +1,9 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="loading" article="{{article}}">
+    <view class="content">
+        <view class="content-title">默认</view>
+        <view class="content-flex">
+            <tb-button text="点击" bindonClick="getClick" />
+            <tb-loading show="{{loading}}" />
+        </view>
+    </view>
+</tb-navLeft>

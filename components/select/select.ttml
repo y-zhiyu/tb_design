@@ -4,11 +4,10 @@
     <text>{{lable}} </text>
   </view>
 
-  <view class="select-box {{errorText && 'select-error'}} select-class {{disabled && 'select-disabled'}}">
-    <view 
-      class="select-content select-class" 
-      data-labeType="{{labeType}}" 
-      catchtap="selectTap">
+  <view
+    class="select-box {{errorText && 'select-error'}} select-class {{disabled && 'select-disabled'}}  {{outsideFocus && 'select-focus'}}">
+    <view bindonmouseenter="getonmouseenter" bindonmouseleave="getonmouseleave" class="select-content select-class"
+      data-labeType="{{labeType}}" catchtap="selectTap">
       <view class="select-text {{!value && placeholder && 'select-normal'}} {{disabled && 'text-disabled'}}">
         {{value?value:placeholder}}
       </view>
@@ -37,10 +36,7 @@
         </view>
 
         <!-- option数据 -->
-        <view 
-          tt:for="{{!isSearch?selectArray:searchSelectArray}}" 
-          tt:key='index' 
-          data-index="{{index}}"
+        <view tt:for="{{!isSearch?selectArray:searchSelectArray}}" tt:key='index' data-index="{{index}}"
           data-item="{{item}}"
           class='select-item {{item.text && "select-item-flex"}} {{item.selected && "select-text-selected"}} {{item.disabled && "value-disabled"}}'
           catchtap='{{!item.disabled && "setText"}}'>
@@ -55,9 +51,12 @@
       class="input"
       type="text"
       adjust-position="{{false}}"
-      focus="{{focus}}"
-      style="position: absolute;top: 20px;left:-999999px;border:1px red sold"
-      bindblur="getOnBlur" />
+      style="position: absolute;top: 20px;left:-999999px;"
+      bindfocus="getOnfocus"
+      bindblur="getOnBlur"
+      />
   </view>
   <view class="select-error-text" tt:if="{{errorText}}">{{errorText}}</view>
 </view>
+
+<!-- <view  tt:if="{{selectShow}}" class="layout" catchtap="getLayout" catchtouchmove='catchTouchMove'></view> -->

@@ -3,7 +3,8 @@
     <view class="input-necessary {{necessary?'input-necessary_active':''}}">*</view>
     <view>{{lable}}</view>
   </view>
-  <view class='input-box {{errorText && "input-error"}} input_class {{disabled && "input-disabled"}}'>
+  <view
+    class="input-box {{errorText && 'input-error'}} input_class {{disabled && 'input-disabled'}} {{focus && 'input-focus'}}">
     <view class="input-content" tt:if="{{!disabled}}">
       <view class="input-left" tt:if="{{imgPosition=='left'}}" catchtap="getIconClick">
         <image class="input-icon" src="{{imgUlr?imgUlr:'/components/images/searchOutlined.svg'}}"></image>
@@ -14,6 +15,7 @@
         maxlength="{{maxlength?maxlength:255}}"
         class="input-text"
         value="{{value}}"
+        focus="{{focus}}"
         placeholder="{{placeholder}}"
         bindinput='onChange'
         bindfocus='onFocus'

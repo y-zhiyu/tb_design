@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "tb-navLeft": "/pages/common/nav-left/nav-left",
+        "tb-button": "/components/button/button",
+        "tb-loading": "/components/loading/loading"
+    }
+}

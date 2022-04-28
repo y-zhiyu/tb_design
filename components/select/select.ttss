@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   font-family: PingFangSC-Regular, PingFang SC;
-
 }
 
 .select-title {
@@ -33,16 +32,12 @@
 
 .select-box:hover {
   border: 1px solid #1890FF;
-  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
-}
-
-.select-box:active {
-  border: 1px solid #1890FF;
   box-shadow: 0px 0px 4px 2px rgba(73, 144, 226, 0.3);
 }
 
-.select-box-selected {
+.select-focus{
   border: 1px solid #1890FF;
+  box-shadow: 0px 0px 4px 2px rgba(73, 144, 226, 0.3);
 }
 
 .select-content {
@@ -117,6 +112,20 @@
 
 .select-normal {
   color: #909399;
+}
+
+.layout{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  /* width: 100%;
+  height: 100%; */
+  border: 1px red solid;
+  pointer-events: none;
+  box-sizing: border-box;
 }
 
 .select-list-position {

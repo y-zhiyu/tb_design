@@ -1,0 +1,8 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="popup" article="{{article}}">
+    <view class="content">
+        <view class="content-title">默认</view>
+        <view class="content-flex">
+            <tb-popup />
+        </view>
+    </view>
+</tb-navLeft>

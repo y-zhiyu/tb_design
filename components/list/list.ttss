@@ -1,8 +1,7 @@
 .list-content {
   width: 100%;
   display: flex;
-  /* align-items: center; */
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .list-title {
@@ -19,9 +18,7 @@
   flex: auto;
   font-size: 13px;
   font-weight: 400;
-  color: #FFFFFF;
-  /* word-break:normal;  */
+  color: #424242;
   word-break:break-all; 
   word-wrap:break-word; 
-  
 }

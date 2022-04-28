@@ -68,7 +68,9 @@ Component({
   /**
    * 组件的初始数据
    */
-  data: {},
+  data: {
+    focus: false,
+  },
 
   /**
    * 组件的方法列表
@@ -103,24 +105,27 @@ Component({
 
     onFocus(e) {
       let value = e.detail.value;
+      console.log('获取焦点------');
 
-      this.triggerEvent("focus", {
-        value,
-      });
+      this.setData({
+        focus: true
+      })
+
+      this.triggerEvent("focus", { value });
     },
 
     onBlur(e) {
       let value = e.detail.value;
-      this.triggerEvent("blur", {
-        value,
-      });
+      this.setData({
+        focus: false
+      })
+      this.triggerEvent("blur", { value });
     },
 
     onConfirm(e) {
       let value = e.detail.value;
-      this.triggerEvent("confirm", {
-        value,
-      });
+
+      this.triggerEvent("confirm", { value });
     },
 
     getIconClick() {

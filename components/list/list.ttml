@@ -1,17 +1,6 @@
-<block tt:if='{{!placeStatus}}'>
-    <view class="list-content" tt:for="{{listArray}}" tt:key="index" tt:if="{{listArray.length>0 && item.title}}">
-        <view class="list-title">{{item.title}}</view>
-        <view class="list-value">{{item.value}}</view>
-        <slot />
-    </view>
-
-</block>
-
-<block tt:if='{{placeStatus}}'>
-    <view class="list-content" tt:for="{{listArray}}" tt:key="index"
-        tt:if="{{listArray.length>0 && item.title && item.placeType==placeType}}">
-        <view class="list-title">{{item.title}}</view>
-        <view class="list-value">{{item.value}}</view>
-        <slot />
-    </view>
-</block>
+<view class="list-content item_class" tt:for="{{listArray}}" tt:key="index"
+    tt:if="{{listArray.length>0 && !item.hideStatus}}">
+    <view class="list-title left_class">{{item.title}}</view>
+    <view class="list-value right_class">{{item.value}}</view>
+    <slot />
+</view>

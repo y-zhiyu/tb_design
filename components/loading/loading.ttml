@@ -1,0 +1,3 @@
+<view class="loading-fixed" tt:if="{{show}}">
+    <image class='loading-image img_class' src="{{imgUrl?imgUrl:'/components/images/loading.gif'}}"></image>
+</view>
