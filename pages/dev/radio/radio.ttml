@@ -1,8 +1,15 @@
 <tb-navLeft menuList="{{menuList}}" selectedType="radio" article="{{article}}">
     <view class="content">
-        <view class="content-title">默认</view>
+        <view class="content-title">radio组</view>
         <view class="content-flex">
-            <tb-radio />
+            <tb-radio radioList="{{radioList}}" bindonChange="getRadioGroupChange" />
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">禁止态</view>
+        <view class="content-flex">
+            <tb-radio radioList="{{radioList1}}" bindonChange="getRadioGroupChange" />
         </view>
     </view>
 </tb-navLeft>

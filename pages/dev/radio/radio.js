@@ -1,9 +1,22 @@
+const app = getApp();
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        radioList: [
+            { id: '1', text: '选项一', },
+            { id: '2', text: '选项二', },
+            { id: '3', text: '选项三', },
+        ],
+        radioList1: [
+            { id: '1', text: '选项一', disabled: true },
+            { id: '2', text: '选项二', },
+            { id: '3', text: '选项三', },
+        ],
+        article: {},  // 内容数据
 
     },
 
@@ -11,7 +24,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let source = require('./md/doc.js');
+        let article = app.towxml(source, 'markdown');
 
+        this.setData({
+            article: article
+        })
     },
 
     /**
@@ -61,5 +79,11 @@ Page({
      */
     onShareAppMessage: function () {
 
-    }
+    },
+
+    getRadioGroupChange(e) {
+        console.log('e', e.detail);
+
+    },
+
 })

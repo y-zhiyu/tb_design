@@ -1,22 +1,27 @@
-<view class="radio-tabs">
-    <view class="radio-tabs-item {{isProgress && 'progress-item'}}" tt:for="{{radioTabs}}" tt:key="index"
-        data-index="{{index}}" data-item="{{item}}" catchtap="tabsChange">
+<view class="radio-contanier {{direction=='column' && 'radio-group-flex'}} radio_class">
 
-        <block tt:if="{{!isProgress}}">
-            <image class="radio-tabs-item-img"
-                src="{{item.type==tabType?publicImgUrl+'/img/pcPAlark/pc_choose_active.png':publicImgUrl+'/img/pcPAlark/pc_choose_default.png'}}">
-            </image>
-            <view>{{item.name}}</view>
-        </block>
+    <!-- 单个 -->
+    <!-- <view tt:if="{{radioList.length==0}}" class="radio-item {{disabled && 'radio-disabled'}} radio_item_class"
+        bindtap="onChange">
+        <view class="radio-border {{checked && 'radio-checked'}} radio_item_left_class">
+            <view class="radio-round {{checked && 'radio-round-checked'}}"></view>
+           <image tt:if="{{checked}}" class="radio-icon radio_icon_class"
+                src="{{imgUrl?imgUrl:'/components/images/radioOutlined.png'}}">
+            </image> 
+        </view>
+        {{text}}
+    </view> -->
 
-        <block tt:if="{{isProgress}}">
-            <view class="progress-left {{item.id==tabType && 'active'}}">
-                <view class="progress-index {{item.id==tabType && 'active-index'}}">{{item.id}}</view>
-                {{item.name}}
-            </view>
-            <image class="progress-img" tt:if="{{index !=radioTabs.length-1}}"
-                src="{{publicImgUrl+'/img/pcPAlark/pc_fileiconLeft.png'}}"></image>
-        </block>
-
+    <!-- 组 -->
+    <view tt:if="{{radioList.length>0}}" tt:for="{{radioList}}" tt:key="index"
+        class="radio-item radio-group {{direction=='column' && 'radio-group-row'}} {{item.disabled && 'radio-disabled'}} radio_item_class"
+        data-index="{{index}}" data-item="{{item}}" bindtap="onChangeItem">
+        <view class="radio-border {{item.checked && 'radio-checked'}} radio_item_left_class">
+            <view class="radio-round {{item.checked && 'radio-round-checked'}}"></view>
+            <!-- <image tt:if="{{item.checked}}" class="radio-icon radio_icon_class"
+                src="{{imgUrl?imgUrl:'/components/images/radioOutlined.png'}}">
+            </image> -->
+        </view>
+        {{item.text}}
     </view>
 </view>

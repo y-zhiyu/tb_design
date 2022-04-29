@@ -1,76 +1,84 @@
-.radio-tabs{
+.radio-contanier {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.radio-tabs-item{
-  font-size: 13px;
-  font-weight: 400;
-  color: #D8DCE6;
+.radio-item {
   display: flex;
   align-items: center;
-  cursor: pointer;
-}
-
-.radio-tabs-item-img{
-  width: 16px;
-  height: 16px;
-  background-size:100% 100% ;
-  margin-right: 8px;
-
-}
-
-/* 进度 */
-.progress-item{
-  /* width: 25%; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.progress-left{
-  display: flex;
-  align-items: center;
+  color: #141414;
   font-size: 14px;
-  font-family: PingFang-SC-Medium, PingFang-SC;
-  font-weight: 500;
-  color: #8E9BA7;
-  margin-right: 52px;
 }
 
-.progress-index{
-  width: 22px;
-  height: 22px;
+.radio-item:hover .radio-border {
+  border: 1px #1890FF solid;
+  box-shadow: 0px 0px 3px 1px rgba(73, 144, 226, 0.3);
+}
+
+.radio-border {
+  width: 14px;
+  height: 14px;
+  border: 1px #E0E0E0 solid;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-   border: 2px solid #83919F;
-  font-size: 13px;
-  font-family: PingFang-SC-Medium, PingFang-SC;
-  font-weight: 500;
-  color: #83919F;
-  border-radius: 50%;
   margin-right: 10px;
-  box-sizing: border-box;
 }
 
-.progress-img{
-  width: 18px;
-  height: 18px;
-  background-size:100% 100% ;
+.radio-round {
+  width: 8px;
+  height: 8px;
+  background: #1890FF;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
 }
 
-.active{
-  font-size: 14px;
-  font-family: PingFangSC-Medium, PingFang SC;
-  font-weight: 500;
-  color: #FFFFFF;
-
+.radio-round-checked {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
 }
 
-.active-index{
-  border: 2px solid #FFFFFF;
-  color: #FFFFFF;
+.radio-icon {
+  width: 10px;
+  height: 10px;
+  background-size: 100% 100%;
+}
 
+.radio-checked {
+  border: 1px #1890FF solid;
+  box-shadow: 0px 0px 3px 1px rgba(73, 144, 226, 0.3);
+}
+
+.radio-group {
+  margin-right: 20px;
+}
+
+.radio-group-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group-row {
+  margin-bottom: 10px;
+}
+
+
+/* 禁止 */
+.radio-disabled {
+  color: #D4D4D4;
+  cursor: not-allowed;
+}
+
+.radio-disabled .radio-border {
+  background: #F6F6F6;
+  border: 1px #E0E0E0 solid;
+}
+
+.radio-disabled:hover .radio-border {
+  border: 1px #E0E0E0 solid;
+  box-shadow: none;
 }

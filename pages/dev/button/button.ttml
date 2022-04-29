@@ -12,8 +12,7 @@
     <view class="content">
         <view class="content-title">按钮图标</view>
         <view class="content-flex">
-            <tb-button text="add" imgStatus="{{true}}" btn_class="btn_class" />
-            <tb-button text="add" type='primary' imgStatus="{{true}}" btn_class="btn_class" bindonClick="onClick" />
+            <tb-button text="add" imgStatus="{{true}}" btn_class="btn_class" bindonClick="onClick" />
         </view>
     </view>
 

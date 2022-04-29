@@ -1,8 +1,8 @@
 <tb-navLeft menuList="{{menuList}}" selectedType="table" article="{{article}}">
     <view class="content">
         <view class="content-title">默认</view>
-        <view class="content-flex">
-            <tb-table />
+        <view class="content-flex-column">
+            <tb-table headData="{{headData}}" bodyData="{{bodyData}}" maxHeight='200'/>
         </view>
     </view>
 </tb-navLeft>

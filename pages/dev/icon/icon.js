@@ -9,9 +9,9 @@ Page({
       { name: "rightOutlined", iconSrc: "/components/images/rightOutlined.png", },
       { name: "closeOutlined", iconSrc: "/components/images/closeOutlined.png", },
       { name: "loadingOutlined", iconSrc: "/components/images/loadingOutlined.png", },
-      { name: "searchOutlined", iconSrc: "/components/images/searchOutlined.svg", },
-      { name: "checkOutlined", iconSrc: "/components/images/checkOutlined.svg", },
-      { name: "deleteOutlined", iconSrc: "/components/images/deleteOutlined.svg", },
+      { name: "searchOutlined", iconSrc: "/components/images/searchOutlined.png", },
+      { name: "checkOutlined", iconSrc: "/components/images/checkOutlined.png", },
+      { name: "deleteOutlined", iconSrc: "/components/images/deleteOutlined.png", },
     ],
   },
 

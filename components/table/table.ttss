@@ -1,106 +1,74 @@
+.table_container {
+  overflow-y: auto;
+  position: relative;
+}
+
 .table {
   width: 100%;
   font-family: PingFangSC-Regular, PingFang SC;
+  display: table;
+  position: relative;
 }
 
-.table-scroll{
-  min-width: 1160px;
+
+
+.table_container::-webkit-scrollbar {
+  /* display: none; */
+  width: 2px;
 }
 
-.tablelist {
-  /* height: 100%; */
-  overflow-y: auto;
-}
-
-.tablelist::-webkit-scrollbar{
-  display: none;
-}
-.hoverStatus{
+.hoverStatus {
   cursor: pointer;
 }
-.sortBox_img{
+
+.sortBox_img {
   width: 16px;
   height: 16px;
   display: block;
   margin-left: 5px;
 }
 
-
-.table_title {
-  /* padding: 16px 0; */
-  height: 42px;
-  background: #5C7184;
-  border-radius: 1px;
-  display: flex;
-  justify-content: space-around;
-  /* position: sticky;
-  top: 0px; */
+.table_row {
+  display: table-row;
 }
 
-.table_title_i {
-  color: #E7E7E7;
-  font-family: PingFang-SC-Bold, PingFang-SC;
-  font-weight: bold;
-  line-height: 17px;
+.table_cell {
+  display: table-cell;
+  color: #999999;
+  font-weight: 600;
   font-size: 12px;
-  /* text-align: center; */
-  white-space: nowrap;
+  border-bottom: 1px #e0e0e0 solid;
 }
 
-.tablelist_i {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 16px 0;
-  border-bottom: 1px solid #496278;
-  font-size: 12px;
+.table_thead {
+  height: 50px;
+  line-height: 50px;
+  /* border-bottom: 1px #e0e0e0 solid; */
+  position: sticky;
+  top: 0;
+}
+
+.table_thead_item {
+  color: #999999;
+}
+
+.table_tbody_item {
+  padding: 18px 0;
   color: #8E9BA7;
-
+  box-sizing: border-box;
+  font-weight: 400;
 }
 
-.tablelist_i:hover {
-  background: #163450;
+.table_tbody:hover {
+  background: #F6F6F6;
   cursor: pointer;
 }
 
-.table_title_i,
-.tablelist_i_i {
-  word-break: break-all;
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  width: 9%;
-}
 
-.table_title_i:nth-child(1),
-.tablelist_i_i:nth-child(1){
-  width: 155px;
-  justify-content: flex-start;
-  padding-left: 20px;
-  box-sizing: border-box;
-}
-
-.table-ellipsis{
+.table-ellipsis {
   display: flex;
   align-items: center;
 }
-
-/* .table_title_i:nth-child(1)>.table-ellipsis{
-  width: 155px;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-}
-
-.tablelist_i_i:nth-child(1)>.table-ellipsis{
-  width: 155px;
-} */
-
-.table_title_i:nth-child(8),
-.tablelist_i_i:nth-child(8) {
-  width: 250px;
-}
-
 
 .table_i_image {
   width: 32px;
@@ -111,7 +79,7 @@
   background-repeat: no-repeat;
 }
 
-.noBorder{
+.noBorder {
   border: 1px solid transparent;
 }
 
@@ -149,7 +117,7 @@
   cursor: pointer;
 }
 
-.table-download{
+.table-download {
   width: 20px;
   height: 20px;
   display: flex;
@@ -158,13 +126,13 @@
   margin-right: 6px;
 }
 
-.table-download-img{
+.table-download-img {
   width: 20px;
   height: 20px;
 }
 
 /* 显示标签 */
-.showTags_i{
+.showTags_i {
   margin-left: 10px;
   width: 30px;
   height: 12px;
@@ -172,49 +140,53 @@
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   text-align: center;
-  line-height:12px ;
+  line-height: 12px;
   color: #FFFFFF;
   border-radius: 2px;
   border: 1px solid #496278;
-  background:#496278 ;
+  background: #496278;
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
-.NoneBorder{
+
+.NoneBorder {
   border: none;
 }
-.table-choose-img-box{
+
+.table-choose-img-box {
   display: flex;
   align-items: center;
 }
-.delstyle{
+
+.delstyle {
   text-align: right;
 }
 
 .date-icon {
   width: 16px;
   height: 16px;
-  background:url('https://oss.tb.tokoyi.com/img/xcxCommon/newIcon/pc_date_edit.png') ;
+  background: url('https://oss.tb.tokoyi.com/img/xcxCommon/newIcon/pc_date_edit.png');
   background-size: 16px 16px;
   background-repeat: no-repeat;
 }
 
-.picker-trigger:hover >.date-icon{
+.picker-trigger:hover>.date-icon {
   width: 16px;
   height: 16px;
-  background:url('https://oss.tb.tokoyi.com/img/xcxCommon/newIcon/pc_date_edit_hover.png') ;
+  background: url('https://oss.tb.tokoyi.com/img/xcxCommon/newIcon/pc_date_edit_hover.png');
   background-size: 16px 16px;
   background-repeat: no-repeat;
 }
-.picker-trigger{
+
+.picker-trigger {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.picker-trigger:hover{
+.picker-trigger:hover {
   font-size: 12px;
   font-weight: 400;
   color: #D8DCE6;

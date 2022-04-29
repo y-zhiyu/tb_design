@@ -2,7 +2,7 @@
     <view class="content">
         <view class="content-title">默认</view>
         <view class="content-flex">
-            <tb-textarea />
+            <!-- <tb-textarea /> -->
         </view>
     </view>
 </tb-navLeft>

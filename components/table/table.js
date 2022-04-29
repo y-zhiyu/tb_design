@@ -25,12 +25,11 @@ Component({
     themColor: {
       type: Object,
       value: null
-
     },
 
-    thHeight: {
+    maxHeight: {
       type: Number,
-      value: "",
+      value: -1,
     },
     scrollWidth: {
       type: Boolean,

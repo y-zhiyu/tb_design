@@ -1,24 +1,36 @@
 Component({
+    externalClasses: ["radio_class", "radio_item_class", "radio_item_left_class", "radio_icon_class"],
     /**
      * 组件的属性列表
      */
     properties: {
-
-        publicImgUrl: {
+        text: {
             type: String,
-            value: ""
+            value: "",
         },
-        radioTabs: {
-            type: Array,
-            value: ""
-        },
-        tabType: {
-            type: String,
-            value: ""
-        },
-        isProgress: {
+        checked: {
             type: Boolean,
-            value: false
+            value: false,
+        },
+        disabled: {
+            type: Boolean,
+            value: false,
+        },
+
+        imgUrl: {
+            type: String,
+            value: "",
+        },
+
+
+        radioList: {
+            type: Array,
+            value: [],
+        },
+
+        direction: {
+            type: String,
+            value: "row",// column
         }
     },
 
@@ -33,16 +45,33 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        tabsChange(e) {
-            // console.log(e);
+        // onChange(e) {
+        //     let { disabled, checked } = this.data;
+        //     if (disabled) return;
 
-            let { index, item } = e.currentTarget.dataset;
-            let type = item.type;
+        //     this.triggerEvent("onChange", { checked: !checked });
+        // },
 
-            this.triggerEvent('change', {
-                item, type
+        onChangeItem(e) {
+            let { item, index } = e.currentTarget.dataset;
+            if (item.disabled) return;
+
+            let { radioList } = this.data;
+
+            radioList && radioList.length > 0 && radioList.map((info, k) => {
+
+                if (k == index) {
+                    info.checked = true;
+
+                } else {
+                    info.checked = false;
+                }
             })
-        }
+            this.setData({
+                radioList: radioList
+            });
 
-    }
-})
+            this.triggerEvent("onChange", { item, index });
+        }
+    },
+});

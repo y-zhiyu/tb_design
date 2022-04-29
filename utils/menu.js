@@ -15,6 +15,8 @@ const getMenuList = (data) => {
         { label: 'Search', labelCn: "搜索", type: 'search' },
         { label: 'Select', labelCn: "选择器", type: 'select' },
         { label: 'Table', labelCn: "表格", type: 'table' },
+        { label: 'Tabs', labelCn: "标签页", type: 'tabs' },
+        { label: 'Tag', labelCn: "标签", type: 'tag' },
         { label: 'Textarea', labelCn: "多行文本框", type: 'textarea' },
         { label: 'Toast', labelCn: "提示", type: 'toast' },
         { label: 'utils', labelCn: "公共方法", type: 'utils' },

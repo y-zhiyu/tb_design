@@ -1,7 +1,7 @@
 <!-- <tb-menu menuList="{{itemList}}" selectedType="{{itemSelectedType}}" binditemChange="getItemChange1"
             modeType="inline" /> -->
 
-<tb-navLeft menuList="{{menuList}}" selectedType="loading" article="{{article}}">
+<tb-navLeft menuList="{{menuList}}" selectedType="menu" article="{{article}}">
     <view class="content">
         <view class="content-title">默认</view>
         <view class="content-flex">

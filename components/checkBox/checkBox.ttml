@@ -5,7 +5,7 @@
         bindtap="onChange">
         <view class="checkBox-border {{checked && 'checkBox-checked'}} check_item_left_class">
             <image tt:if="{{checked}}" class="checkBox-icon check_icon_class"
-                src="{{imgUrl?imgUrl:'/components/images/checkOutlined.svg'}}"></image>
+                src="{{imgUrl?imgUrl:'/components/images/checkOutlined.png'}}"></image>
         </view>
         {{text}}
     </view>
@@ -16,7 +16,7 @@
         data-index="{{index}}" data-item="{{item}}" bindtap="onChangeItem">
         <view class="checkBox-border {{item.checked && 'checkBox-checked'}} check_item_left_class">
             <image tt:if="{{item.checked}}" class="checkBox-icon check_icon_class"
-                src="{{imgUrl?imgUrl:'/components/images/checkOutlined.svg'}}"></image>
+                src="{{imgUrl?imgUrl:'/components/images/checkOutlined.png'}}"></image>
         </view>
         {{item.text}}
     </view>
