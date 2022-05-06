@@ -1,3 +1,6 @@
+const app = getApp();
+
+
 const getMenuList = (data) => {
     let menuList = [
         { label: 'Button', labelCn: "按钮", type: 'button' },
@@ -10,6 +13,7 @@ const getMenuList = (data) => {
         { label: 'Menu', labelCn: "菜单", type: 'menu' },
         { label: 'Modal', labelCn: "对话框", type: 'modal' },
         { label: 'Pagination', labelCn: "分页", type: 'pagination' },
+        { label: 'Popover', labelCn: "气泡弹出框", type: 'popover' },
         { label: 'Popup', labelCn: "消息提示", type: 'popup' },
         { label: 'Radio', labelCn: "单选框", type: 'radio' },
         { label: 'Search', labelCn: "搜索", type: 'search' },
@@ -27,8 +31,9 @@ const getMenuList = (data) => {
         menuList: menuList,
         selectedType: data.type
     })
+    console.log('app', app.globalData.envVersion);
 
-    tt.setNavigationBarTitle({ "title": data.type, });
+    tt.setNavigationBarTitle({ "title": data.type + ' (' + app.globalData.envVersion + ')', });
 }
 
 module.exports = {

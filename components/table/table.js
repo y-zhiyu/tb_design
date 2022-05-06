@@ -19,14 +19,6 @@ Component({
       value: false,
     },
 
-    publicImgUrl: {
-      type: String,
-    },
-    themColor: {
-      type: Object,
-      value: null
-    },
-
     maxHeight: {
       type: Number,
       value: -1,
@@ -35,19 +27,6 @@ Component({
       type: Boolean,
       value: false,
     },
-    type: {
-      type: String,
-      value: 'default',
-    },
-    showBorder: {
-      type: Boolean,
-      value: true
-    },
-    previewImage: {
-      type: String,
-      value: 'preview',
-    },
-
     showSort: {
       type: Boolean,
       value: false
