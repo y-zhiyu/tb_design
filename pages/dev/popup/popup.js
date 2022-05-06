@@ -1,16 +1,28 @@
+
+const app = getApp();
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        article: {},
+        succseeStatus: false,
+        infoStatus: false,
+        errorStatus: false,
+        warningStatus: false,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let source = require('./md/doc.js');
+        let article = app.towxml(source, 'markdown');
+        this.setData({
+            article: article
+        })
 
     },
 
@@ -61,5 +73,13 @@ Page({
      */
     onShareAppMessage: function () {
 
-    }
+    },
+
+    getClick(e) {
+        console.log("点击button-----", e);
+        let { type } = e.currentTarget.dataset;
+        this.setData({
+            [type]: true,
+        });
+    },
 })

@@ -1,4 +1,6 @@
 {
     "component": true,
-    "usingComponents": {}
+    "usingComponents": {
+        "tb-checkBox": "/components/checkBox/checkBox"
+    }
 }

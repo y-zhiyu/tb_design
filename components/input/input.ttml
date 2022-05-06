@@ -7,7 +7,7 @@
     class="input-box {{errorText && 'input-error'}} input_class {{disabled && 'input-disabled'}} {{focus && 'input-focus'}}">
     <view class="input-content" tt:if="{{!disabled}}">
       <view class="input-left" tt:if="{{imgPosition=='left'}}" catchtap="getIconClick">
-        <image class="input-icon" src="{{imgUlr?imgUlr:'/components/images/searchOutlined.svg'}}"></image>
+        <image class="input-icon" src="{{imgUlr?imgUlr:'/components/images/searchOutlined.png'}}"></image>
       </view>
       <input
         tt:if="{{isSlot}}"

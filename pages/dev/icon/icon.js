@@ -12,6 +12,10 @@ Page({
       { name: "searchOutlined", iconSrc: "/components/images/searchOutlined.png", },
       { name: "checkOutlined", iconSrc: "/components/images/checkOutlined.png", },
       { name: "deleteOutlined", iconSrc: "/components/images/deleteOutlined.png", },
+      { name: "successOutlined", iconSrc: "/components/images/successOutlined.png", },
+      { name: "infoOutlined", iconSrc: "/components/images/infoOutlined.png", },
+      { name: "errorOutlined", iconSrc: "/components/images/errorOutlined.png", },
+      { name: "warningOutlined", iconSrc: "/components/images/warningOutlined.png", },
     ],
   },
 

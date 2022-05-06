@@ -2,7 +2,31 @@
     <view class="content">
         <view class="content-title">默认</view>
         <view class="content-flex-column">
-            <tb-table headData="{{headData}}" bodyData="{{bodyData}}" maxHeight='200'/>
+            <tb-table headData="{{headData}}" bodyData="{{bodyData}}" bindoperation="getOperation"
+                bindchange="getChange" />
         </view>
     </view>
+
+    <view class="content">
+        <view class="content-title">可滚动</view>
+        <view class="content-flex-column">
+            <tb-table headData="{{headData}}" bodyData="{{bodyData}}" maxHeight='200' />
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">可选择</view>
+        <view class="content-flex-column">
+            <tb-table headData="{{headData}}" bodyData="{{bodyData}}" choose="{{true}}" bindallChoose="getAllChoose"
+                bindchoose="getChoose" />
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">排序</view>
+        <view class="content-flex-column">
+            <tb-table headData="{{headData}}" bodyData="{{bodyData}}" showSort="{{true}}" bindsort="getSort" />
+        </view>
+    </view>
+
 </tb-navLeft>

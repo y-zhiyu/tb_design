@@ -1,2 +1,6 @@
-<text>Hello, world!</text>
-          
+<view class="popup-container {{show && 'popup-show'}} {{show && 'popup-show-'+kind}} ">
+    <view class="popup-type {{'popup-'+ type}} {{'popup-'+ kind}} popup_class">
+        <image class="popup-icon img_class" src="{{imgUrl?imgUrl:'/components/images/'+type +'Outlined.png'}}"></image>
+        {{text}}
+    </view>
+</view>

@@ -1,2 +1,26 @@
-<text>Hello, world!</text>
-          
+<view
+  class="input-box {{errorText && 'input-error'}} search_class {{disabled && 'input-disabled'}} {{focus && 'input-focus'}}">
+  <view class="input-content" tt:if="{{!disabled}}">
+    <view class="input-left" tt:if="{{imgPosition=='left'}}" catchtap="getIconClick">
+      <image class="input-icon" src="{{imgUlr?imgUlr:'/components/images/searchOutlined.png'}}"></image>
+    </view>
+    <input
+        type="{{type}}"
+        maxlength="{{maxlength?maxlength:255}}"
+        class="input-text"
+        value="{{value}}"
+        focus="{{focus}}"
+        placeholder="{{placeholder}}"
+        bindinput='onChange'
+        bindfocus='onFocus'
+        bindblur="onBlur"
+        bindconfirm="onConfirm"
+        placeholder-style="placeholder-style" />
+
+    <view class="input-right" tt:if="{{imgPosition=='right'}}" catchtap="getIconClick">
+      <image class="input-icon" src="{{imgUlr?imgUlr:'/components/images/searchOutlined.png'}}"></image>
+    </view>
+
+  </view>
+  <block tt:if="{{disabled}}">{{value}}</block>
+</view>

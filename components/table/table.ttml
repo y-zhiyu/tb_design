@@ -1,127 +1,56 @@
 <view class="table_container" style="{{maxHeight>0 && 'height:'+ maxHeight +'px'}};">
   <view class="table table_class">
-    <!-- 头部 -->
+
+    <!-- thead -->
     <view class="table_row table_thead">
+
+      <!-- choose -->
+      <view tt:if="{{choose}}" class="table_cell">
+        <tb-checkBox checked="{{checkedAll}}" bindonChange="getChangeAll" />
+      </view>
+
       <block tt:for="{{headData}}" tt:key="index">
-        <view class="table_cell table_thead_item {{item.showSort?'hoverStatus':''}}" data-key="{{item.key}}"
-          data-sort="{{item.sort}}" catchtap="{{item.showSort?'sortBy':''}}">
-          {{item.title}}
-          <block tt:if="{{item.sort=='ASC'}}">
-            <image class="sortBox_img" mode="widthFix" src="{{publicImgUrl+'/img/pcPAlark/pc_as1.png'}}"></image>
-          </block>
-          <block tt:if="{{item.sort=='DESC'}}">
-            <image class="sortBox_img" mode="widthFix" src="{{publicImgUrl+'/img/pcPAlark/pc_ds1.png'}}"></image>
-          </block>
+        <view class="table_cell table_thead_item" data-key="{{item.key}}" data-sort="{{item.sort}}"
+          catchtap="{{showSort && 'sortClick'}}">
+          <view class="showSort-flex">
+            {{item.title}}
+            <block tt:if="{{showSort && item.sort}}">
+              <view class="sort-flex">
+                <view class="sort-arrow-up {{item.sort=='ASC' && 'arrow-selected-up'}}"></view>
+                <view class="sort-arrow-down {{item.sort=='DESC' && 'arrow-selected-down'}}"></view>
+              </view>
+            </block>
+          </view>
+
       </block>
     </view>
 
+    <!-- tbody -->
     <block tt:for="{{bodyData}}" tt:for-item="body" tt:for-index="bodyIndex" tt:key="bodyIndex">
       <view class="table_row table_tbody" catchtap="getItem" data-item="{{body}}">
+
+        <!-- choose -->
+        <view tt:if="{{choose}}" class="table_cell table_tbody_item">
+          <tb-checkBox checked="{{body.checked}}" data-item="{{body}}" data-index="{{bodyIndex}}"
+            bindonChange="getChange" />
+        </view>
+
         <view class="table_cell table_tbody_item" tt:for="{{headData}}" tt:key="index" tt:for-index="headIndex"
           tt:key="headIndex">
 
-          <!-- 默认文本 -->
-          <block tt:if="{{item.key !='imgUrl' && item.key!='operation' && item.key!='status' && item.key!='time' }}">
-            <view tt:if="{{choose && headIndex==0}}" class="table-choose" data-item="{{body}}"
-              data-index="{{bodyIndex}}" catchtap="getChoose">
-              <image class="table-choose-img"
-                src="{{body.checked?publicImgUrl+'/img/pcPAlark/pc_choose_active.png':publicImgUrl+'/img/pcPAlark/pc_choose_default.png'}}">
-              </image>
-            </view>
-            <view tt:if="{{type=='download' && headIndex==0}}" class="table-download">
-              <!--imgType=>0 (文件夹)  imgType=>1 (word) ,2(excel),3(pdf),4(jpg),5(png) -->
-              <!-- <image class="table-download-img"
-                src="{{body.imgType==1?publicImgUrl+'/img/pcPAlark/pc_file_word.png':body.imgType==2?publicImgUrl+'/img/pcPAlark/pc_file_excel.png':body.imgType==3?publicImgUrl+'/img/pcPAlark/pc_file_pdf.png':body.imgType==4?publicImgUrl+'/img/pcPAlark/pc_file_jpg.png':body.imgType==5?publicImgUrl+'/img/pcPAlark/pc_file_png.png':''}}">
-              </image> -->
-              <image tt:if="{{body.imgType==0}}" class="table-download-img"
-                src="{{publicImgUrl+'/img/pcPAlark/pc_folder.png'}}">
-              </image>
-              <image tt:if="{{body.imgType==1}}" class="table-download-img"
-                src="{{publicImgUrl+'/img/pcPAlark/pc_file_word.png'}}">
-              </image>
-              <image tt:if="{{body.imgType==2}}" class="table-download-img"
-                src="{{publicImgUrl+'/img/pcPAlark/pc_file_excel.png'}}">
-              </image>
-              <image tt:if="{{body.imgType==3}}" class="table-download-img"
-                src="{{publicImgUrl+'/img/pcPAlark/pc_file_pdf.png'}}">
-              </image>
-              <image tt:if="{{body.imgType==4}}" class="table-download-img"
-                src="{{publicImgUrl+'/img/pcPAlark/pc_file_jpg.png'}}">
-              </image>
-              <image tt:if="{{body.imgType==5}}" class="table-download-img"
-                src="{{publicImgUrl+'/img/pcPAlark/pc_file_png.png'}}">
-              </image>
-            </view>
-            <view class="table-ellipsis">
-              {{body[item.key]}}
-              <block
-                tt:if="{{body.showTags.length>0 && body.showTagsTitle==item.key &&   (body.ac_account_org_is_default==1 || body.ac_org_bank_type==2 || body.ac_org_bank_type==1 )}}">
-                <block tt:for="{{body.showTags}}" tt:key="{{index}}">
-                  <view class="showTags_i">{{item}}<view>
-                </block>
-              </block>
-
-            </view>
-          </block>
-
-          <!-- 图片 -->
-          <block tt:if="{{item.key=='imgUrl'}}">
-            <image class="table_i_image img-class {{showBorder?'':'noBorder'}}" src="{{body[item.key]}}"
-              data-imgUrl="{{body[item.key]}}" catchtap="{{previewImage=='preview'?'getImage':''}}">
-            </image>
-          </block>
-          <!-- 状态 -->
-          <block tt:if="{{item.key=='status'}}">
-            <!-- <tt-progress progressList="{{body.status}}" publicImgUrl="{{publicImgUrl}}" /> -->
-          </block>
-
-          <!-- 操作 -->
-          <block tt:if="{{type=='default' && item.key=='operation' && body.operation.length>0}}"
-            tt:for="{{body.operation}}" tt:for-item="operation" tt:key="operationIndex">
-            <view class="operation-button" data-itemmsg="{{body}}" data-item="{{operation}}" catchtap="getButton">
-              {{operation.title}}
-            </view>
-          </block>
-
-          <!-- 下载 -->
-          <block tt:if="{{type=='download' && item.key=='operation' && body.operation.length>0}}"
-            tt:for="{{body.operation}}" tt:for-item="operation" tt:key="operationIndex" data-item="{{operation}}">
-            <view class="table-choose-img-box" data-itemmsg="{{body}}" data-item="{{operation}}" catchtap="getButton">
-              <image class="table-choose-img" src="{{publicImgUrl+'/img/pcPAlark/pc_download.png'}}">
-              </image>
-              {{operation.title}}
-            </view>
-
-          </block>
-
-          <!-- 修改时间  type=='download' && body.operation.length>0  编辑时间   tt:if="{{}}"。 0全部，1已询价-->
-          <block tt:if="{{ item.key=='time' }}" data-item="{{operation}}">
-            <view class="table-choose-img-box" data-itemmsg="{{body}}"
-              catchtap="{{body.statusV2==0 || body.statusV2==1?'getTime':'' }}" catchtap="getButton">
-              <block tt:if="{{body.statusV2==0 || body.statusV2==1 }}">
-                <picker class="picker" mode="date" value="{{body[item.key]}}" start="{{start}}" end="{{end}}"
-                  bindchange="pickerChangeDate" fields="day">
-                  <view class="picker-trigger">
-                    {{body[item.key]}}
-                    <view class="date-icon"></view>
-                  </view>
-                </picker>
-              </block>
-              <block tt:else>
-                {{body[item.key]}}
-              </block>
-            </view>
-
-          </block>
-
+          <view class="table-ellipsis {{body.trClass}}" tt:if="{{item.key!='operation'}}">
+            {{body[item.key]}}
+          </view>
 
           <!-- 操作---删除 -->
-          <block tt:if="{{type=='del' && item.key=='operation' && body.operation.length>0}}" tt:for="{{body.operation}}"
-            tt:for-item="operation" tt:key="operationIndex">
-            <view catchtap="getButton" class="delstyle" data-item="{{body}}">
-              <view>{{operation.title}} </view>
-            </view>
-          </block>
+          <view class="operation-flex" tt:if="{{item.key=='operation' && body.operation.length>0}}">
+            <block tt:for="{{body.operation}}" tt:for-item="operation" tt:key="operationIndex">
+              <view catchtap="getOperation" data-item="{{operation}}" class="operation-tag">
+                {{operation.title}}
+              </view>
+            </block>
+          </view>
+
 
         </view>
       </view>

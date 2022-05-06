@@ -1,17 +1,23 @@
+const app = getApp();
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        article: {}
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        let source = require('./md/doc.js');
+        let article = app.towxml(source, 'markdown');
+        this.setData({
+            article: article
+        })
     },
 
     /**
@@ -60,6 +66,21 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
+
+    },
+
+    getChangeValue(e) {
+        console.log('getChangeValue-------------', e.detail.value)
+
+    },
+
+    getConfirm(e) {
+        console.log('getConfirm-------------', e.detail.value)
+
+    },
+
+    getSearch(e) {
+        console.log('getSearch-------------', e.detail.value)
 
     }
 })

@@ -2,7 +2,8 @@
     <view class="content">
         <view class="content-title">默认</view>
         <view class="content-flex">
-            <tb-search />
+            <tb-search placeholder='输入关键字' imgPosition='right' bindchange="getChangeValue" bindconfirm="getConfirm"
+                bindsearch="getSearch" />
         </view>
     </view>
 </tb-navLeft>

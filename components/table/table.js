@@ -1,6 +1,6 @@
 
 Component({
-  externalClasses: ["table-class", "table-li-class", 'img-class'],
+  externalClasses: ["table-class", "table-li-class", 'img-class', "tr_class"],
 
   /**
    * 组件的属性列表
@@ -46,19 +46,21 @@ Component({
     previewImage: {
       type: String,
       value: 'preview',
+    },
+
+    showSort: {
+      type: Boolean,
+      value: false
     }
-    // sort: {
-    //   type: String,
-    //   value: 'init',
-    // }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    checkedAll: false,
   },
+
   ready() {
     // console.log('thHeight=====',this.data.thHeight)
     // console.log('headData:headData', this.data.headData)
@@ -76,26 +78,18 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    getChoose(e) {
-      // console.log(e.currentTarget.dataset);
-      let { index, item } = e.currentTarget.dataset;
-
-
-      this.triggerEvent("checked", { item, index });
+    // 操作
+    getOperation(e) {
+      let { item } = e.currentTarget.dataset;
+      this.triggerEvent("operation", { item });
     },
 
-    getButton(e) {
-      let { item, itemmsg } = e.currentTarget.dataset;
-      console.log("getButton:", item, itemmsg);
-      this.triggerEvent("operation", { item, itemmsg });
-    },
-
+    // tbody的每条数据事件
     getItem(e) {
       let { item } = e.currentTarget.dataset;
-      console.log("getItem:", item);
-
       this.triggerEvent("change", { item });
     },
+
     getImage(e) {
       let { imgurl } = e.currentTarget.dataset;
       console.log("getImage:", imgurl);
@@ -112,39 +106,66 @@ Component({
       });
     },
 
-    sortBy(e) {
-      let { sort, key } = e.currentTarget.dataset, headData = this.data.headData;
+
+    // 排序
+    sortClick(e) {
+      let { sort, key } = e.currentTarget.dataset;
+      let { headData } = this.data;
       let currIndex = headData.findIndex((o, i) => { return o.key == key });
+      let _sort = sort == 'ASC' ? 'DESC' : 'ASC';
 
-      // let preSort = headData[currIndex].sort
-      // if (preSort == sort) {
-      //   this.setData({
-      //     [`headData[${currIndex}].sort`]: 'init'
-      //   })
-      // } else {
-      //   this.setData({
-      //     [`headData[${currIndex}].sort`]: sort
-      //   })
-      // }
-
-      // console.log(sort, currIndex, key, headData);
-
-      this.triggerEvent("sortBy", {
-        sort,
-        currIndex,
-        key,
+      this.setData({
+        [`headData[${currIndex}].sort`]: _sort
       })
+
+      this.triggerEvent("sort", { sort: _sort })
     },
-    getTime(e) {
-      let { itemmsg, } = e.currentTarget.dataset;
-      // console.log("getTime:", itemmsg)
-      this.data.curItem = itemmsg
+
+    // 复选框-全选
+    getChangeAll(e) {
+      let { checkedAll, bodyData } = this.data;
+
+      bodyData && bodyData.length > 0 && bodyData.map((info, k) => {
+        info.checked = !checkedAll;
+      })
+
+      this.setData({
+        checkedAll: !checkedAll,
+        bodyData: bodyData
+      })
+
+      this.triggerEvent("allChoose", { bodyData });
     },
-    pickerChangeDate(e) {
-      let { value } = e.detail
-      let { curItem } = this.data;
-      this.triggerEvent("pickerChangeDate", { curItem, value })
-      // console.log("pickerChangeDate:", curItem,value)
+
+    // 单选
+    getChange(e) {
+      let { index, item } = e.currentTarget.dataset;
+      let { bodyData } = this.data;
+      let count = 0;
+
+      this.setData({
+        [`bodyData[${index}].checked`]: !bodyData[index].checked,
+      })
+
+      bodyData && bodyData.length > 0 && bodyData.map((info, k) => {
+        if (info.checked == true) {
+          count++;
+        }
+
+        if (count == bodyData.length) {
+          this.setData({
+            checkedAll: true
+          })
+        }
+      })
+
+      if (!bodyData[index].checked) {
+        this.setData({
+          checkedAll: false
+        })
+      }
+
+      this.triggerEvent("choose", { bodyData, index });
     }
   },
 });
