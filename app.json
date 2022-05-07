@@ -16,6 +16,8 @@
     "pages/dev/search/search",
     "pages/dev/select/select",
     "pages/dev/table/table",
+    "pages/dev/tabs/tabs",
+    "pages/dev/tag/tag",
     "pages/dev/textarea/textarea",
     "pages/dev/toast/toast"
   ],

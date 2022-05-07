@@ -26,14 +26,14 @@ const getMenuList = (data) => {
         { label: 'utils', labelCn: "公共方法", type: 'utils' },
     ];
     let pageCurrentPage = getCurrentPages()[getCurrentPages().length - 1];
-
+    let _envVersion = app.globalData.envVersion && ' (' + app.globalData.envVersion + ')';
+    
     pageCurrentPage.setData({
         menuList: menuList,
         selectedType: data.type
     })
-    console.log('app', app.globalData.envVersion);
 
-    tt.setNavigationBarTitle({ "title": data.type + ' (' + app.globalData.envVersion + ')', });
+    tt.setNavigationBarTitle({ "title": data.type + _envVersion, });
 }
 
 module.exports = {

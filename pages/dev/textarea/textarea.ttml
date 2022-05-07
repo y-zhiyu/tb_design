@@ -2,7 +2,33 @@
     <view class="content">
         <view class="content-title">默认</view>
         <view class="content-flex">
-            <!-- <tb-textarea /> -->
+            <tb-textarea />
+        </view>
+    </view>
+    <view class="content">
+        <view class="content-title">禁止</view>
+        <view class="content-flex">
+            <tb-textarea disabled="{{true}}" value="禁止文字" />
+        </view>
+    </view>
+    <view class="content">
+        <view class="content-title">自适应高度</view>
+        <view class="content-flex">
+            <tb-textarea autoHeight="{{true}}" />
+        </view>
+    </view>
+    <view class="content">
+        <view class="content-title">lable/necessary/errorText</view>
+        <view class="content-flex-column">
+            <tb-textarea lable='文案一' autoHeight="{{true}}" necessary="{{true}}" box_class="box_class" />
+            <tb-textarea lable='文案二' autoHeight="{{true}}" necessary="{{false}}" box_class="box_class" />
+            <tb-textarea lable='文案三' autoHeight="{{true}}" necessary="{{false}}" errorText="这是错误的提示" />
+        </view>
+    </view>
+    <view class="content">
+        <view class="content-title">统计字数: countSpace/maxlength</view>
+        <view class="content-flex-column">
+            <tb-textarea countSpace="{{true}}" maxlength="{{200}}" value="{{value}}" bindchange="getChangeValue" />
         </view>
     </view>
 </tb-navLeft>

@@ -1,0 +1,26 @@
+<view class="tab {{fixedStatus && 'tab-fixed'}} {{placeType=='center' && 'tab_center'}} tab_class">
+  <block tt:for="{{tabsList}}" tt:key="index">
+    <view 
+      catchtap="selectTab" 
+      data-type="{{item.type}}" 
+      data-index="index"
+      data-disabled="{{item.disabled}}"
+      class="tab_i tab_item_class {{tabsActiveType==item.type?'active':''}} {{placeType=='border' && 'tab_i_border'}} {{item.disabled && 'tab_i_disabled'}}">
+
+      <!-- 图标 -->
+      <image tt:if="{{item.imgUrl}}" class="tab_i_img tab_img_class" src="{{item.imgUrl}}"></image>
+
+      <!-- 文字 -->
+      <view>{{item.text}}</view>
+
+      <!-- 数量 -->
+      <block tt:if="{{item.count}}">{{'('+item.count+')'}}</block>
+
+      <!-- 下划线 -->
+      <view tt:if="{{!item.disabled && lineStatus && tabsActiveType==item.type }}" class="tab-line line_style">
+        <view class="tab-line-style"></view>
+      </view>
+
+    </view>
+  </block>
+</view>

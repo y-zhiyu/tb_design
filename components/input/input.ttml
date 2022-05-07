@@ -12,7 +12,7 @@
       <input
         tt:if="{{isSlot}}"
         type="{{type}}"
-        maxlength="{{maxlength?maxlength:255}}"
+        maxlength="{{maxlength?maxlength:512}}"
         class="input-text"
         value="{{value}}"
         focus="{{focus}}"

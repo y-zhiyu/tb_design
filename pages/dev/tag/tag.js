@@ -7,7 +7,6 @@ Page({
      */
     data: {
         article: {},
-        value: '',
 
     },
 
@@ -73,9 +72,8 @@ Page({
 
     },
 
-    getChangeValue(e) {
-        this.setData({
-            value: e.detail.value
-        })
+    getDel() {
+        console.log('点击删除-----')
+
     }
 })

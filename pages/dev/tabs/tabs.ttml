@@ -1,0 +1,43 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="tabs" article="{{article}}">
+    <view class="content">
+        <view class="content-title">样式一</view>
+        <view class="content-flex-column">
+            <tb-tabs tabsList="{{tabsList}}" tabsActiveType="{{tabsActiveType}}" bindtabs="getTabs"
+                lineStatus="{{false}}" />
+            <view class="tab_pane" tt:if="{{tabsActiveType=='tab_1'}}">Content of Tab Pane 1</view>
+            <view class="tab_pane" tt:if="{{tabsActiveType=='tab_2'}}">Content of Tab Pane 2</view>
+            <view class="tab_pane" tt:if="{{tabsActiveType=='tab_3'}}">Content of Tab Pane 3</view>
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">样式二: 下划线</view>
+        <view class="content-flex-column">
+            <tb-tabs tabsList="{{tabsList}}" tabsActiveType="{{tabsActiveType}}" bindtabs="getTabs"
+                lineStatus="{{true}}" />
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">样式三: 居中 </view>
+        <view class="content-flex-column">
+            <tb-tabs tabsList="{{tabsList}}" tabsActiveType="{{tabsActiveType}}" bindtabs="getTabs" placeType="center"
+                lineStatus="{{true}}" />
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">样式四: 边框 </view>
+        <view class="content-flex-column">
+            <tb-tabs tabsList="{{tabsList}}" tabsActiveType="{{tabsActiveType}}" bindtabs="getTabs"
+                placeType="border" />
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">样式四: 图标 </view>
+        <view class="content-flex-column">
+            <tb-tabs tabsList="{{tabsList1}}" tabsActiveType="{{tabsActiveType}}" bindtabs="getTabs" />
+        </view>
+    </view>
+</tb-navLeft>

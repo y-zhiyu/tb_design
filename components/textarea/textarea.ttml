@@ -1,24 +1,32 @@
-<view class="textarea-container box-class">
-  <view class="textarea-title lable-class" tt:if="{{necessary || lable}}">
+<view class="textarea-container box_class">
+  <view class="textarea-title lable_class" tt:if="{{necessary || lable}}">
     <text class="textarea-necessary {{necessary?'textarea-necessary_active':''}}">*</text>
     <text tt:if="{{lable}}">{{lable}} </text>
   </view>
-  <view class='{{disabled?"textarea-disabled":"textarea-box"}} {{errorText && "textarea-error"}} textarea-class'>
-    <view class='textarea-content'>
-      <textarea
-      
+  <view class="textarea-content {{disabled && 'textarea-disabled'}} {{errorText && 'textarea-error'}}  textarea_class">
+    <textarea
         tt:if="{{!disabled}}"
-        class="textarea-style textarea-inside-class"
-        placeholder-style="placeholder-style placeholder-class"
+        class="textarea-style textarea_inside_class"
+        placeholder-style="placeholder-style placeholder_class"
+        style="{{!autoHeight?'height:100px':''}}"
         value="{{value}}"
+        focus="{{focus}}"
         placeholder="{{placeholder}}"
         maxlength="{{maxlength}}"
+        auto-height="{{autoHeight}}"
         bindinput='onChange'
         bindfocus='onFocus'
         bindblur="onBlur"/>
 
-      <block tt:if="{{disabled}}">{{value}}</block>
+    <!-- 字数统计 -->
+    <view tt:if="{{countSpace}}" class="textarea-countSpace">
+      {{value.length}}/{{maxlength}}
     </view>
+
+    <!-- 禁止态 -->
+    <block tt:if="{{disabled}}">{{value}}</block>
   </view>
+  
+  <!-- 错误态 -->
   <view class="textarea-error-text" tt:if="{{errorText}}">{{errorText}}</view>
 </view>

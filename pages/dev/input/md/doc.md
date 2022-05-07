@@ -39,7 +39,7 @@
 | value       | 输入的值                            | String  | -      |
 | errorText   | 错误样式以及文案                    | String  | -      |
 | disabled    | 禁止态                              | Boolean | false  |
-| maxlength   | 最大长度                            | number  | 255    |
+| maxlength   | 最大长度                            | number  | 512    |
 | imgPosition | 图标位置(left/right)                | String  | -      |
 | imgUlr      | 图标路径                            | String  | -      |
 | isChina     | 限制只输入中文                      | Boolean | false  |

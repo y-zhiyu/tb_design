@@ -4,7 +4,7 @@ App({
   },
 
   onShow: function () {
-    var res = tt.getSystemInfoSync();
+    let res = tt.getSystemInfoSync();
     // console.log('res', res);
 
     if (res.gadgetVersion) {
@@ -14,10 +14,11 @@ App({
 
   // 版本更新提示
   updateMP() {
-    const updateManager = tt.getUpdateManager();
+    let updateManager = tt.getUpdateManager();
+
     updateManager.onCheckForUpdate(function (res) {
       // 请求完新版本信息的回调
-      // console.log("是否有新版本更新:", res.hasUpdate)
+      console.log("是否有新版本更新:", res.hasUpdate)
     });
     updateManager.onUpdateReady(function () {
       tt.showModal({

@@ -32,7 +32,7 @@ Component({
     },
     maxlength: {
       type: Number || String,
-      value: 255,
+      value: 512,
     },
     disabled: {
       type: Boolean,

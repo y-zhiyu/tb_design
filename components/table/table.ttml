@@ -6,7 +6,7 @@
 
       <!-- choose -->
       <view tt:if="{{choose}}" class="table_cell">
-        <tb-checkBox checked="{{checkedAll}}" bindonChange="getChangeAll" />
+        <tb-checkBox checked="{{checkedAll}}" bindonChange="getChangeAll" check_class="check_class" />
       </view>
 
       <block tt:for="{{headData}}" tt:key="index">
@@ -32,7 +32,7 @@
         <!-- choose -->
         <view tt:if="{{choose}}" class="table_cell table_tbody_item">
           <tb-checkBox checked="{{body.checked}}" data-item="{{body}}" data-index="{{bodyIndex}}"
-            bindonChange="getChange" />
+            bindonChange="getChange"  check_class="check_class" />
         </view>
 
         <view class="table_cell table_tbody_item" tt:for="{{headData}}" tt:key="index" tt:for-index="headIndex"

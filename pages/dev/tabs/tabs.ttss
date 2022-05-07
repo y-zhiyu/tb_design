@@ -1,0 +1,4 @@
+.tab_pane{
+    padding-top: 15px;
+    box-sizing: border-box;
+}

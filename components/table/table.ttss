@@ -214,3 +214,7 @@
 .arrow-selected-down{
   border-top: 4px solid #1890FF;
 }
+
+.check_class{
+  margin-left: 15px;
+}

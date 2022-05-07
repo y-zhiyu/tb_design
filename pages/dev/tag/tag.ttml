@@ -1,0 +1,30 @@
+<tb-navLeft menuList="{{menuList}}" selectedType="tag" article="{{article}}">
+    <view class="content">
+        <view class="content-title">默认</view>
+        <view class="content-flex">
+            <tb-tag text="标签" />
+        </view>
+    </view>
+    <view class="content">
+        <view class="content-title">可删除</view>
+        <view class="content-flex">
+            <tb-tag text="标签" imgStatus="{{true}}" binddel="getDel" />
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">颜色</view>
+        <view class="content-flex">
+            <tb-tag text="明黄 1" color="1" />
+            <tb-tag text="橙黄 2" color="2" />
+            <tb-tag text="橘红 3" color="3" />
+            <tb-tag text="粉红 4" color="4" />
+            <tb-tag text="紫色 5" color="5" />
+            <tb-tag text="普蓝 6" color="6" />
+            <tb-tag text="蓝色 7" color="7" />
+            <tb-tag text="湖蓝 8 " color="8" />
+            <tb-tag text="青色 9" color="9" />
+            <tb-tag text="绿色 10" color="10" />
+        </view>
+    </view>
+</tb-navLeft>

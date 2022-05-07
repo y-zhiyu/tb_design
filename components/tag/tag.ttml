@@ -1,0 +1,6 @@
+<view class="tag-container">
+    <view class="tag-item tag_class {{color && 'tag_item_'+color}}" bindtap="{{imgStatus && 'getDel'}}">
+        {{text}}
+        <image class="tag-img" tt:if="{{imgStatus}}" src="{{imgUrl?imgUrl:'/components/images/closeOutlined.png'}}" />
+    </view>
+</view>
