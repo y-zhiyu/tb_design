@@ -15,7 +15,7 @@
 <tb-tag text="紫色 5" color="5" />
 <tb-tag text="普蓝 6" color="6" />
 <tb-tag text="蓝色 7" color="7" />
-<tb-tag text="湖蓝 8 " color="8" />
+<tb-tag text="湖蓝 8" color="8" />
 <tb-tag text="青色 9" color="9" />
 <tb-tag text="绿色 10" color="10" />
 ```

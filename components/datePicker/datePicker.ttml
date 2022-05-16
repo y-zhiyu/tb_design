@@ -1,4 +1,18 @@
-<view class="datePicker-container">
-    
+<view class="picker-container box_class">
+    <view class="picker-title lable_class" tt:if="{{lable}}">
+        <text class="picker-necessary {{necessary?'picker-necessary_active':''}}">*</text>
+        <text>{{lable}} </text>
+    </view>
+    <view class="picker-box {{disabled && 'picker-disabled'}} picker_class">
+        <picker class="picker-content {{!value && 'picker-trigger-default'}} {{errorText && 'picker-error'}}"
+            mode="date" value="{{value}}" start="{{start}}" end="{{end}}" bindchange="bindDayDateChange"
+            bindcancel="bindcancel" fields="{{fields}}" disabled="{{disabled}}">
+            {{value?value:placeholder}}
+        </picker>
+        <view class="right-flex" tt:if="{{value && clear}}" catchtap="getDel">
+            <image class="del-icon" src="{{imgUlr?imgUlr:'/components/images/delOutlined_1.png'}}"></image>
+        </view>
+    </view>
 
+    <view class="picker-error-text" tt:if="{{errorText}}">{{errorText}}</view>
 </view>

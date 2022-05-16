@@ -2,8 +2,41 @@
     <view class="content">
         <view class="content-title">默认</view>
         <view class="content-flex">
-            <!-- <tb-datePicker /> -->
-            待开发~
+            <tb-datePicker value="{{value}}" bindchange="getChangeValue" />
         </view>
     </view>
+    <view class="content">
+        <view class="content-title">可清除:clear</view>
+        <view class="content-flex">
+            <tb-datePicker value="{{value}}" bindchange="getChangeValue" clear="{{true}}" bindclear="gerClear" />
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">有效日期范围:start,end</view>
+        <view class="content-flex">
+            <tb-datePicker value="{{value}}" bindchange="getChangeValue" start="2022-05-14" end="2023-05-14" />
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="content-title">lable/necessary/errorText</view>
+        <view class="content-flex-column">
+            <tb-datePicker lable="文案一" value="{{value}}" bindchange="getChangeValue" box_class="box_class" />
+
+            <tb-datePicker lable="文案二" necessary="{{true}}" value="{{value}}" bindchange="getChangeValue"
+                box_class="box_class" />
+
+            <tb-datePicker lable="文案三" necessary="{{true}}" value="{{value}}" bindchange="getChangeValue"
+                errorText="这是错误的提示" />
+        </view>
+    </view>
+    
+    <view class="content">
+        <view class="content-title">disabled</view>
+        <view class="content-flex">
+            <tb-datePicker disabled="{{true}}" />
+        </view>
+    </view>
+
 </tb-navLeft>

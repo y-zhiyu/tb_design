@@ -1,18 +1,27 @@
+const app = getApp();
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        article: {}
+        article: {},
+        value: "",
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let source = require('./md/doc.js');
+        let article = app.towxml(source, 'markdown');
 
+        this.setData({
+            article: article
+        })
     },
+
 
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -61,5 +70,19 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    getChangeValue(e) {
+        console.log('e--------------', e);
+        this.setData({
+            value: e.detail.value
+        })
+    },
+
+    gerClear(e) {
+        console.log('clear--------------', e);
+        this.setData({
+            value: ''
+        })
     }
 })

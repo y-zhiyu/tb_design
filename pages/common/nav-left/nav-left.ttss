@@ -12,7 +12,8 @@
 }
 
 .app-container-left::-webkit-scrollbar {
-  display: none
+  /* display: none; */
+  width: 1px;
 }
 
 .app-container-right {

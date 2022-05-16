@@ -18,8 +18,8 @@
     <view class="content">
         <view class="content-title">多选</view>
         <view class="content-flex">
-            <tb-select selectKey="option_key" selectText="option_value"
-                selectArray="{{selectArray1}}" value="{{value1}}" bindchange="getSelectChange1" />
+            <!-- <tb-select selectKey="option_key" selectText="option_value"
+                selectArray="{{selectArray1}}" value="{{value1}}" bindchange="getSelectChange1" /> -->
         </view>
     </view>
 
